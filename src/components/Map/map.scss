@@ -1,7 +1,10 @@
 .map {
-
+  background-color: red;
+  margin-left: 30rem;
+  margin-top: 10rem;
   height: 80%;
   width: 100%;
-  background-color: red;
-  
+  display: flex;
+  flex-direction: column;
 }
+

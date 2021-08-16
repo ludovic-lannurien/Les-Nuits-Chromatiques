@@ -1,12 +1,15 @@
 .nav {
+  z-index: 1;
+  position: fixed;
   width: 30%;
   height: 100vh;
 
   .navList{
-    font-size: 70px;
+    font-size: 50px;
     padding: 0.5em;
     line-height: 1.5em;
     color: white;
+    list-style: none;
 
   }
   img {
