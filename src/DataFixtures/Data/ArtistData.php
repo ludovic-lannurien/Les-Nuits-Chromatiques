@@ -3,8 +3,8 @@
 namespace App\DataFixtures\Data;
 
 class ArtistData
-{  
-   public static $artistData = 
+{
+    public static $artistData =
    [
 
 
@@ -53,6 +53,4 @@ class ArtistData
             'videolink'=>'https://vimeo.com/161602302',
         ],
     ];
-
-
 }
