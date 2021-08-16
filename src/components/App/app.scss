@@ -1,9 +1,15 @@
 .app {
-  width: 500px;
-  margin: 1em auto;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url('src/assets/fond.png');
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
 }
 
-.app img {
-  max-width: 150px;
-}
