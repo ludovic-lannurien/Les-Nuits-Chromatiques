@@ -60,7 +60,7 @@ class Place
     private $picture;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=320)
      */
     private $slug;
 
