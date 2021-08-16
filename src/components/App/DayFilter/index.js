@@ -6,9 +6,14 @@ import './dayfilter.scss';
 
 // == Composant
 const DayFilter = () => (
-  <div className="dayfilter">
-    dayfilter
-  </div>
+  <ul className="dayfilter">
+    <li><a href="#">mardi</a></li>
+    <li><a href="#">mercredi</a></li>
+    <li><a href="#">jeudi</a></li>
+    <li><a href="#">vendredi</a></li>
+    <li><a href="#">samedi</a></li>
+    <li><a href="#">dimanche</a></li>
+  </ul>
 );
 
 // == Export
