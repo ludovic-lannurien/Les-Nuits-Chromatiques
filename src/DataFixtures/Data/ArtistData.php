@@ -15,7 +15,7 @@ class ArtistData
             ils produisent des évènements et des installations autour de concepts innovants et créatifs.
             Ils puisent leur inspiration dans différents domaines tels que le design, le graphisme, l’architecture et le jeu vidéo.',
             'picture'=>'https://www.flickr.com/photos/_wecomeinpeace/16076592071/',
-            'type'=>'lumiére',
+            'type'=>'lumière',
             'videolink'=>'https://www.youtube.com/watch?v=1xJQ816CTKQ&ab_channel=CHKT',
         ],
 
@@ -24,7 +24,7 @@ class ArtistData
             'lastname'=>'',
             'description'=>'Théoriz est un studio de création Art et Technologie spécialisé dan sla conception installations immersives et de spectacles audiovisuels innovant',
             'picture'=>'',
-            'type'=>'lumiére',
+            'type'=>'lumière',
             'videolink'=>'https://vimeo.com/194838088',
         ],
 
@@ -38,8 +38,8 @@ class ArtistData
         ],
 
         [
-            'firstname'=>'GUERRA',
-            'lastname'=>'david',
+            'firstname'=>'David',
+            'lastname'=>'GUERRA',
             'description'=> 'Svindrön, aka David Guerra, est un artiste sonore, compositeur, interprète, sound designer et programmeur, vivant en France.
             Multi-instrumentiste autodidacte et créateur de musique électronique, il se forme à la musique électroacoustique (Conservatoire 
             de Chalon-sur-Saône, avec Jean-Marc WEBER) et aux techniques studio (CFPM Villeurbanne).
@@ -49,7 +49,7 @@ class ArtistData
             Sensible à l’art total, David Guerra crée et collabore sur de nombreux projets artistiques où l’art sonore, la danse, l’art visuel, 
             l’art plastique... vivent dans un temps unique.',
             'picture'=>'',
-            'type'=>'musique/lumiere',
+            'type'=>'musique/lumière',
             'videolink'=>'https://vimeo.com/161602302',
         ],
     ];
