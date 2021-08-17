@@ -6,6 +6,7 @@ use App\Repository\PlaceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=PlaceRepository::class)
@@ -16,56 +17,67 @@ class Place
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("places_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("places_get")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("places_get")
      */
     private $address;
 
     /**
      * @ORM\Column(type="integer", length=5)
+     * @Groups("places_get")
      */
     private $zipCode;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("places_get")
      */
     private $city;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("places_get")
      */
     private $latitude;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("places_get")
      */
     private $longitude;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("places_get")
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=320)
+     * @Groups("places_get")
      */
     private $picture;
 
     /**
-     * @ORM\Column(type="string", length=320)
+     * @ORM\Column(type="string", length=320, unique=true)
+     * @Groups("places_get")
      */
     private $slug;
 
     /**
      * @ORM\OneToMany(targetEntity=Event::class, mappedBy="place")
+     * @Groups("places_get")
      */
     private $events;
 
