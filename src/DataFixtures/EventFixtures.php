@@ -2,14 +2,14 @@
 
 namespace App\DataFixtures;
 
-use App\DataFixtures\Data\EventData;
+use DateTime;
 use App\Entity\Event;
 use App\Service\MySlugger;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\DataFixtures\Data\EventData;
 use Doctrine\Persistence\ObjectManager;
-use DateTime;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
-class PlaceFixtures extends Fixture
+class EventFixtures extends Fixture
 {
     private $mySlugger;
 
@@ -26,10 +26,11 @@ class PlaceFixtures extends Fixture
 
             $event->setName($data['name']);
             $event->setStartDatetime(new DateTime($data['start_datetime']));
-            $event->setEndDatetime($data['end_datetime']);
+            $event->setEndDatetime(new DateTime($data['end_datetime']));
             $event->setDescription($data['description']);
             $event->setSlug($this->mySlugger->slugify($event->getName()));
-
+            // $event->setPlace();
+            
             $manager->persist($event);
         };
 

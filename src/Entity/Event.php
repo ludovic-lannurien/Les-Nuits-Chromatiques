@@ -46,7 +46,7 @@ class Event
 
     /**
      * @ORM\ManyToOne(targetEntity=Place::class, inversedBy="events")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $place;
 
