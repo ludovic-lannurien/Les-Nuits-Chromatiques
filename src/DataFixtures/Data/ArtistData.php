@@ -11,9 +11,7 @@ class ArtistData
         [
             'firstname'=>'WECOMEINPEACE',
             'lastname'=>'',
-            'description'=>'WECOMEINPEACE a été fondé par Wilfried Della Rossa, Kimi Do et Thomas Mathieu Depuis 2008, 
-            ils produisent des évènements et des installations autour de concepts innovants et créatifs.
-            Ils puisent leur inspiration dans différents domaines tels que le design, le graphisme, l’architecture et le jeu vidéo.',
+            'description'=>'WECOMEINPEACE a été fondé par Wilfried Della Rossa, Kimi Do et Thomas Mathieu Depuis 2008, ils produisent des évènements et des installations autour de concepts innovants et créatifs. Ils puisent leur inspiration dans différents domaines tels que le design, le graphisme, l’architecture et le jeu vidéo.',
             'picture'=>'https://www.flickr.com/photos/_wecomeinpeace/16076592071/',
             'type'=>'lumière',
             'videolink'=>'https://www.youtube.com/watch?v=1xJQ816CTKQ&ab_channel=CHKT',
@@ -22,7 +20,7 @@ class ArtistData
         [
             'firstname'=>'THEORIZ',
             'lastname'=>'',
-            'description'=>'Théoriz est un studio de création Art et Technologie spécialisé dan sla conception installations immersives et de spectacles audiovisuels innovant',
+            'description'=>'Théoriz est un studio de création Art et Technologie spécialisé dans la conception installations immersives et de spectacles audiovisuels innovant',
             'picture'=>'',
             'type'=>'lumière',
             'videolink'=>'https://vimeo.com/194838088',
