@@ -20,7 +20,6 @@ class PlaceFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         foreach (PlaceData::$placeData as $data) {
-
             $place = new Place();
 
             $place->setName($data['name']);

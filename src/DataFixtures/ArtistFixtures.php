@@ -20,7 +20,6 @@ class ArtistFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         foreach (ArtistData::$artistData as $data) {
-
             $artist = new Artist();
 
             $artist->setFirstname($data['firstname']);
