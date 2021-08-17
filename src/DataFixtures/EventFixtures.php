@@ -21,7 +21,6 @@ class EventFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         foreach (EventData::$eventData as $data) {
-
             $event = new Event();
 
             $event->setName($data['name']);
