@@ -61,7 +61,7 @@ class PlaceController extends AbstractController
         $em->flush();
 
         return $this->json(
-            $place,
+            ['message' => 'Le lieu a bien été ajouté.'],
             Response::HTTP_CREATED,
             ['Location' => $this->generateUrl('api_places_get_item', ['slug' => $place->getSlug()])],
             ['groups' => 'places_get']

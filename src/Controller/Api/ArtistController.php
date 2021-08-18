@@ -61,7 +61,7 @@ class ArtistController extends AbstractController
         $em->flush();
 
         return $this->json(
-            $artist,
+            ['message' => 'L\'artiste a bien été ajouté.'],
             Response::HTTP_CREATED,
             ['Location' => $this->generateUrl('api_artists_get_item', ['slug' => $artist->getSlug()])],
             ['groups' => 'artists_get']

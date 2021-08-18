@@ -18,60 +18,80 @@ class Place
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $address;
 
     /**
      * @ORM\Column(type="integer", length=5)
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $zipCode;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $city;
 
     /**
      * @ORM\Column(type="float")
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $latitude;
 
     /**
      * @ORM\Column(type="float")
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $longitude;
 
     /**
      * @ORM\Column(type="text")
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=320)
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $picture;
 
     /**
      * @ORM\Column(type="string", length=320, unique=true)
      * @Groups("places_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      */
     private $slug;
 

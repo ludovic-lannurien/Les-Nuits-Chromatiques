@@ -49,7 +49,7 @@ class EventController extends AbstractController
     {
         $jsonContent = $request->getContent();
 
-        $event = $serializer->deserialize($jsonContent, Movie::class, 'json');
+        $event = $serializer->deserialize($jsonContent, Event::class, 'json');
 
         $errors = $validator->validate($event);
 
@@ -61,7 +61,7 @@ class EventController extends AbstractController
         $em->flush();
 
         return $this->json(
-            $event,
+            ['message' => 'L\'évènement a bien été ajouté.'],
             Response::HTTP_CREATED,
             ['Location' => $this->generateUrl('api_events_get_item', ['slug' => $event->getSlug()])],
             ['groups' => 'events_get']
@@ -103,9 +103,9 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/api/movies/{slug}", name="api_events_delete", methods="DELETE")
+     * @Route("/api/events/{slug}", name="api_events_delete", methods="DELETE")
      */
-    public function delete(Event $event = null, EntityManagerInterface $em)
+    public function deleteEvent(Event $event = null, EntityManagerInterface $em)
     {
         // 404
         if (null === $event) {

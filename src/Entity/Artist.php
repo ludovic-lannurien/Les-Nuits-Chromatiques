@@ -17,54 +17,72 @@ class Artist
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $picture;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $videoLink;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $type;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     * @Groups("artists_get")
+     * @Groups("events_get")
      * @Groups("places_get")
      */
     private $slug;
 
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="artists")
+     * @Groups("artists_get")
+     * @Groups("places_get")
      */
     private $events;
 

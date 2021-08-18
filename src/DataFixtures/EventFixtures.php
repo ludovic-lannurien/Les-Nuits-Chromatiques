@@ -28,7 +28,6 @@ class EventFixtures extends Fixture
             $event->setEndDatetime(new DateTime($data['end_datetime']));
             $event->setDescription($data['description']);
             $event->setSlug($this->mySlugger->slugify($event->getName()));
-            // $event->setPlace();
             
             $manager->persist($event);
         };
