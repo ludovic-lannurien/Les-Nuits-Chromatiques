@@ -29,8 +29,16 @@ class PlaceController extends AbstractController
     /**
      * @Route("/api/places/{slug}", name="api_places_get_item", methods="GET")
      */
-    public function getPlace(Place $place): Response
+    public function getPlace(Place $place = null): Response
     {
+        // 404
+        if (null === $place) {
+            return new JsonResponse(
+                ["message" => "Lieu non trouvé"],
+                Response::HTTP_NOT_FOUND
+            );
+        }
+
         return $this->json($place, Response::HTTP_OK, [], ['groups' => 'places_get']);
     }
 
@@ -65,6 +73,7 @@ class PlaceController extends AbstractController
      */
     public function editPlace(Place $place = null, SerializerInterface $serializer, ValidatorInterface $validator, EntityManagerInterface $em, Request $request): Response
     {
+        // 404
         if (null === $place) {
             return new JsonResponse(
                 ["message" => "Lieu non trouvé"],
@@ -98,10 +107,13 @@ class PlaceController extends AbstractController
      */
     public function deletePlace(Place $place = null, EntityManagerInterface $em)
     {
+        // 404
         if (null === $place) {
-            $error = 'Ce lieu n\'existe pas';
-
-            return $this->json(['error' => $error], Response::HTTP_NOT_FOUND);
+            $error = 'Lieu non trouvé';
+            return $this->json(
+                ['error' => $error],
+                Response::HTTP_NOT_FOUND
+            );
         }
 
         $em->remove($place);

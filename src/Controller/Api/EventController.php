@@ -29,8 +29,16 @@ class EventController extends AbstractController
     /**
      * @Route("/api/events/{slug}", name="api_events_get_item", methods="GET")
      */
-    public function getEvent(Event $event): Response
+    public function getEvent(Event $event = null): Response
     {
+        // 404
+        if (null === $event) {
+            return new JsonResponse(
+                ["message" => "Évènement non trouvé"],
+                Response::HTTP_NOT_FOUND
+            );
+        }
+
         return $this->json($event, Response::HTTP_OK, [], ['groups' => 'events_get']);
     }
 
@@ -65,6 +73,7 @@ class EventController extends AbstractController
      */
     public function editEvent(Event $event = null, SerializerInterface $serializer, ValidatorInterface $validator, EntityManagerInterface $em, Request $request): Response
     {
+        // 404
         if (null === $event) {
             return new JsonResponse(
                 ["message" => "Évènement non trouvé"],
@@ -98,10 +107,12 @@ class EventController extends AbstractController
      */
     public function delete(Event $event = null, EntityManagerInterface $em)
     {
+        // 404
         if (null === $event) {
-            $error = 'Cet évènement n\'existe pas';
-
-            return $this->json(['error' => $error], Response::HTTP_NOT_FOUND);
+            $error = 'Évènement non trouvé';
+            return $this->json(
+                ['error' => $error],
+                Response::HTTP_NOT_FOUND);
         }
 
         $em->remove($event);
