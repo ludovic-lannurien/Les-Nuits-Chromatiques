@@ -2,14 +2,32 @@
 import React from 'react';
 
 // == Import
-
+import Logo from './logo.png';
 import './nav.scss';
 
 // == Composant
 const Nav = () => (
-  <div className="nav">
-    Hello Nav
-  </div>
+  <nav className="nav">
+    <button className="navbar__burger" type="button">
+      <span className="burger-bar" />
+    </button>
+    <img src={Logo} alt="react logo" className="logo" />
+    <ul className="navList">
+      <a href="#" className="navbar__link">
+        <li className="navLink_element"><span>Map</span></li>
+      </a>
+      <a href="#">
+        <li href="#" className="navLink_element">Programmation</li>
+      </a>
+      <a href="#">
+        <li href="#" className="navLink_element">Lieux</li>
+      </a>
+      <a href="#">
+        <li href="#" className="navLink_element">Festival</li>
+      </a>
+    </ul>
+
+  </nav>
 );
 
 // == Export

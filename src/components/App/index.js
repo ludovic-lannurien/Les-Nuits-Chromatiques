@@ -4,13 +4,17 @@ import React from 'react';
 // == Import
 import Map from 'src/components/Map';
 import Nav from 'src/components/Nav';
+import DayFilter from './DayFilter';
 import './app.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
     <Nav />
-    <Map />
+    <div className="wrapper">
+      <DayFilter />
+      <Map />
+    </div>
   </div>
 );
 

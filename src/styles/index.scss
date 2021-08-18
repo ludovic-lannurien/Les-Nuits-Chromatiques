@@ -2,7 +2,9 @@
 @use 'vars';
 
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('src/assets/fond.png');
+  background-attachment: fixed;
 }
 
 /* 
