@@ -2,13 +2,12 @@
 import React from 'react';
 
 // == Import
-import Popup from 'src/components/Map/MapBox/Popup';
 import './mapbox.scss';
 
 // == Composant
 const MapBox = () => (
   <div className="mapbox">
-    <Popup />
+    <p>hello</p>
   </div>
 );
 
