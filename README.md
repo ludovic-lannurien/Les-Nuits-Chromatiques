@@ -1,6 +1,6 @@
 # Les Nuits Chromatiques
 
-## Installer le projet :
+## Installer le projet
 
 ### 1. Récupérer le projet
 ```
@@ -25,7 +25,7 @@ bin/console d:d:c
 ### 5. Exécuter la ou les migration(s) dans la bdd
 ```
 bin/console d:m:m  
-yes à la question
++ yes à la question
 ```
 ### 6. Charger les fixtures
 ```
