@@ -8,13 +8,25 @@ import './nav.scss';
 // == Composant
 const Nav = () => (
   <nav className="nav">
+    <button className="navbar__burger" type="button">
+      <span className="burger-bar" />
+    </button>
     <img src={Logo} alt="react logo" className="logo" />
     <ul className="navList">
-      <li>Map</li>
-      <li>Programmation</li>
-      <li>Lieux</li>
-      <li>Festival</li>
+      <a href="#" className="navbar__link">
+        <li className="navLink_element"><span>Map</span></li>
+      </a>
+      <a href="#">
+        <li href="#" className="navLink_element">Programmation</li>
+      </a>
+      <a href="#">
+        <li href="#" className="navLink_element">Lieux</li>
+      </a>
+      <a href="#">
+        <li href="#" className="navLink_element">Festival</li>
+      </a>
     </ul>
+
   </nav>
 );
 

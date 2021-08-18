@@ -6,9 +6,7 @@ import './popup.scss';
 
 // == Composant
 const Popup = () => (
-  <div className="popup">
-    popup
-  </div>
+  <div>a</div>
 );
 
 // == Export
