@@ -1,5 +1,10 @@
+// Mise en place de state pour faire marcher mapBox
 const initialState = {
-  // ici l'état initial
+  dijonLatitude: 47.321212,
+  dijonLongitude: 5.041350,
+  zoom: 10,
+  width: '100vw',
+  height: '100vh',
 };
 
 function nameForTheReducer(state = initialState, action = {}) {
