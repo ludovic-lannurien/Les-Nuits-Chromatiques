@@ -1,12 +1,18 @@
 .mapbox {
+<<<<<<< HEAD
   border-radius: 80px;
+=======
+>>>>>>> 312ec5744f71a5b81468ab2e6a7f65ff4278e775
   position: fixed;
   bottom: 0;
   right: 0;
   height: 70vh;
   width: 70vw;
+<<<<<<< HEAD
+=======
+  border-top-left-radius: 80px 80px;
+>>>>>>> 312ec5744f71a5b81468ab2e6a7f65ff4278e775
 }
-
 @media (max-width: 1000px) {
   .mapbox {
     margin-top: 12rem;
@@ -16,7 +22,6 @@
     width: 100vw;
   }
 }
-
 @media (max-width: 700px) {
   .mapbox {
     margin-top: 12rem;
@@ -24,4 +29,20 @@
     width: 100vw;
   }
 }
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
+.cible{
+  width: 40px;
+  height: 40px;
+  transition: 0.5s;
+
+  &:hover{
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+  }
+}
