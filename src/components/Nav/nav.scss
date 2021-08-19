@@ -43,6 +43,11 @@
       top: 1rem;
       width: 20rem;
       height: auto;
+
+      &:hover {
+        width: 21rem;
+        transition: 0.5s;
+      }
     }
   }
 

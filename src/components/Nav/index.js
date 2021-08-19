@@ -11,7 +11,7 @@ const Nav = () => (
     <button className="navbar__burger" type="button">
       <span className="burger-bar" />
     </button>
-    <img src={Logo} alt="react logo" className="logo" />
+    <a href="#"><img src={Logo} alt="react logo" className="logo" /></a>
     <ul className="navList">
       <a href="#" className="navbar__link">
         <li className="navLink_element"><span>Map</span></li>
