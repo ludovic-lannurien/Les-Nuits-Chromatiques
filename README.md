@@ -1,6 +1,6 @@
 # Les Nuits Chromatiques
 
-## Installer le projet
+## Installer le projet (Symfony)
 
 ### 1. Récupérer le projet
 ```
