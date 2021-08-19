@@ -49,10 +49,12 @@
 }
 
 .popup-content {
+  border-radius: 5px;
   padding: 1rem;
-  background-color: rgb(236, 234, 234);
+  background-color: rgba(236, 234, 234, 0.658);
 
   img {
+    border-radius: 5px;
     width: 190px;
     height: auto;
     margin: auto;
@@ -71,7 +73,24 @@
   }
 
   p {
-    
+    margin: 1rem 0;
+  }
+
+  .type {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 6px;
+    background-color: rgb(245, 78, 0);
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 10px;
+  }
+
+  .voir-plus {
+    font-style: italic;
+    text-decoration: underline;
+    float: right;
   }
 }
 

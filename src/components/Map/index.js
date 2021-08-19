@@ -90,7 +90,8 @@ const Map = () => {
               <h2>{selectedEvent.name}</h2>
               <h3>{selectedEvent.artists[0].firstname} {selectedEvent.artists[0].lastname}</h3>
               <p>{selectedEvent.description}</p>
-              <a href="https://chkt.fr/">Voir plus</a>
+              <a href="https://chkt.fr/"><span className="type">{selectedEvent.artists[0].type}</span></a>
+              <a href="https://chkt.fr/" className="voir-plus">Voir plus</a>
             </div>
           </Popup>
         )}
