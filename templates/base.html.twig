@@ -13,6 +13,25 @@
 	</head>
 
 	<body>
+
+		<nav>
+			<ul>
+				<li>
+					<a href="#">Evènements</a>
+				</li>
+				{# <li class="{% block active_event %}{% endblock %}><a href="{{ path('admin_event_browse') }}">Evènements</a></li> #}
+
+				<li class="{% block active_place %}{% endblock %}">
+					<a href="{{ path('admin_place_browse') }}">Lieux</a>
+				</li>
+
+				<li>
+					<a href="#">Artistes</a>
+				</li>
+				{# <li class="{% block active_artist %}{% endblock %}"><a href="{{ path('admin_artist_browse') }}">Artistes</a></li> #}
+			</ul>
+		</nav>
+
 		{% block body %}{% endblock %}
 	</body>
 </html>

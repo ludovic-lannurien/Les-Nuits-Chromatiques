@@ -62,6 +62,7 @@ class PlaceController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $place->setSlug($slugger->slugify($place->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -90,6 +91,7 @@ class PlaceController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $place->setSlug($slugger->slugify($place->getName()));
 
             $em = $this->getDoctrine()->getManager();

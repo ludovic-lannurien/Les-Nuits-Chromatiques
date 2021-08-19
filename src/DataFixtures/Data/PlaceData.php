@@ -65,7 +65,7 @@ class PlaceData
             'latitude' => 47.32432869558158,
             'longitude' => 5.034022511586989,
             'description' => 'Grand Hôtel La Cloche de Dijon est un hôtel 5 étoiles classé monument historique qui propose des chambres et suites en plein centre ville.',
-            'picture' => 'https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/48/69/48691_v4.jpeg'
+            'picture' => 'https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/48/69/48691_v4.jpg'
         ]
     ];
 }
