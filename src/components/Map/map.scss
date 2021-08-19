@@ -22,3 +22,20 @@
     width: 100vw;
   }
 }
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cible{
+  width: 40px;
+  height: 40px;
+  transition: 0.5s;
+
+  &:hover{
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+  }
+}
