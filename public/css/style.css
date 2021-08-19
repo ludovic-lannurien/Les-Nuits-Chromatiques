@@ -1,0 +1,56 @@
+/* VARS
+   ========================================================================== */
+
+/* :root {
+    --color-1: #000;
+} */
+
+/* TOOLS
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* UTILITIES
+   ========================================================================== */
+
+h1,
+th,
+td {
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 1em auto;
+}
+
+th,
+td {
+    vertical-align: middle;
+}
+
+/* MAIN
+   ========================================================================== */
+
+.list table img {
+    width: 7em;
+}
+
+.place .btn {
+    margin-bottom: 2em;
+}
+
+.place img {
+    width: 30em;
+    box-shadow: 3px 5px 9px #333;
+}
+
+.description td {
+    text-align: justify;
+}
