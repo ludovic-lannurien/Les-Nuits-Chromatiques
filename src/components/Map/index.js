@@ -17,6 +17,7 @@ const Map = () => {
     zoom: 12.5,
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedHoverEvent, setSelectedHoverEvent] = useState(null);
   const [popup, setPopup] = useState(false);
   const [isShown, setIsShown] = useState(false);
 
@@ -50,11 +51,11 @@ const Map = () => {
               }}
               onMouseEnter={() => {
                 setIsShown(true);
-                setSelectedEvent(item);
+                setSelectedHoverEvent(item);
               }}
               onMouseLeave={() => {
                 setIsShown(false);
-                setSelectedEvent(item);
+                setSelectedHoverEvent(item);
               }}
             >
               <img src={cible} alt="marker event" className="cible" />
@@ -64,14 +65,14 @@ const Map = () => {
         {isShown && (
         <Popup
           className="myPopup-title"
-          latitude={selectedEvent.place.latitude}
-          longitude={selectedEvent.place.longitude}
+          latitude={selectedHoverEvent.place.latitude}
+          longitude={selectedHoverEvent.place.longitude}
         /* onClose={() => {
           setPopup(false);
         }} */
         >
           <div className="popup-title">
-            <h2>{selectedEvent.name}</h2>
+            <h2>{selectedHoverEvent.name}</h2>
           </div>
         </Popup>
         )}
