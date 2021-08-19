@@ -4,6 +4,7 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import placeData from 'src/placesData';
 // == Import
 import cible from './cible.png';
+import philippe from './katerine.jpg';
 import './map.scss';
 
 // == Composant
@@ -13,18 +14,24 @@ const Map = () => {
     longitude: 5.0413,
     width: '100vw',
     height: '100vh',
-    zoom: 15,
+    zoom: 12.5,
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [popup, setPopup] = useState(false);
+  const [isShown, setIsShown] = useState(false);
+
   return (
     <div className="mapbox">
       <ReactMapGL
         {...viewport}
-        mapboxApiAccessToken={'pk.eyJ1IjoiY291Y291dG9pIiwiYSI6ImNrc2hsanYwZzF2ajIycW9kOGRsdnJqbTAifQ.hAOB8WH3YU4QmpPiEVDaEg'}
+        mapboxApiAccessToken="pk.eyJ1IjoiY291Y291dG9pIiwiYSI6ImNrc2hsanYwZzF2ajIycW9kOGRsdnJqbTAifQ.hAOB8WH3YU4QmpPiEVDaEg"
         mapStyle="mapbox://styles/coucoutoi/cksiodflj6mbm17nxvvo3qyf7"
-        onViewportChange={viewport => {
+        onViewportChange={(viewport) => {
           setViewport(viewport);
+        }}
+        onClick={(event) => {
+          event.preventDefault();
+          setPopup(false);
         }}
       >
         {placeData.map((item) => (
@@ -39,24 +46,50 @@ const Map = () => {
               onClick={(event) => {
                 event.preventDefault();
                 setSelectedEvent(item);
-                setPopup(!popup);
+                setPopup(true);
+              }}
+              onMouseEnter={() => {
+                setIsShown(true);
+                setSelectedEvent(item);
+              }}
+              onMouseLeave={() => {
+                setIsShown(false);
+                setSelectedEvent(item);
               }}
             >
               <img src={cible} alt="marker event" className="cible" />
             </button>
           </Marker>
         ))}
+        {isShown && (
+        <Popup
+          className="myPopup-title"
+          latitude={selectedEvent.place.latitude}
+          longitude={selectedEvent.place.longitude}
+        /* onClose={() => {
+          setPopup(false);
+        }} */
+        >
+          <div className="popup-title">
+            <h2>{selectedEvent.name}</h2>
+          </div>
+        </Popup>
+        )}
         {popup && (
           <Popup
+            className="myPopup"
             latitude={selectedEvent.place.latitude}
             longitude={selectedEvent.place.longitude}
-            onClose={() => {
+            /* onClose={() => {
               setPopup(false);
-            }}
+            }} */
           >
-            <div>
+            <div className="popup-content">
+              <a href="#"><img src={philippe} className="philippe" alt="philippe" /></a>
               <h2>{selectedEvent.name}</h2>
+              <h3>{selectedEvent.artists[0].firstname} {selectedEvent.artists[0].lastname}</h3>
               <p>{selectedEvent.description}</p>
+              <a href="https://chkt.fr/">Voir plus</a>
             </div>
           </Popup>
         )}
