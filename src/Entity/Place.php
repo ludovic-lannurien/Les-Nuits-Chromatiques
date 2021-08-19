@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\PlaceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PlaceRepository::class)
@@ -28,6 +28,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -36,6 +37,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
      */
     private $address;
 
@@ -44,6 +46,9 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
+     * @Assert\Positive
+     * @Assert\Length(min=5, max=5)
      */
     private $zipCode;
 
@@ -52,6 +57,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
      */
     private $city;
 
@@ -60,6 +66,8 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
+     * @Assert\Positive
      */
     private $latitude;
 
@@ -68,6 +76,8 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
+     * @Assert\Positive
      */
     private $longitude;
 
@@ -76,6 +86,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
      */
     private $description;
 
@@ -84,6 +95,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Assert\NotBlank
      */
     private $picture;
 
