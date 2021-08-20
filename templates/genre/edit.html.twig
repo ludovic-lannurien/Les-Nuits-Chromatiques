@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}LNC | {{ place.name }}{% endblock %}
+{% block title %}LNC | {{ genre.name }}{% endblock %}
 
-{% block active_place %}active{% endblock %}
+{% block active_genre %}active{% endblock %}
 
 {% block body %}
 
 	<main>
 		<section class="container">
-			<h1>Modifier un lieu</h1>
+			<h1>Modifier un genre</h1>
 
-			<a class="btn btn-item btn-primary" href="{{ path('admin_place_browse') }}">Liste des lieux</a>
+			<a class="btn btn-item btn-primary" href="{{ path('admin_genre_browse') }}">Liste des genres</a>
 
 			{% include "_form.html.twig" %}
 		</section>

@@ -76,7 +76,8 @@ nav a:hover {
     margin-bottom: 2em;
 }
 
-.place img {
+.place img,
+.artist img {
     width: 30em;
     box-shadow: 3px 5px 9px #333;
 }
