@@ -82,7 +82,6 @@ class Artist
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="artists")
      * @Groups("artists_get")
-     * @Groups("places_get")
      */
     private $events;
 
