@@ -28,21 +28,6 @@ class GenreController extends AbstractController
     }
 
     /**
-     * @Route("/admin/genre/read/{slug}", name="admin_genre_read", methods="GET")
-     */
-    public function read(Genre $genre = null): Response
-    {
-        // 404
-        if (null === $genre) {
-            throw $this->createNotFoundException('Genre non trouvé.');
-        }
-
-        return $this->render('genre/read.html.twig', [
-            'genre' => $genre
-        ]);
-    }
-
-    /**
      * @Route("/admin/genre/edit/{slug}", name="admin_genre_edit", methods={"GET", "POST"})
      */
     public function edit(Genre $genre = null, Request $request, MySlugger $slugger): Response
@@ -65,7 +50,7 @@ class GenreController extends AbstractController
 
             // $this->addFlash('success', 'Le genre a bien été modifié.');
 
-            return $this->redirectToRoute('admin_genre_read', ['slug' => $genre->getSlug()]);
+            return $this->redirectToRoute('admin_genre_browse', ['slug' => $genre->getSlug()]);
         }
 
         return $this->render('genre/edit.html.twig', [

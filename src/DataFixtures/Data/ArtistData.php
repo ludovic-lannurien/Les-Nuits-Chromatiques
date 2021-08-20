@@ -31,7 +31,7 @@ class ArtistData
 
         [
             'firstname' => 'David',
-            'lastname' => 'GUERRA',
+            'lastname' => 'Guerra',
             'description' => 'Svindrön, aka David Guerra, est un artiste sonore, compositeur, interprète, sound designer et programmeur, vivant en France.
             Multi-instrumentiste autodidacte et créateur de musique électronique, il se forme à la musique électroacoustique (Conservatoire 
             de Chalon-sur-Saône, avec Jean-Marc WEBER) et aux techniques studio (CFPM Villeurbanne).

@@ -22,7 +22,7 @@ class EventController extends AbstractController
     {
         $events = $eventRepository->findAll();
 
-        return $this->render('events/browse.html.twig', [
+        return $this->render('event/browse.html.twig', [
             'events' => $events
         ]);
     }
@@ -65,7 +65,7 @@ class EventController extends AbstractController
 
             // $this->addFlash('success', 'Le l\'évènement a bien été modifié.');
 
-            return $this->redirectToRoute('admin_event_read', ['slug' => $event->getSlug()]);
+            return $this->redirectToRoute('admin_event_browse', ['slug' => $event->getSlug()]);
         }
 
         return $this->render('event/edit.html.twig', [

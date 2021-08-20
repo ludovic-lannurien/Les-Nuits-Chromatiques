@@ -16,10 +16,9 @@
 
 		<nav>
 			<ul>
-				<li>
-					<a href="#">Evènements</a>
+				<li class="{% block active_event %}{% endblock %}">
+					<a href="{{ path('admin_event_browse') }}">Evènements</a>
 				</li>
-				{# <li class="{% block active_event %}{% endblock %}><a href="{{ path('admin_event_browse') }}">Evènements</a></li> #}
 
 				<li class="{% block active_place %}{% endblock %}">
 					<a href="{{ path('admin_place_browse') }}">Lieux</a>

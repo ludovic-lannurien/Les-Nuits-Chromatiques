@@ -20,7 +20,7 @@ class GenreType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Genre::class,
+            'data_class' => Genre::class
         ]);
     }
 }
