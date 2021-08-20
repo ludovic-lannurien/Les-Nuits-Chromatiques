@@ -3,23 +3,21 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  height: 70vh;
+  height: 100vh;
   width: 70vw;
 }
 @media (max-width: 1000px) {
   .mapbox {
-    margin-top: 12rem;
     margin-left: 0;
-    border-top-left-radius: 0;
-    height: 70vh;
     width: 100vw;
+    height: 80vh;
+    border-top-left-radius: 0;
   }
 }
 @media (max-width: 700px) {
   .mapbox {
-    margin-top: 12rem;
-    height: 70vh;
     width: 100vw;
+    height: 80vh;
   }
 }
 .marker-btn {
