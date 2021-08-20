@@ -27,7 +27,6 @@ class ArtistFixtures extends Fixture
             $artist->setPicture($data['picture']);
             $artist->setDescription($data['description']);
             $artist->setVideoLink($data['videolink']);
-            $artist->setType($data['type']);
 
             if (null === $artist->getLastname()) {
                 $artist->setSlug($this->mySlugger->slugify($artist->getFirstname()));
