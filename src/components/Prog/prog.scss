@@ -8,6 +8,7 @@
 }
 
 .row {
+  margin-top: 10rem;
   border-top-left-radius: 15px;
   display: flex;
   flex-direction: row;
@@ -19,9 +20,14 @@
     height: 50%;
     border-radius: 15px;
     background-color: white;
-    margin: 2rem 1.3rem;
+    margin: 2rem 1.3rem 0;
     padding: 1rem;
     color: rgb(32, 11, 32);
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
 
     h1 {
       text-align: center;
@@ -33,7 +39,7 @@
     
     .picture {
       width: 100%;
-      margin: 2rem auto;
+      margin: 1rem auto 0;
       border-radius: 10px;
 
       img {
@@ -65,6 +71,7 @@
 
 @media (max-width: 1000px) {
   .prog {
+    top: 10rem;
     margin-left: 0;
     width: 100vw;
     height: 90vh;
@@ -86,6 +93,7 @@
 
 @media (max-width: 700px) {
   .prog {
+    top: 10rem;
     width: 100vw;
     height: 90vh;
 
