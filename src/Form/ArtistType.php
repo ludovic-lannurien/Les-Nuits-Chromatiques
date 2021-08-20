@@ -9,22 +9,27 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class ArtistType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname')
-            ->add('lastname')
-            ->add('picture')
+            ->add('firstname', TextType::class, ['label' => 'Prénom'])
+            ->add('lastname', TextType::class, ['label' => 'Nom'])
+            ->add('picture', UrlType::class, ['label' => 'Image'])
             ->add('description')
-            ->add('videoLink')
-            ->add('type')
-            ->add('slug')
-            // ->add('events')
-
+            ->add('videoLink', UrlType::class, [
+                'label' => 'Lien vidéo',
+                'help' => 'Lien Youtube ou Viméo',
+            ])
+            ->add('genres', EntityType::class, [
+                
+            ])
             ->add('events', EntityType::class, [
+                'label' => 'Evènements',
                 'class' => Event::class,
                 'multiple' => true,
                 'choice_label' => 'name',

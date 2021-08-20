@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}LNC | {{ artist.firstname }}{% endblock %}
+{% block title %}LNC | {{ artist.firstname }} {{ artist.lastname }}{% endblock %}
+
+{% block active_artist %}active{% endblock %}
 
 {% block body %}
 

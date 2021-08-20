@@ -1,53 +1,45 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Admin de l'artiste {{ artist.firstname }}{% endblock %}
+{% block title %}LNC | {{ artist.firstname }} {{artist.lastname}}{% endblock %}
+
+{% block active_artist %}active{% endblock %}
 
 {% block body %}
+	<main>
+		<section class="container place">
+			<h1>{{ artist.firstname }} {{ artist.lastname }}</h1>
 
-<h1>Admin de l'artiste <i>{{ artist.firstname }}</i></h1>
+            <a class="btn btn-item btn-primary" href="{{ path('admin_artist_browse') }}">Liste des artistes</a>
 
-<a class="btn btn-item btn-primary" href="{{ path('admin_artist_browse') }}">Liste des artistes</a>
+			<table class="table table-striped table-light">
+				<thead>
+					<tr>
+						<th scope="col">Nom</th>
+						<th scope="col">Lien vidéo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">{{ artist.firstname }} {{ artist.lastname }}</th>
+						<td>{{ artist.videoLink }}</td>
+					</tr>
+				</tbody>
+			</table>
 
-<div class="row my-5">
-    <div class="col-sm-12 col-md-5">
-        <img src="{{ artist.picture }}" alt="{{ artist.firstname }}" class="img-fluid" />
-    </div>
-    <div class="col-sm-12 col-md-7">
-        <ul class="">
-            <li class="">
-                <strong>Firstname :</strong>
-                {{ artist.firstname }}
-            </li>
+            <table class="table table-striped table-light description">
+				<thead>
+					<tr>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+                        <td>{{ artist.description }}</td>
+					</tr>
+				</tbody>
+			</table>
 
-            <li class="">
-                <strong>lastname :</strong>
-                {{ artist.lastname }}
-            </li>
-
-            <li class="">
-                <strong>Picture :</strong>
-                {{ artist.picture }} 
-            </li>
-
-            <li class="">
-                <strong>Description :</strong>
-                {{ artist.description }} 
-            </li>
-
-            <li class="">
-                <strong>Video link :</strong>
-                {{ artist.videoLink }} 
-            </li>
-
-            <li class="">
-                <strong>Type :</strong>
-                {{ artist.type }} 
-            </li>
-
-
-        </ul>
-
-    </div>
-</div>
-
+            <p><img src="{{ artist.picture }}" alt="Image de l'artiste"></p>
+		</section>
+	</main>
 {% endblock %}
