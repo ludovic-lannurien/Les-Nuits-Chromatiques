@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 // == Import
-import placesData from 'src/placesData';
+import artistData from 'src/artistData';
 import Map from 'src/components/Map';
 import Nav from 'src/components/Nav';
 import Prog from 'src/components/Prog';
@@ -20,11 +20,9 @@ const App = () => (
       <Route path="/" exact>
         <Map />
       </Route>
-      {placesData.map((events) => (
-        <Route path="/programmation">
-          <Prog artists={events.artists} />
-        </Route>
-      ))}
+      <Route path="/programmation">
+        <Prog artists={artistData} />
+      </Route>
       <Route path="/lieux">
         <Places />
       </Route>

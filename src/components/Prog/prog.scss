@@ -1,5 +1,4 @@
 .prog {
-  background-color: green;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -8,11 +7,13 @@
 }
 
 .row {
+  background-color: red;
   display: flex;
   flex-direction: row;
   margin: 1rem;
 
   .artist { 
+    width: 20rem;
     border-radius: 1rem;
     background-color: white;
     margin: 1rem;
