@@ -25,10 +25,9 @@
 					<a href="{{ path('admin_place_browse') }}">Lieux</a>
 				</li>
 
-				<li>
-					<a href="#">Artistes</a>
+				<li class="{% block active_artist %}{% endblock %}">
+					<a href="{{ path('admin_artist_browse') }}">Artistes</a>
 				</li>
-				{# <li class="{% block active_artist %}{% endblock %}"><a href="{{ path('admin_artist_browse') }}">Artistes</a></li> #}
 			</ul>
 		</nav>
 

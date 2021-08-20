@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin de l'artiste {{ artist.firstname }}{% endblock %}
+
+{% block body %}
+
+<h1>Admin de l'artiste <i>{{ artist.firstname }}</i></h1>
+
+<a class="btn btn-item btn-primary" href="{{ path('admin_artist_browse') }}">Liste des artistes</a>
+
+<div class="row my-5">
+    <div class="col-sm-12 col-md-5">
+        <img src="{{ artist.picture }}" alt="{{ artist.firstname }}" class="img-fluid" />
+    </div>
+    <div class="col-sm-12 col-md-7">
+        <ul class="">
+            <li class="">
+                <strong>Firstname :</strong>
+                {{ artist.firstname }}
+            </li>
+
+            <li class="">
+                <strong>lastname :</strong>
+                {{ artist.lastname }}
+            </li>
+
+            <li class="">
+                <strong>Picture :</strong>
+                {{ artist.picture }} 
+            </li>
+
+            <li class="">
+                <strong>Description :</strong>
+                {{ artist.description }} 
+            </li>
+
+            <li class="">
+                <strong>Video link :</strong>
+                {{ artist.videoLink }} 
+            </li>
+
+            <li class="">
+                <strong>Type :</strong>
+                {{ artist.type }} 
+            </li>
+
+
+        </ul>
+
+    </div>
+</div>
+
+{% endblock %}
