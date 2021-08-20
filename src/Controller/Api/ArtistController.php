@@ -43,32 +43,6 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/api/artists", name="api_artists_post", methods="POST")
-     */
-    public function createArtist(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator)
-    {
-        $jsonContent = $request->getContent();
-
-        $artist = $serializer->deserialize($jsonContent, Artist::class, 'json');
-
-        $errors = $validator->validate($artist);
-
-        if (count($errors) > 0) {
-            return $this->json(['errors' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-
-        $em->persist($artist);
-        $em->flush();
-
-        return $this->json(
-            ['message' => 'L\'artiste a bien été ajouté.'],
-            Response::HTTP_CREATED,
-            ['Location' => $this->generateUrl('api_artists_get_item', ['slug' => $artist->getSlug()])],
-            ['groups' => 'artists_get']
-        );
-    }
-
-    /**
      * @Route("/api/artists/{slug}", name="api_artists_put_item", methods={"PUT", "PATCH"})
      */
     public function editArtist(Artist $artist = null, SerializerInterface $serializer, ValidatorInterface $validator, EntityManagerInterface $em, Request $request): Response
@@ -100,6 +74,32 @@ class ArtistController extends AbstractController
         $em->flush();
 
         return new JsonResponse(["message" => "Artiste modifié"], Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("/api/artists", name="api_artists_post", methods="POST")
+     */
+    public function createArtist(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator)
+    {
+        $jsonContent = $request->getContent();
+
+        $artist = $serializer->deserialize($jsonContent, Artist::class, 'json');
+
+        $errors = $validator->validate($artist);
+
+        if (count($errors) > 0) {
+            return $this->json(['errors' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        $em->persist($artist);
+        $em->flush();
+
+        return $this->json(
+            ['message' => 'L\'artiste a bien été ajouté.'],
+            Response::HTTP_CREATED,
+            ['Location' => $this->generateUrl('api_artists_get_item', ['slug' => $artist->getSlug()])],
+            ['groups' => 'artists_get']
+        );
     }
 
     /**

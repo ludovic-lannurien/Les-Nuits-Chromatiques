@@ -43,32 +43,6 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/api/events", name="api_events_post", methods="POST")
-     */
-    public function createEvent(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator)
-    {
-        $jsonContent = $request->getContent();
-
-        $event = $serializer->deserialize($jsonContent, Event::class, 'json');
-
-        $errors = $validator->validate($event);
-
-        if (count($errors) > 0) {
-            return $this->json(['errors' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-
-        $em->persist($event);
-        $em->flush();
-
-        return $this->json(
-            ['message' => 'L\'évènement a bien été ajouté.'],
-            Response::HTTP_CREATED,
-            ['Location' => $this->generateUrl('api_events_get_item', ['slug' => $event->getSlug()])],
-            ['groups' => 'events_get']
-        );
-    }
-
-    /**
      * @Route("/api/events/{slug}", name="api_events_put_item", methods={"PUT", "PATCH"})
      */
     public function editEvent(Event $event = null, SerializerInterface $serializer, ValidatorInterface $validator, EntityManagerInterface $em, Request $request): Response
@@ -100,6 +74,32 @@ class EventController extends AbstractController
         $em->flush();
 
         return new JsonResponse(["message" => "Evènement modifié"], Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("/api/events", name="api_events_post", methods="POST")
+     */
+    public function createEvent(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator)
+    {
+        $jsonContent = $request->getContent();
+
+        $event = $serializer->deserialize($jsonContent, Event::class, 'json');
+
+        $errors = $validator->validate($event);
+
+        if (count($errors) > 0) {
+            return $this->json(['errors' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        $em->persist($event);
+        $em->flush();
+
+        return $this->json(
+            ['message' => 'L\'évènement a bien été ajouté.'],
+            Response::HTTP_CREATED,
+            ['Location' => $this->generateUrl('api_events_get_item', ['slug' => $event->getSlug()])],
+            ['groups' => 'events_get']
+        );
     }
 
     /**

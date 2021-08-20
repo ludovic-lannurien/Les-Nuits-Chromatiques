@@ -43,32 +43,6 @@ class PlaceController extends AbstractController
     }
 
     /**
-     * @Route("/api/places", name="api_places_post", methods="POST")
-     */
-    public function createPlace(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator)
-    {
-        $jsonContent = $request->getContent();
-
-        $place = $serializer->deserialize($jsonContent, Place::class, 'json');
-
-        $errors = $validator->validate($place);
-
-        if (count($errors) > 0) {
-            return $this->json(['errors' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-
-        $em->persist($place);
-        $em->flush();
-
-        return $this->json(
-            ['message' => 'Le lieu a bien été ajouté.'],
-            Response::HTTP_CREATED,
-            ['Location' => $this->generateUrl('api_places_get_item', ['slug' => $place->getSlug()])],
-            ['groups' => 'places_get']
-        );
-    }
-
-    /**
      * @Route("/api/places/{slug}", name="api_places_put_item", methods={"PUT", "PATCH"})
      */
     public function editPlace(Place $place = null, SerializerInterface $serializer, ValidatorInterface $validator, EntityManagerInterface $em, Request $request): Response
@@ -100,6 +74,32 @@ class PlaceController extends AbstractController
         $em->flush();
 
         return new JsonResponse(["message" => "Lieu modifié"], Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("/api/places", name="api_places_post", methods="POST")
+     */
+    public function createPlace(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator)
+    {
+        $jsonContent = $request->getContent();
+
+        $place = $serializer->deserialize($jsonContent, Place::class, 'json');
+
+        $errors = $validator->validate($place);
+
+        if (count($errors) > 0) {
+            return $this->json(['errors' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        $em->persist($place);
+        $em->flush();
+
+        return $this->json(
+            ['message' => 'Le lieu a bien été ajouté.'],
+            Response::HTTP_CREATED,
+            ['Location' => $this->generateUrl('api_places_get_item', ['slug' => $place->getSlug()])],
+            ['groups' => 'places_get']
+        );
     }
 
     /**
