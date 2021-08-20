@@ -2,12 +2,15 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 // == Import
+import placesData from 'src/placesData';
 import Map from 'src/components/Map';
 import Nav from 'src/components/Nav';
 import Prog from 'src/components/Prog';
+import Festival from 'src/components/Festival';
 import Places from 'src/components/Places';
 import DayFilter from './DayFilter';
 import './app.scss';
+
 
 // == Composant
 const App = () => (
@@ -19,10 +22,13 @@ const App = () => (
         <Map />
       </Route>
       <Route path="/programmation">
-        <Prog />
+        <Prog placesData={placesData.map(item)} />
       </Route>
       <Route path="/lieux">
         <Places />
+      </Route>
+      <Route path="/festival">
+        <Festival />
       </Route>
     </div>
   </div>
