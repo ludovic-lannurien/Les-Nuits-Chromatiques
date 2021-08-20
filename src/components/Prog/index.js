@@ -1,17 +1,37 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import ArtistCard from './ArtistCard';
 
 // == Import
-import Artist from 'src/components/Prog/Artist';
 import './prog.scss';
 
 // == Composant
-const Prog = () => (
-  <div className="prog">
-    prog
-    <Artist />
-  </div>
-);
+const Prog = ({ artists }) => {
+  console.log(artists);
+
+  return (
+    <div className="prog">
+      <div className="row">
+        {artists.map((artist) => (
+          <ArtistCard
+            {...artist}
+            key={artist.id}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+Prog.propTypes = {
+  artists: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+};
 
 // == Export
 export default Prog;

@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 // == Import
 import Logo from './logo.png';
@@ -13,18 +14,35 @@ const Nav = () => (
     </button>
     <a href="#"><img src={Logo} alt="react logo" className="logo" /></a>
     <ul className="navList">
-      <a href="#" className="navbar__link">
-        <li className="navLink_element"><span>Map</span></li>
-      </a>
-      <a href="#">
-        <li href="#" className="navLink_element">Programmation</li>
-      </a>
-      <a href="#">
-        <li href="#" className="navLink_element">Lieux</li>
-      </a>
-      <a href="#">
-        <li href="#" className="navLink_element">Festival</li>
-      </a>
+      <NavLink
+        to="/"
+        className="navbar__link"
+        activeClassName="navbar__link--active"
+        exact
+      >
+        <li className="navLink_element">Map</li>
+      </NavLink>
+      <NavLink
+        to="/programmation"
+        className="navbar__link"
+        activeClassName="navbar__link--active"
+      >
+        <li className="navLink_element">Programmation</li>
+      </NavLink>
+      <NavLink
+        to="/lieux"
+        className="navbar__link"
+        activeClassName="navbar__link--active"
+      >
+        <li className="navLink_element">Lieux</li>
+      </NavLink>
+      <NavLink
+        to="/festival"
+        className="navbar__link"
+        activeClassName="navbar__link--active"
+      >
+        <li className="navLink_element">Festival</li>
+      </NavLink>
     </ul>
 
   </nav>

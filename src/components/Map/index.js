@@ -1,7 +1,7 @@
 // == Import npm
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import placeData from 'src/placesData';
+import placeData from 'src/eventData';
 // == Import
 import cible from './cible.png';
 import philippe from './katerine.jpg';
