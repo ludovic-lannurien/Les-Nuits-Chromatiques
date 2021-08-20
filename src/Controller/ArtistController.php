@@ -26,6 +26,21 @@ class ArtistController extends AbstractController
     }
 
     /**
+     * @Route("/admin/artist/read/{slug}", name="admin_artist_read", methods={"GET"})
+     */
+    public function read(Artist $artist): Response
+    {
+        // 404 ?
+        if (null === $artist) {
+            throw $this->createNotFoundException('artiste non trouvé.');
+        }
+
+        return $this->render('artist/read.html.twig', [
+            'artist' => $artist,
+        ]);
+    }
+
+    /**
      * @Route("/admin/artist/add", name="admin_artist_add", methods={"GET","POST"})
      */
     public function add(Request $request, MySlugger $slugger): Response
@@ -53,22 +68,7 @@ class ArtistController extends AbstractController
 
         return $this->renderForm('artist/add.html.twig', [
             'artist' => $artist,
-            'form' => $form,
-        ]);
-    }
-
-    /**
-     * @Route("/admin/artist/read/{slug}", name="admin_artist_read", methods={"GET"})
-     */
-    public function read(Artist $artist): Response
-    {
-        // 404 ?
-        if (null === $artist) {
-            throw $this->createNotFoundException('artiste non trouvé.');
-        }
-
-        return $this->render('artist/read.html.twig', [
-            'artist' => $artist,
+            'form' => $form
         ]);
     }
 

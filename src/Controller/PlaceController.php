@@ -82,7 +82,7 @@ class PlaceController extends AbstractController
     /**
      * @Route("/admin/place/add", name="admin_place_add", methods={"GET", "POST"})
      */
-    public function addPlace(Request $request, MySlugger $slugger): Response
+    public function add(Request $request, MySlugger $slugger): Response
     {
         $place = new Place();
 
