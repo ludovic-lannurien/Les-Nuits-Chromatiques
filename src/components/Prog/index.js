@@ -6,12 +6,11 @@ import PropTypes from 'prop-types';
 import './prog.scss';
 
 // == Composant
-const Prog = ({ placesData }) => {
-  console.log(placesData);
-
+const Prog = ({ artists }) => {
+  console.log(artists);
   return (
     <div className="prog">
-      {placesData.map((artist) => (
+      {artists.map((artist) => (
         <div className="row">
           <div className="artist">
             <a><img src="katerine.jpg" alt="katerine" /></a>
@@ -28,7 +27,7 @@ const Prog = ({ placesData }) => {
 };
 
 Prog.propTypes = {
-  placesData: PropTypes.arrayOf(
+  artists: PropTypes.arrayOf(
     PropTypes.shape({
       artists: PropTypes.shape.isRequired,
     }),

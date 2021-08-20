@@ -11,7 +11,6 @@ import Places from 'src/components/Places';
 import DayFilter from './DayFilter';
 import './app.scss';
 
-
 // == Composant
 const App = () => (
   <div className="app">
@@ -21,9 +20,11 @@ const App = () => (
       <Route path="/" exact>
         <Map />
       </Route>
-      <Route path="/programmation">
-        <Prog placesData={placesData.map(item)} />
-      </Route>
+      {placesData.map((events) => (
+        <Route path="/programmation">
+          <Prog artists={events.artists} />
+        </Route>
+      ))}
       <Route path="/lieux">
         <Places />
       </Route>
