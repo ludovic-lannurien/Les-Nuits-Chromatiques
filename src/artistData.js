@@ -90,7 +90,7 @@ export default [
     }],
     genres: [{ id: 1, name: 'Lumi\u00e8re', slug: 'lumiere' }, { id: 2, name: 'Musique', slug: 'musique'},
     ],
-  },{
+  }, {
     id: 5,
     firstname: 'josé',
     lastname: 'Michel',
@@ -111,7 +111,7 @@ export default [
     }],
     genres: [{ id: 1, name: 'Lumi\u00e8re', slug: 'lumiere' }, { id: 2, name: 'Musique', slug: 'musique'},
     ],
-  },{
+  }, {
     id: 6,
     firstname: 'Coucou',
     picture: '',
@@ -131,7 +131,7 @@ export default [
     }],
     genres: [{ id: 1, name: 'Lumi\u00e8re', slug: 'lumiere' }, { id: 2, name: 'Musique', slug: 'musique'},
     ],
-  },{
+  }, {
     id: 7,
     firstname: 'David Vendettaz',
     picture: '',
@@ -151,7 +151,7 @@ export default [
     }],
     genres: [{ id: 1, name: 'Lumi\u00e8re', slug: 'lumiere' }, { id: 2, name: 'Musique', slug: 'musique'},
     ],
-  },{
+  }, {
     id: 8,
     firstname: 'mich mich',
     picture: '',
@@ -171,7 +171,7 @@ export default [
     }],
     genres: [{ id: 1, name: 'Lumi\u00e8re', slug: 'lumiere' }, { id: 2, name: 'Musique', slug: 'musique'},
     ],
-  },{
+  }, {
     id: 9,
     firstname: 'michel polnaref',
     picture: '',
@@ -191,7 +191,7 @@ export default [
     }],
     genres: [{ id: 1, name: 'Lumi\u00e8re', slug: 'lumiere' }, { id: 2, name: 'Musique', slug: 'musique'},
     ],
-  },{
+  }, {
     id: 10,
     firstname: 'doudoudidon',
     picture: '',

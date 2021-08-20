@@ -6,6 +6,7 @@ import artistData from 'src/artistData';
 import Map from 'src/components/Map';
 import Nav from 'src/components/Nav';
 import Prog from 'src/components/Prog';
+import Artist from 'src/components/Prog/Artist';
 import Festival from 'src/components/Festival';
 import Places from 'src/components/Places';
 import './app.scss';
@@ -26,6 +27,9 @@ const App = () => (
       </Route>
       <Route path="/festival">
         <Festival />
+      </Route>
+      <Route path="/artistes/slug">
+        <Artist />
       </Route>
     </div>
   </div>
