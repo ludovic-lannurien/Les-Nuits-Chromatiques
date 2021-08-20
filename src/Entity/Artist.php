@@ -19,6 +19,7 @@ class Artist
      * @ORM\Column(type="integer")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $id;
@@ -27,6 +28,7 @@ class Artist
      * @ORM\Column(type="string", length=255)
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $firstname;
@@ -35,6 +37,7 @@ class Artist
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $lastname;
@@ -43,6 +46,7 @@ class Artist
      * @ORM\Column(type="string", length=255)
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $picture;
@@ -51,6 +55,7 @@ class Artist
      * @ORM\Column(type="text")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $description;
@@ -59,6 +64,7 @@ class Artist
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $videoLink;
@@ -67,6 +73,7 @@ class Artist
      * @ORM\Column(type="string", length=255, unique=true)
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $slug;
@@ -74,11 +81,15 @@ class Artist
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="artists")
      * @Groups("artists_get")
+     * @Groups("genres_get")
      */
     private $events;
 
     /**
      * @ORM\ManyToMany(targetEntity=Genre::class, mappedBy="artists")
+     * @Groups("artists_get")
+     * @Groups("events_get")
+     * @Groups("places_get")
      */
     private $genres;
 

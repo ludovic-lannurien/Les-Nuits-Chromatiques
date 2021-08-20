@@ -21,6 +21,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      */
     private $id;
 
@@ -29,6 +30,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      */
     private $name;
@@ -38,6 +40,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      */
     private $address;
@@ -47,6 +50,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      * @Assert\Positive
      * @Assert\Length(min=5, max=5)
@@ -58,6 +62,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      */
     private $city;
@@ -67,6 +72,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      * @Assert\Positive
      */
@@ -77,6 +83,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      * @Assert\Positive
      */
@@ -87,6 +94,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      */
     private $description;
@@ -96,6 +104,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Assert\NotBlank
      */
     private $picture;
@@ -105,6 +114,7 @@ class Place
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
+     * @Groups("genres_get")
      */
     private $slug;
 

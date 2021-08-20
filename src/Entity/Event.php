@@ -19,6 +19,7 @@ class Event
      * @ORM\Column(type="integer")
      * @Groups("events_get")
      * @Groups("artists_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $id;
@@ -27,6 +28,7 @@ class Event
      * @ORM\Column(type="string", length=255)
      * @Groups("events_get")
      * @Groups("artists_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $name;
@@ -35,6 +37,7 @@ class Event
      * @ORM\Column(type="text")
      * @Groups("events_get")
      * @Groups("artists_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $description;
@@ -43,6 +46,7 @@ class Event
      * @ORM\Column(type="datetime")
      * @Groups("events_get")
      * @Groups("artists_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $startDatetime;
@@ -51,6 +55,7 @@ class Event
      * @ORM\Column(type="datetime")
      * @Groups("events_get")
      * @Groups("artists_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $endDatetime;
@@ -59,6 +64,7 @@ class Event
      * @ORM\Column(type="string", length=255, unique=true)
      * @Groups("events_get")
      * @Groups("artists_get")
+     * @Groups("genres_get")
      * @Groups("places_get")
      */
     private $slug;
@@ -67,6 +73,7 @@ class Event
      * @ORM\ManyToOne(targetEntity=Place::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=true)
      * @Groups("events_get")
+     * @Groups("genres_get")
      * @Groups("artists_get")
      */
     private $place;

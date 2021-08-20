@@ -20,22 +20,35 @@ class Genre
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("genres_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
+     * @Groups("places_get")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("genres_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
+     * @Groups("places_get")
      * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("genres_get")
+     * @Groups("artists_get")
+     * @Groups("events_get")
+     * @Groups("places_get")
      */
     private $slug;
 
     /**
      * @ORM\ManyToMany(targetEntity=Artist::class, inversedBy="genres")
+     * @Groups("genres_get")
      */
     private $artists;
 
