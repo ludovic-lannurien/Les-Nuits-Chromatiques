@@ -1,5 +1,4 @@
 .places {
-  background-color: green;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -7,3 +6,33 @@
   width: 70vw;
 }
 
+
+.image {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 5px;
+  bottom: 2em;
+  
+  left: 9em;
+}
+.right-arrow {
+  position: absolute;
+  top: 30%;
+  right: 22px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+.left-arrow {
+  position: absolute;
+  top: 30%;
+  left: 45px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
