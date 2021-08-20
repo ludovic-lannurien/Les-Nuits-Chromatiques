@@ -1,5 +1,6 @@
 .prog {
   position: fixed;
+  overflow-y: scroll;
   bottom: 0;
   right: 0;
   height: 70vh;
@@ -7,16 +8,18 @@
 }
 
 .row {
-  background-color: red;
+  border-top-left-radius: 15px;
   display: flex;
   flex-direction: row;
-  margin: 1rem;
+  flex-wrap: wrap;
 
   .artist { 
-    width: 20rem;
-    border-radius: 1rem;
+    border: 1px solid rgba(206, 192, 192, 0.829);
+    width: 30%;
+    height: 25rem;
+    border-radius: 15px;
     background-color: white;
-    margin: 1rem;
+    margin: 2rem 1.3rem;
     padding: 1rem;
     color: rgb(32, 11, 32);
 
@@ -24,6 +27,8 @@
       text-align: center;
       text-decoration: none;
       color: rgb(32, 11, 32);
+      font-weight: 600;
+      font-size: 22px;
     }
     
     img {
@@ -32,6 +37,7 @@
       height: auto;
       margin: 1rem;
       text-align: center;
+      border-radius: 15px;
     }
     
     p {
