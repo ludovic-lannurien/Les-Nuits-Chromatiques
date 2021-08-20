@@ -15,12 +15,18 @@
 				<thead>
 					<tr>
 						<th scope="col">Nom</th>
+						<th scope="col">Genre(s) artistique(s)</th>
 						<th scope="col">Lien vidéo</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<th scope="row">{{ artist.firstname }} {{ artist.lastname }}</th>
+						<td>
+						{% for genre in artist.genres %}
+							{{ genre.name }}{{ loop.last ? '' : ', ' }}
+						{% endfor %}
+						</td>
 						<td>{{ artist.videoLink }}</td>
 					</tr>
 				</tbody>

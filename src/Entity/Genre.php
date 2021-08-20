@@ -105,7 +105,7 @@ class Genre
 
     public function removeArtist(Artist $artist): self
     {
-        $this->artists->removeElement($artist);
+        $this->artist->removeElement($artist);
 
         return $this;
     }

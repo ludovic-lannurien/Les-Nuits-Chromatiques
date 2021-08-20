@@ -79,7 +79,7 @@ class ArtistController extends AbstractController
     {
         // 404 ?
         if (null === $artist) {
-            throw $this->createNotFoundException('artiste non trouvé.');
+            throw $this->createNotFoundException('Artiste non trouvé.');
         }
 
         $form = $this->createForm(ArtistType::class, $artist);
