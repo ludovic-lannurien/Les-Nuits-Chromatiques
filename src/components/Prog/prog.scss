@@ -3,7 +3,7 @@
   overflow-y: scroll;
   bottom: 0;
   right: 0;
-  height: 70vh;
+  height: 100vh;
   width: 70vw;
 }
 
@@ -16,7 +16,7 @@
   .artist { 
     border: 1px solid rgba(206, 192, 192, 0.829);
     width: 30%;
-    height: 25rem;
+    height: 50%;
     border-radius: 15px;
     background-color: white;
     margin: 2rem 1.3rem;
@@ -31,13 +31,16 @@
       font-size: 22px;
     }
     
-    img {
-      padding: 1rem;
-      width: 20rem;
-      height: auto;
-      margin: 1rem;
-      text-align: center;
-      border-radius: 15px;
+    .picture {
+      width: 100%;
+      margin: 2rem auto;
+      border-radius: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
     }
     
     p {
@@ -58,8 +61,42 @@
       color: rgb(32, 11, 32);
     }
   }
-  
-
-  
 }
 
+@media (max-width: 1000px) {
+  .prog {
+    margin-left: 0;
+    width: 100vw;
+    height: 90vh;
+    border-top-left-radius: 0;
+
+    .artist { 
+      width: 40%;
+      height: 50%;
+
+      h1 {
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+  }
+
+
+}
+
+@media (max-width: 700px) {
+  .prog {
+    width: 100vw;
+    height: 90vh;
+
+    .artist { 
+      width: 40%;
+      height: 40%;
+
+      h1 {
+        font-weight: 600;
+        font-size: 15px;
+      }
+    }
+  }
+}

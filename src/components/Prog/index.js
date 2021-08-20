@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ProgFilter from './ProgFilter';
 import ArtistCard from './ArtistCard';
 
 // == Import
@@ -13,6 +14,7 @@ const Prog = ({ artists }) => {
 
   return (
     <div className="prog">
+      <ProgFilter />
       <div className="row">
         {artists.map((artist) => (
           <ArtistCard
