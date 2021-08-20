@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Artist;
 use App\Form\ArtistType;
 use App\Repository\ArtistRepository;
+use App\Service\MySlugger;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +28,7 @@ class ArtistController extends AbstractController
     /**
      * @Route("/admin/artist/add", name="admin_artist_add", methods={"GET","POST"})
      */
-    public function add(Request $request): Response
+    public function add(Request $request, MySlugger $slugger): Response
     {
         $artist = new Artist();
 
@@ -36,6 +37,12 @@ class ArtistController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if (null === $artist->getLastname()) {
+                $artist->setSlug($slugger->slugify($artist->getFirstname()));
+            } else {
+                $artist->setSlug($slugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
+            }
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($artist);
@@ -55,11 +62,11 @@ class ArtistController extends AbstractController
      */
     public function read(Artist $artist): Response
     {
-
         // 404 ?
-        if ($artist === null) {
+        if (null === $artist) {
             throw $this->createNotFoundException('artiste non trouvé.');
         }
+
         return $this->render('artist/read.html.twig', [
             'artist' => $artist,
         ]);
@@ -68,13 +75,24 @@ class ArtistController extends AbstractController
     /**
      * @Route("/admin/artist/edit/{slug}", name="admin_artist_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Artist $artist): Response
+    public function edit(Artist $artist = null, Request $request, MySlugger $slugger): Response
     {
+        // 404 ?
+        if (null === $artist) {
+            throw $this->createNotFoundException('artiste non trouvé.');
+        }
+
         $form = $this->createForm(ArtistType::class, $artist);
         $form->add('Enregister', SubmitType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if (null === $artist->getLastname()) {
+                $artist->setSlug($slugger->slugify($artist->getFirstname()));
+            } else {
+                $artist->setSlug($slugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
+            }
 
             $this->getDoctrine()->getManager()->flush();
 
@@ -101,7 +119,7 @@ class ArtistController extends AbstractController
         $em->remove($artist);
         $em->flush();
 
-        $this->addFlash('success', 'Le lieu a bien été supprimé.');
+        // $this->addFlash('success', 'Le lieu a bien été supprimé.');
 
         return $this->redirectToRoute('admin_artist_browse');
     }

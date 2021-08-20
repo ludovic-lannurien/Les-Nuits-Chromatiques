@@ -68,7 +68,7 @@ class PlaceController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            $this->addFlash('success', 'Le lieu a bien été modifié.');
+            // $this->addFlash('success', 'Le lieu a bien été modifié.');
 
             return $this->redirectToRoute('admin_place_read', ['slug' => $place->getSlug()]);
         }
@@ -98,7 +98,7 @@ class PlaceController extends AbstractController
             $em->persist($place);
             $em->flush();
 
-            $this->addFlash('success', 'Le lieu a bien été ajouté.');
+            // $this->addFlash('success', 'Le lieu a bien été ajouté.');
 
             return $this->redirectToRoute('admin_place_browse', ['slug' => $place->getSlug()]);
         }
@@ -121,7 +121,7 @@ class PlaceController extends AbstractController
         $em->remove($place);
         $em->flush();
 
-        $this->addFlash('success', 'Le lieu a bien été supprimé.');
+        // $this->addFlash('success', 'Le lieu a bien été supprimé.');
 
         return $this->redirectToRoute('admin_place_browse');
     }
