@@ -47,7 +47,7 @@ class Genre
     private $slug;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Artist::class, inversedBy="genres")
+     * @ORM\ManyToMany(targetEntity=Artist::class, mappedBy="genres")
      * @Groups("genres_get")
      */
     private $artists;
@@ -98,6 +98,7 @@ class Genre
     {
         if (!$this->artists->contains($artist)) {
             $this->artists[] = $artist;
+            $artist->addGenre($this);
         }
 
         return $this;

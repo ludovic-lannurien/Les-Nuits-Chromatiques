@@ -7,9 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
+ *  @UniqueEntity(fields={"name"})
  */
 class Event
 {
@@ -30,6 +32,7 @@ class Event
      * @Groups("artists_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -39,6 +42,7 @@ class Event
      * @Groups("artists_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $description;
 
@@ -48,6 +52,7 @@ class Event
      * @Groups("artists_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $startDatetime;
 
@@ -57,6 +62,7 @@ class Event
      * @Groups("artists_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $endDatetime;
 
@@ -75,13 +81,15 @@ class Event
      * @Groups("events_get")
      * @Groups("genres_get")
      * @Groups("artists_get")
+     * @Assert\NotBlank
      */
     private $place;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Artist::class, inversedBy="events")
+     * @ORM\ManyToMany(targetEntity=Artist::class, mappedBy="events")
      * @Groups("events_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $artists;
 

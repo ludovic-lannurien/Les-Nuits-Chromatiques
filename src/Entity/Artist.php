@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArtistRepository::class)
@@ -30,6 +31,7 @@ class Artist
      * @Groups("events_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $firstname;
 
@@ -48,6 +50,7 @@ class Artist
      * @Groups("events_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $picture;
 
@@ -57,6 +60,7 @@ class Artist
      * @Groups("events_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $description;
 
@@ -79,17 +83,20 @@ class Artist
     private $slug;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="artists")
+     * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="artists")
      * @Groups("artists_get")
      * @Groups("genres_get")
+     * @Assert\NotBlank
      */
     private $events;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Genre::class, mappedBy="artists")
+     * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="artists")
      * @Groups("artists_get")
      * @Groups("events_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
+     * @Assert\Count(min=1)
      */
     private $genres;
 
@@ -215,7 +222,6 @@ class Artist
     {
         if (!$this->genres->contains($genre)) {
             $this->genres[] = $genre;
-            $genre->addArtist($this);
         }
 
         return $this;
