@@ -62,6 +62,8 @@ class AppFixtures extends Fixture
             $manager->persist($place);
         };
 
+        $eventsList = [];
+
         foreach (EventData::$eventData as $data) {
             $event = new Event();
 
@@ -70,7 +72,9 @@ class AppFixtures extends Fixture
             $event->setEndDatetime(new DateTime($data['end_datetime']));
             $event->setDescription($data['description']);
             $event->setSlug($this->mySlugger->slugify($event->getName()));
-            
+
+            $eventsList[] = $event;
+
             $manager->persist($event);
         };
 
@@ -89,7 +93,6 @@ class AppFixtures extends Fixture
 
         foreach (ArtistData::$artistData as $data) {
             $artist = new Artist();
-            $genre = new Genre();
 
             $artist->setFirstname($data['firstname']);
             $artist->setLastname($data['lastname']);
@@ -101,13 +104,15 @@ class AppFixtures extends Fixture
                 $artist->addGenre($genresList[array_rand($genresList)]);
             }
 
+            for ($i = 1; $i <= mt_rand(1, 2); $i++) {
+                $artist->addEvent($eventsList[array_rand($eventsList)]);
+            }
+
             if (null === $artist->getLastname()) {
                 $artist->setSlug($this->mySlugger->slugify($artist->getFirstname()));
             } else {
                 $artist->setSlug($this->mySlugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
             }
-
-            $artistsList[] = $artist;
 
             $manager->persist($artist);
         }
