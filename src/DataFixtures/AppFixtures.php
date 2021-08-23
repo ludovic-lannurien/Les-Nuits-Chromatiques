@@ -74,23 +74,7 @@ class AppFixtures extends Fixture
             $manager->persist($event);
         };
 
-        foreach (ArtistData::$artistData as $data) {
-            $artist = new Artist();
-
-            $artist->setFirstname($data['firstname']);
-            $artist->setLastname($data['lastname']);
-            $artist->setPicture($data['picture']);
-            $artist->setDescription($data['description']);
-            $artist->setVideoLink($data['videolink']);
-
-            if (null === $artist->getLastname()) {
-                $artist->setSlug($this->mySlugger->slugify($artist->getFirstname()));
-            } else {
-                $artist->setSlug($this->mySlugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
-            }
-
-            $manager->persist($artist);
-        }
+        $genresList = [];
 
         foreach (GenreData::$genreData as $data) {
             $genre = new Genre();
@@ -98,7 +82,34 @@ class AppFixtures extends Fixture
             $genre->setName($data['name']);
             $genre->setSlug($this->mySlugger->slugify($genre->getName()));
 
+            $genresList[] = $genre;
+
             $manager->persist($genre);
+        }
+
+        foreach (ArtistData::$artistData as $data) {
+            $artist = new Artist();
+            $genre = new Genre();
+
+            $artist->setFirstname($data['firstname']);
+            $artist->setLastname($data['lastname']);
+            $artist->setPicture($data['picture']);
+            $artist->setDescription($data['description']);
+            $artist->setVideoLink($data['videolink']);
+
+            for ($i = 1; $i <= mt_rand(1, 2); $i++) {
+                $artist->addGenre($genresList[array_rand($genresList)]);
+            }
+
+            if (null === $artist->getLastname()) {
+                $artist->setSlug($this->mySlugger->slugify($artist->getFirstname()));
+            } else {
+                $artist->setSlug($this->mySlugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
+            }
+
+            $artistsList[] = $artist;
+
+            $manager->persist($artist);
         }
 
         foreach (UserData::$userData as $data) {
