@@ -11,7 +11,6 @@ import './prog.scss';
 // == Composant
 const Prog = ({ artists }) => {
   console.log(artists);
-
   return (
     <div className="prog">
       <ProgFilter />

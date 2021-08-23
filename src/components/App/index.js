@@ -28,8 +28,8 @@ const App = () => (
       <Route path="/festival">
         <Festival />
       </Route>
-      <Route path="/artistes/slug">
-        <Artist />
+      <Route path="/artiste/:slug">
+        <Artist artists={artistData} />
       </Route>
     </div>
   </div>

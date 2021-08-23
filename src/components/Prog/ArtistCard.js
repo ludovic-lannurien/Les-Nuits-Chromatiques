@@ -5,11 +5,11 @@ import philippe from './katerine.jpg';
 
 import './prog.scss';
 
-const ArtistCard = ({ firstname }) => {
+const ArtistCard = ({ firstname, slug }) => {
   console.log(firstname);
   return (
     <Link
-      to="/artistes/slug"
+      to={`/artiste/${slug}`}
       className="artist"
     >
       <a href="#"><h1>{firstname}</h1></a>
@@ -22,6 +22,7 @@ const ArtistCard = ({ firstname }) => {
 
 ArtistCard.propTypes = {
   firstname: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default ArtistCard;
