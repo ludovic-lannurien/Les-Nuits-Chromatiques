@@ -17,7 +17,14 @@ const Places = ({ places }) => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
   const [placeName, setPlaceName] = useState(null);
-  console.log(placeName);
+  const [placeAdress, setPlaceAdress] = useState(null);
+  const [placeZip, setPlaceZip] = useState(null);
+  const [placeCity, setPlaceCity] = useState(null);
+  const [onMouse, setOnMouse] = useState(false);
+  let textCssClass = 'text-picture';
+  if (onMouse) {
+    textCssClass += '-active';
+  }
   if (!Array.isArray(places) || places.length <= 0) {
     return null;
   }
@@ -35,12 +42,32 @@ const Places = ({ places }) => {
               key={place.id}
               className="image"
               onMouseEnter={() => {
+                setOnMouse(true);
                 setPlaceName(place.name);
+                setPlaceAdress(place.address);
+                setPlaceZip(place.zipCode);
+                setPlaceCity(place.city);
+              }}
+              onMouseLeave={() => {
+                setOnMouse(false);
               }}
             />
             )}
         </div>
       ))}
+      <div
+        className={textCssClass}
+        onMouseEnter={() => {
+          setOnMouse(true);
+        }}
+        onMouseLeave={() => {
+          setOnMouse(false);
+        }}
+      >
+        <h3>{placeName}</h3>
+        <h4>{placeAdress}</h4>
+        <p>{placeZip} {placeCity}</p>
+      </div>
     </div>
   );
 };
