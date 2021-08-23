@@ -16,24 +16,20 @@
 
 		<nav>
 			<ul>
-				<li class="{% block active_event %}{% endblock %}">
-					<a href="{{ path('admin_event_browse') }}">Evènements</a>
+				<li>
+					<a class="{% block active_event %}{% endblock %}" href="{{ path('admin_event_browse') }}">Évènements</a>
 				</li>
-
-				<li class="{% block active_place %}{% endblock %}">
-					<a href="{{ path('admin_place_browse') }}">Lieux</a>
+				<li>
+					<a class="{% block active_place %}{% endblock %}" href="{{ path('admin_place_browse') }}">Lieux</a>
 				</li>
-
-				<li class="{% block active_artist %}{% endblock %}">
-					<a href="{{ path('admin_artist_browse') }}">Artistes</a>
+				<li>
+					<a class="{% block active_artist %}{% endblock %}" href="{{ path('admin_artist_browse') }}">Artistes</a>
 				</li>
-
-				<li class="{% block active_genre %}{% endblock %}">
-					<a href="{{ path('admin_genre_browse') }}">Genres</a>
+				<li>
+					<a class="{% block active_genre %}{% endblock %}" href="{{ path('admin_genre_browse') }}">Genres</a>
 				</li>
-
-				<li class="{% block active_user %}{% endblock %}">
-					<a href="{{ path('admin_user_browse') }}">Utilisateurs</a>
+				<li>
+					<a class="{% block active_user %}{% endblock %}" href="{{ path('admin_user_browse') }}">Utilisateurs</a>
 				</li>
 			</ul>
 		</nav>
