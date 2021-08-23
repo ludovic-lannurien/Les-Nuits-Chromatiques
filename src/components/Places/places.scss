@@ -1,9 +1,86 @@
 .places {
-  background-color: green;
   position: fixed;
   bottom: 0;
   right: 0;
   height: 70vh;
   width: 70vw;
-}
+  
+  .image {
+    position: absolute;
+    width: 950px;
+    height: 800px;
+    bottom: 3%;
+    margin: 0 auto;
+    right: 12.8%;
+  }
 
+  .right-arrow {
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+  }
+  
+  .left-arrow {
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+  }
+  .text-picture{
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 3%;
+    margin: 0 Auto;
+    height: 0;
+    right: 12.8%;
+    opacity: 0.6;
+    width: 950px;
+    transition: 0.8s;
+    h3{
+      font-size: 60px;
+      text-align: center;
+      padding: 1rem;
+    }
+    h4{
+      font-size: 45px;
+      text-align: center;
+    }
+    p{
+      font-size: 45px;
+      text-align: center;
+    }
+  }
+  .text-picture-active{
+    transition: 0.8s;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 3%;
+    margin: 0 Auto;
+    height: 200px;
+    right: 12.8%;
+    opacity: 0.6;
+    width: 950px;
+    h3{
+      font-size: 60px;
+      text-align: center;
+      padding: 1rem;
+    }
+    h4{
+      font-size: 45px;
+      text-align: center;
+    }
+    p{
+      font-size: 45px;
+      text-align: center;
+    }
+  }
+}
