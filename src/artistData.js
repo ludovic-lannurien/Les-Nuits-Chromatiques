@@ -1,10 +1,10 @@
 export default [{
   id: 1,
   firstname: 'WECOMEINPEACE',
-  lastname: '',
+  lastname: null,
   picture: 'https:\/\/www.flickr.com\/photos\/_wecomeinpeace\/16076592071\/',
   description: 'WECOMEINPEACE a \u00e9t\u00e9 fond\u00e9 par Wilfried Della Rossa, Kimi Do et Thomas Mathieu Depuis 2008, ils produisent des \u00e9v\u00e8nements et des installations autour de concepts innovants et cr\u00e9atifs. Ils puisent leur inspiration dans diff\u00e9rents domaines tels que le design, le graphisme, l\u2019architecture et le jeu vid\u00e9o.',
-  videoLink: '\u003Ciframe width=\u0022560\u0022 height=\u0022315\u0022 src=\u0022https:\/\/www.youtube.com\/embed\/1xJQ816CTKQ\u0022 title=\u0022YouTube video player\u0022 frameborder=\u00220\u0022 allow=\u0022accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\u0022 allowfullscreen\u003E\u003C\/iframe\u003E',
+  videoLink: 'http:\/\/\u003Ciframe width=\u0022560\u0022 height=\u0022315\u0022 src=\u0022https:\/\/www.youtube.com\/embed\/1xJQ816CTKQ\u0022 title=\u0022YouTube video player\u0022 frameborder=\u00220\u0022 allow=\u0022accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\u0022 allowfullscreen\u003E\u003C\/iframe\u003E',
   slug: 'wecomeinpeace',
   events: [{
     id: 1,
@@ -88,4 +88,6 @@ export default [{
     },
   }],
   genres: [{ id: 1, name: 'Lumi\u00e8re', slug: 'lumiere' }, { id: 2, name: 'Musique', slug: 'musique' }],
+}, {
+  id: 5, firstname: 'philipe catherine', lastname: 'philipe catherine', picture: 'https:\/\/www.telerama.fr\/sites\/tr_master\/files\/styles\/simplecrop1000\/public\/originale_169535_0.jpg?itok=Ek0kyBMc', description: 'wtf', videoLink: 'http:\/\/\u003Ciframe width=\u0022560\u0022 height=\u0022315\u0022 src=\u0022https:\/\/www.youtube.com\/embed\/Z3zziYR7o4Q\u0022 title=\u0022YouTube video player\u0022 frameborder=\u00220\u0022 allow=\u0022accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\u0022 allowfullscreen\u003E\u003C\/iframe\u003E', slug: 'philipe-catherine-philipe-catherine', events: [], genres: [{ id: 2, name: 'Musique', slug: 'musique' }],
 }];

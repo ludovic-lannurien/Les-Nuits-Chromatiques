@@ -25,7 +25,7 @@ const Artist = ({ artists }) => {
       </div>
       <div className="artist-content">
         <h1 className="name">
-          {`${artist.firstname} ${artist.lastname}`}
+          <span>{artist.firstname} </span><span>{artist.lastname}</span>
         </h1>
         <h1 className="artist-description">
           {artist.description}

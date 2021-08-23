@@ -8,10 +8,12 @@
   width: 70vw;
 
   .artist-picture {
+    background-size: auto 100%;
     width: 100%;
     height: 20rem;
 
     &:hover {
+      background-size: auto 110%;
       height: 20rem;
     }
 
@@ -21,6 +23,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+
     }
   }
 
