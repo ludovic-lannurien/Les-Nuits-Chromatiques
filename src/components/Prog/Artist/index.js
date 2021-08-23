@@ -10,37 +10,39 @@ import './artist.scss';
 
 // == Composant
 const Artist = ({ artists }) => {
-  console.log(artists);
-
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
+  console.log(artist.picture);
 
   return (
     <div className="artist-page">
       <div className="artist-picture">
         <a href="#">
-          <img src={philippe} alt="pipou" />
+          <img src={artist.picture} alt="pipou" />
         </a>
       </div>
       <div className="content">
         <h1 className="name">
           {artist.firstname}
         </h1>
-        <div className="description">
-          <p>Lorem ipsum dolor sit amet, consect</p>
+        {artist.events.map((event) => (
+          <div className="bloc-event">
+            <div className="description">
+              {event.description}
+            </div>
 
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
+            <div className="event">
+              <a href="#" className="event_info">{event.name}</a>
+              <a href="#" className="event_info">{event.place.name}</a>
+            </div>
 
-        </div>
-
-        <div className="event">
-          <a href="#" className="event_info">Nom de l'événement</a>
-          <a href="#" className="event_info">Lieu de l'événement</a>
-        </div>
+          </div>
+        ))}
 
         <div className="video">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/6JMCgVFYAqQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className="video-iframe" allowFullScreen />
         </div>
+
       </div>
     </div>
   );
