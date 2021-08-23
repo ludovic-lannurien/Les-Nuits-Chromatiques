@@ -20,7 +20,7 @@ class UserController extends AbstractController
      */
     public function browse(UserRepository $userRepository): Response
     {
-        return $this->render('back/user/browse.html.twig', [
+        return $this->render('user/browse.html.twig', [
             'users' => $userRepository->findAll()
         ]);
     }
@@ -54,9 +54,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             if (!empty($form->get('password')->getData())) {
-
                 $hashedPassword = $userPasswordHasher->hashPassword($user, $form->get('password')->getData());
 
                 $user->setPassword($hashedPassword);
@@ -84,7 +82,6 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $hashedPassword = $userPasswordHasherInterface->hashPassword($user, $user->getPassword());
 
             $user->setPassword($hashedPassword);

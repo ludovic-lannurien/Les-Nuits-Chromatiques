@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EventController extends AbstractController
 {
-    /** 
+    /**
      * @Route("/api/events", name="api_events_get", methods="GET")
      */
     public function getEvents(EventRepository $eventRepository): Response
@@ -112,7 +112,8 @@ class EventController extends AbstractController
             $error = 'Évènement non trouvé';
             return $this->json(
                 ['error' => $error],
-                Response::HTTP_NOT_FOUND);
+                Response::HTTP_NOT_FOUND
+            );
         }
 
         $em->remove($event);

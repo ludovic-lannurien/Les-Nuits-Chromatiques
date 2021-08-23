@@ -42,7 +42,6 @@ class GenreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            
             $genre->setSlug($slugger->slugify($genre->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -71,7 +70,6 @@ class GenreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $genre->setSlug($slugger->slugify($genre->getName()));
 
             $em = $this->getDoctrine()->getManager();

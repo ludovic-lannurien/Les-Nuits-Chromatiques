@@ -52,7 +52,6 @@ class ArtistController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             if (null === $artist->getLastname()) {
                 $artist->setSlug($slugger->slugify($artist->getFirstname()));
             } else {
@@ -87,7 +86,6 @@ class ArtistController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             if (null === $artist->getLastname()) {
                 $artist->setSlug($slugger->slugify($artist->getFirstname()));
             } else {

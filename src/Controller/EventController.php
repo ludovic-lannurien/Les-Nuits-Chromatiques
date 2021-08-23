@@ -57,7 +57,6 @@ class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $event->setSlug($slugger->slugify($event->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -86,7 +85,6 @@ class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $event->setSlug($slugger->slugify($event->getName()));
 
             $entityManager = $this->getDoctrine()->getManager();
