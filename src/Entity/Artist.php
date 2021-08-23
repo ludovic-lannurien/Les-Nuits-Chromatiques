@@ -65,7 +65,7 @@ class Artist
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      * @Groups("artists_get")
      * @Groups("events_get")
      * @Groups("genres_get")
