@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -35,7 +36,7 @@ class UserController extends AbstractController
             throw $this->createNotFoundException('Utilisateur non trouvé.');
         }
 
-        return $this->render('back/user/read.html.twig', [
+        return $this->render('user/read.html.twig', [
             'user' => $user
         ]);
     }
@@ -51,6 +52,7 @@ class UserController extends AbstractController
         }
 
         $form = $this->createForm(UserType::class, $user);
+        $form->add('Enregister', SubmitType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -79,6 +81,7 @@ class UserController extends AbstractController
         $user = new User();
 
         $form = $this->createForm(UserType::class, $user);
+        $form->add('Enregister', SubmitType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
