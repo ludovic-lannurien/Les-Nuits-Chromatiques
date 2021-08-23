@@ -24,27 +24,106 @@
     }
   }
 
-  .content {
+  .artist-content {
     text-align: center;
     padding: 2rem;
+
 
     .name {
       font-size: 70px;
       font-weight: 600;
       padding: 3rem;
-      border: 2px solid #E3A503;
+      border: 2px solid #e3a3038c;
+      margin-bottom: 2rem;
     }
 
-    .description {
-      border-radius: 5px;
-      text-align: justify;
-      padding: 1rem 5rem;
-      font-size: 20px;
+    .artist-description {
+      font-size: 22px;
+      font-weight: 300;
       line-height: 30px;
+      padding: 3rem;
+    }
+  }
 
-      p {
+  .event-content {
+    text-align: center;
+    padding: 2rem;
+    
+    .prog-span {
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 200;
+      margin: 2rem;
+      text-decoration: underline;
+    }
+
+    .bloc-event {
+      padding: 2rem;
+      border-bottom: 1px solid gray;
+      width: 80%;
+      margin: auto;
+      margin-bottom: 2rem;
+
+      .event-date {
+        width: 20rem;
+        margin: 1rem auto;
+        font-size: 20px;
+        margin-bottom: 1rem;
+        border: 1PX solid rgba(128, 128, 128, 0.699);
         padding: 1rem;
+        border-radius: 10px;
+
+        .react-icons {
+          margin: 0 1rem;
+
+        }
+
       }
+
+      .event-name {
+        width: 20rem;
+        color: white;
+        margin: auto;
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        background-color: #07e22be8;
+      }
+
+      .event-place {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: rgba(170, 162, 162, 0.658);
+        transition: 0.3s;
+
+        .react-icons {
+          cursor: pointer;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.3s;
+        }
+      }
+
+      .event-description {
+          border-radius: 5px;
+          text-align: justify;
+          padding: 1rem 5rem;
+          font-size: 20px;
+          font-weight: 200;
+          line-height: 30px;
+  
+        p {
+          padding: 1rem;
+        }
+    }
+
+
     }
 
     .event {
@@ -112,7 +191,7 @@
       }
   
       .description {
-        padding: 5px 0px;
+        padding: 5px 1rem;
         font-size: 20px;
         line-height: 30px;
   

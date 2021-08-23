@@ -5,14 +5,14 @@ import philippe from './katerine.jpg';
 
 import './prog.scss';
 
-const ArtistCard = ({ firstname, slug }) => {
+const ArtistCard = ({ firstname, lastname, slug }) => {
   console.log(firstname);
   return (
     <Link
       to={`/artiste/${slug}`}
       className="artist"
     >
-      <a href="#"><h1>{firstname}</h1></a>
+      <a href="#"><h1>{firstname} {lastname}</h1></a>
       <div className="picture">
         <a href="#"><img src={philippe} alt={firstname} /></a>
       </div>
@@ -22,6 +22,7 @@ const ArtistCard = ({ firstname, slug }) => {
 
 ArtistCard.propTypes = {
   firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
 };
 
