@@ -92,7 +92,11 @@ class AppFixtures extends Fixture
             $genre = new Genre();
 
             $artist->setFirstname($data['firstname']);
-            $artist->setLastname($data['lastname']);
+
+            if ($data['lastname'] != null) {
+                $artist->setLastname($data['lastname']);
+            }
+
             $artist->setPicture($data['picture']);
             $artist->setDescription($data['description']);
             $artist->setVideoLink($data['videolink']);
