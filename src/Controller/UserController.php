@@ -93,7 +93,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('back_user_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_user_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('user/add.html.twig', [
@@ -103,7 +103,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/admin/user/delete/{id<\d+>}", name="admin_user_delete", methods={"POST"})
+     * @Route("/admin/user/delete/{id<\d+>}", name="admin_user_delete", methods={"GET"})
      */
     public function delete(Request $request, User $user = null, EntityManagerInterface $em): Response
     {
@@ -112,10 +112,8 @@ class UserController extends AbstractController
             throw $this->createNotFoundException('Utilisateur non trouvé.');
         }
 
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
-            $em->remove($user);
-            $em->flush();
-        }
+        $em->remove($user);
+        $em->flush();
 
         return $this->redirectToRoute('admin_user_browse', [], Response::HTTP_SEE_OTHER);
     }

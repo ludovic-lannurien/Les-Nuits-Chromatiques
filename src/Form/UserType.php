@@ -22,9 +22,10 @@ class UserType extends AbstractType
         $builder
             ->add('email')
             ->add('roles', ChoiceType::class, [
+                'label' => 'Rôle',
                 'choices' => [
-                    'Manager' => 'ROLE_ADMIN',
-                    'Administrateur' => 'ROLE_SUPER_ADMIN'
+                    'Administrateur' => 'ROLE_ADMIN',
+                    'Super-administrateur' => 'ROLE_SUPER_ADMIN'
                 ],
                 'multiple' => true,
                 'expanded' => true
@@ -41,7 +42,7 @@ class UserType extends AbstractType
                         'first_options'  => [
                             'constraints' => new NotBlank(),
                             'label' => 'Mot de passe',
-                            'help' => 'Minimum eight characters, at least one letter, one number and one special character.'
+                            'help' => '8 caractères minimum, avec au moins une lettre, un chiffre et un caractère spécial.'
                         ],
                         'second_options' => ['label' => 'Répéter le mot de passe'],
                     ]);
@@ -59,7 +60,7 @@ class UserType extends AbstractType
                                 'placeholder' => 'Laissez vide si inchangé...',
                             ],
                             'label' => 'Mot de passe',
-                            'help' => 'Minimum eight characters, at least one letter, one number and one special character.'
+                            'help' => '8 caractères minimum, avec au moins une lettre, un chiffre et un caractère spécial.'
                         ],
                         'second_options' => ['label' => 'Répéter le mot de passe'],
                     ]);
