@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
- *  @UniqueEntity(fields={"name"})
+ * @UniqueEntity(fields={"name"})
  */
 class Event
 {
