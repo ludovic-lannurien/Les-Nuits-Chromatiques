@@ -7,7 +7,7 @@ class ArtistData
     public static $artistData = [
         [
             'firstname' => 'WECOMEINPEACE',
-            //'lastname' => '',
+            'lastname',
             'description' => 'WECOMEINPEACE a été fondé par Wilfried Della Rossa, Kimi Do et Thomas Mathieu Depuis 2008, ils produisent des évènements et des installations autour de concepts innovants et créatifs. Ils puisent leur inspiration dans différents domaines tels que le design, le graphisme, l’architecture et le jeu vidéo.',
             'picture' => 'https://www.flickr.com/photos/_wecomeinpeace/16076592071/',
             'videolink' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/1xJQ816CTKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
@@ -15,7 +15,7 @@ class ArtistData
 
         [
             'firstname' => 'THEORIZ',
-            //'lastname' => '',
+            'lastname',
             'description' => 'Théoriz est un studio de création Art et Technologie spécialisé dans la conception installations immersives et de spectacles audiovisuels innovant',
             'picture' => '',
             'videolink' => '<iframe src="https://player.vimeo.com/video/194838088?h=ff41b03408&color=45B7D9" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>'
@@ -23,7 +23,7 @@ class ArtistData
 
         [
             'firstname' => 'SAPIA',
-            //'lastname' => '',
+            'lastname',
             'description' => '',
             'picture' => '',
             'videolink' => '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335567162&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>'
