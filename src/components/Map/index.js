@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import placeData from 'src/eventData';
 // == Import
+
+import DayFilter from './DayFilter';
 import cible from './cible.png';
 import philippe from './katerine.jpg';
 import './map.scss';
@@ -23,6 +25,7 @@ const Map = () => {
 
   return (
     <div className="mapbox">
+      <DayFilter />
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoiY291Y291dG9pIiwiYSI6ImNrc2hsanYwZzF2ajIycW9kOGRsdnJqbTAifQ.hAOB8WH3YU4QmpPiEVDaEg"
