@@ -93,7 +93,7 @@ class AppFixtures extends Fixture
 
             $artist->setFirstname($data['firstname']);
 
-            if ($data['lastname'] != null) {
+            if ($data['lastname'] !== null) {
                 $artist->setLastname($data['lastname']);
             }
 
