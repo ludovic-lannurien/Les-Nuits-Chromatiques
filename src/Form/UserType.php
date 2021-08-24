@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -17,19 +18,32 @@ use Symfony\Component\Validator\Constraints\NotCompromisedPassword;
 
 class UserType extends AbstractType
 {
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
-            ->add('roles', ChoiceType::class, [
-                'label' => 'Rôle',
-                'choices' => [
-                    'Administrateur' => 'ROLE_ADMIN',
-                    'Super-administrateur' => 'ROLE_SUPER_ADMIN'
-                ],
-                'multiple' => true,
-                'expanded' => true
-            ])
+            ->add('email');
+            
+        if ($this->security->isGranted('ROLE_SUPER_ADMIN')) {
+            $builder
+                ->add('roles', ChoiceType::class, [
+                    'label' => 'Rôle',
+                    'choices' => [
+                        'Administrateur' => 'ROLE_ADMIN',
+                        'Super-administrateur' => 'ROLE_SUPER_ADMIN'
+                    ],
+                    'multiple' => true,
+                    'expanded' => true
+                ]);
+        }
+        
+        $builder
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                 $form = $event->getForm();
 
