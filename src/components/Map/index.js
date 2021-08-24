@@ -92,14 +92,20 @@ const Map = ({
             <h2>{selectedEvent.name}</h2>
             <h3>{selectedEvent.artists[0].firstname} {selectedEvent.artists[0].lastname}</h3>
             <p>{selectedEvent.description}</p>
+            <span />
             {selectedEvent.artists.map((artist) => (
               <>
-                <span className="type">{artist.type}</span>
+                <span
+                  className="type"
+                  key={artist.id}
+                >
+                  {artist.type}
+                </span>
                 <Link
                   to={`/artiste/${artist.slug}`}
                   className="artist"
                 >
-                  <span className="voir-plus">Voir plus</span>
+                  <span key={artist.id} className="voir-plus">Voir plus</span>
                 </Link>
               </>
             ))}
@@ -113,8 +119,26 @@ Map.propTypes = {
   viewport: PropTypes.shape({
   }).isRequired,
   selectedEvent: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    place: PropTypes.shape({
+      latitude: PropTypes.number.isRequired,
+      longitude: PropTypes.number.isRequired,
+    }).isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    artists: PropTypes.arrayOf(
+      PropTypes.shape({
+        firstname: PropTypes.string.isRequired,
+        lastname: PropTypes.string.isRequired,
+      }).isRequired,
+    ).isRequired,
   }),
   selectedHoverEvent: PropTypes.shape({
+    place: PropTypes.shape({
+      latitude: PropTypes.number.isRequired,
+      longitude: PropTypes.number.isRequired,
+    }).isRequired,
+    name: PropTypes.string.isRequired,
   }),
   setViewport: PropTypes.func.isRequired,
   setSelectedEvent: PropTypes.func.isRequired,
@@ -123,6 +147,7 @@ Map.propTypes = {
   isShown: PropTypes.bool.isRequired,
   setPopup: PropTypes.func.isRequired,
   setIsShown: PropTypes.func.isRequired,
+
 };
 Map.defaultProps = {
   selectedEvent: null,

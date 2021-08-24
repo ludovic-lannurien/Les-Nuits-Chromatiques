@@ -6,6 +6,7 @@ import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug } from 'src/utils';
 import philippe from './katerine.jpg';
+import cible from './cible.png';
 
 // == Import
 import './artist.scss';
@@ -19,9 +20,17 @@ const Artist = ({ artists }) => {
   return (
     <div className="artist-page">
       <Link
+        to="/programmation"
+      >
+        <div className="back-to-prog">Voir la programmation</div>
+      </Link>
+      <Link
         to="/"
       >
-        <div className="back-to-map">Retour à la map</div>
+        <div className="back-to-map">
+          <img src={cible} alt="map" className="cible" />
+          <span className="back-to-map-text">Voir la map</span>
+        </div>
       </Link>
       <div className="artist-picture">
         <a href="#">

@@ -7,14 +7,14 @@
   height: 100vh;
   width: 70vw;
 
-  .back-to-map {
+  .back-to-prog {
     cursor: pointer;
     background-color: #e3a303a1;
     position: absolute;
     top: 2rem;
     left: 2rem;
-    padding: 2rem;
-    font-size: 30px;
+    padding: 1rem;
+    font-size: 25px;
     border-radius: 15px;
     color: white;
     transition: 0.5s;
@@ -25,6 +25,20 @@
       transition: 0.5s;
       color: #e3a303a1;
       border: 1px solid #e3a303a1;
+    }
+  }
+
+  .back-to-map {
+    background-color: red;
+    cursor: pointer;
+    position: absolute;
+    top: 7rem;
+    left: 2rem;
+    font-size: 25px;
+
+    .back-to-map-text {
+      background-color: green;
+      margin: auto;
     }
   }
 
