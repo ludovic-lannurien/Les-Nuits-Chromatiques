@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug } from 'src/utils';
@@ -18,6 +18,11 @@ const Artist = ({ artists }) => {
 
   return (
     <div className="artist-page">
+      <Link
+        to="/"
+      >
+        <div className="back-to-map">Retour à la map</div>
+      </Link>
       <div className="artist-picture">
         <a href="#">
           <img src={philippe} alt={`${artist.firstname} ${artist.lastname}`} />

@@ -7,6 +7,27 @@
   height: 100vh;
   width: 70vw;
 
+  .back-to-map {
+    cursor: pointer;
+    background-color: #e3a303a1;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    padding: 2rem;
+    font-size: 30px;
+    border-radius: 15px;
+    color: white;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: white;
+      transform: scale(1.1);
+      transition: 0.5s;
+      color: #e3a303a1;
+      border: 1px solid #e3a303a1;
+    }
+  }
+
   .artist-picture {
     background-size: auto 100%;
     width: 100%;
