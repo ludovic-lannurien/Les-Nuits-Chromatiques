@@ -48,7 +48,7 @@ const Artist = ({ artists }) => {
       <div className="event-content">
         <span className="prog-span">Programmation :</span>
         {artist.events.map((event) => (
-          <div className="bloc-event">
+          <div className="bloc-event" key={event.id}>
             <div className="event-date">
               <GrSchedule className="react-icons" />
               <span>{event.startDatetime}</span>
@@ -79,6 +79,7 @@ Artist.propTypes = {
   artists: PropTypes.arrayOf(
     PropTypes.shape({
       firstname: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
 };

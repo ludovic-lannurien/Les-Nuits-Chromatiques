@@ -90,24 +90,21 @@ const Map = ({
           <div className="popup-content">
             <a href="#"><img src={philippe} className="philippe" alt="philippe" /></a>
             <h2>{selectedEvent.name}</h2>
-            <h3>{selectedEvent.artists[0].firstname} {selectedEvent.artists[0].lastname}</h3>
-            <p>{selectedEvent.description}</p>
-            <span />
             {selectedEvent.artists.map((artist) => (
-              <>
-                <span
-                  className="type"
-                  key={artist.id}
-                >
-                  {artist.type}
-                </span>
+              <h3 key={artist.slug}>{artist.firstname} {artist.lastname}</h3>
+            ))}
+            <p>{selectedEvent.description}</p>
+            {selectedEvent.artists.map((artist) => (
+              <div key={artist.id}>
+                <span className="type">{artist.type} </span>
                 <Link
+                  key={artist.id}
                   to={`/artiste/${artist.slug}`}
                   className="artist"
                 >
-                  <span key={artist.id} className="voir-plus">Voir plus</span>
+                  <span className="voir-plus">Voir plus</span>
                 </Link>
-              </>
+              </div>
             ))}
           </div>
         </Popup>

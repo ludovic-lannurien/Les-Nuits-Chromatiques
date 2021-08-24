@@ -5,12 +5,13 @@ import philippe from './katerine.jpg';
 
 import './prog.scss';
 
-const ArtistCard = ({ firstname, lastname, slug }) => {
+const ArtistCard = ({ firstname, lastname, slug, id }) => {
   console.log(firstname);
   return (
     <Link
       to={`/artiste/${slug}`}
       className="artist"
+      key={id}
     >
       <a href="#"><h1>{firstname} {lastname}</h1></a>
       <div className="picture">
