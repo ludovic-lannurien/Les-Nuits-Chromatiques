@@ -1,5 +1,6 @@
 // == Import npm
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import placeData from 'src/eventData';
 import { Link } from 'react-router-dom';
@@ -11,14 +12,14 @@ import philippe from './katerine.jpg';
 import './map.scss';
 
 // == Composant
-const Map = () => {
-  const [viewport, setViewport] = useState({
-    latitude: 47.3212,
-    longitude: 5.0413,
-    width: '100vw',
-    height: '100vh',
-    zoom: 12.5,
-  });
+const Map = ({ viewport, setViewport }) => {
+  // const [viewport, setViewport] = useState({
+  //   latitude: 47.3212,
+  //   longitude: 5.0413,
+  //   width: '100vw',
+  //   height: '100vh',
+  //   zoom: 12.5,
+  // });
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedHoverEvent, setSelectedHoverEvent] = useState(null);
   const [popup, setPopup] = useState(false);
@@ -112,6 +113,10 @@ const Map = () => {
     </div>
   );
 };
-
+Map.propTypes = {
+  viewport: PropTypes.shape({
+  }).isRequired,
+  setViewport: PropTypes.func.isRequired,
+};
 // == Export
 export default Map;

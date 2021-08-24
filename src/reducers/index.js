@@ -1,17 +1,17 @@
-// Mise en place de state pour faire marcher mapBox
-const initialState = {
-  dijonLatitude: 47.321212,
-  dijonLongitude: 5.041350,
-  zoom: 10,
-  width: '100vw',
-  height: '100vh',
-};
+import { combineReducers } from 'redux';
 
-function nameForTheReducer(state = initialState, action = {}) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+// on importe tous les reducers
+import mapReducer from './mapReducer';
+import placesReducer from './placesReducer';
 
-export default nameForTheReducer;
+// le reducer principal, qui regroupe les autres
+// combineReducers prend en argument un objet qui indique un nom pour
+// chaque reducer
+const rootReducer = combineReducers({
+  // on crée un tiroir qui s'appelle recipes, et c'est recipesReducer qui
+  // va gérer les données dans ce tiroir
+  map: mapReducer,
+  places: placesReducer,
+});
+
+export default rootReducer;

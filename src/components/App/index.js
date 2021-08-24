@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 // == Import
 import artistData from 'src/artistData';
 import placeData from 'src/placeData';
-import Map from 'src/components/Map';
+import Map from 'src/containers/Map';
 import Nav from 'src/components/Nav';
 import Prog from 'src/components/Prog';
 import Artist from 'src/components/Prog/Artist';
