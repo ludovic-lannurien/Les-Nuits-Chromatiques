@@ -88,6 +88,7 @@ class Event
 
     /**
      * @ORM\ManyToMany(targetEntity=Artist::class, mappedBy="events")
+     * @ORM\GeneratedValue
      * @Groups("events_get")
      * @Groups("places_get")
      * @Assert\NotBlank
