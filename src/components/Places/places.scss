@@ -1,22 +1,20 @@
 .places {
   position: fixed;
   bottom: 0;
-  right: 0;
-  height: 70vh;
-  width: 70vw;
+  right: 5rem;
+  top: 10rem;
+  height: 35rem;
+  width: 60vw;
   
   .image {
-    position: absolute;
-    width: 950px;
-    height: 800px;
-    bottom: 3%;
-    margin: 0 auto;
-    right: 12.8%;
+    width: 100%;
+    height: auto;
+    margin: auto;
   }
 
   .right-arrow {
     position: absolute;
-    top: 20%;
+    top: 35%;
     right: 3%;
     font-size: 3rem;
     color: white;
@@ -27,7 +25,7 @@
   
   .left-arrow {
     position: absolute;
-    top: 20%;
+    top: 35%;
     left: 3%;
     font-size: 3rem;
     color: white;
@@ -36,14 +34,14 @@
     user-select: none;
   }
   .text-picture{
+
     background-color: aliceblue;
     position: absolute;
-    bottom: 3%;
+    bottom: 0;
     margin: 0 Auto;
     height: 0;
-    right: 12.8%;
     opacity: 0.6;
-    width: 950px;
+    width: 60vw;
     transition: 0.8s;
     h3{
       font-size: 60px;
@@ -63,12 +61,11 @@
     transition: 0.8s;
     background-color: aliceblue;
     position: absolute;
-    bottom: 3%;
+    bottom: 0;
     margin: 0 Auto;
     height: 200px;
-    right: 12.8%;
     opacity: 0.6;
-    width: 950px;
+    width: 60vw;
     h3{
       font-size: 60px;
       text-align: center;
@@ -83,4 +80,144 @@
       text-align: center;
     }
   }
+}
+
+
+@media (max-width: 1000px) {
+  .places {
+    top: 10rem;
+    width: 100vw;
+    right: 0;
+
+    .text-picture{
+
+      background-color: aliceblue;
+      position: absolute;
+      bottom: 0;
+      margin: 0 Auto;
+      height: 0;
+      opacity: 0.6;
+      width: 100vw;
+      transition: 0.8s;
+  
+      h3{
+        font-size: 40px;
+        text-align: center;
+        padding: 2rem;
+      }
+      h4{
+        font-size: 35px;
+        text-align: center;
+      }
+      p{
+        font-size: 35px;
+        text-align: center;
+      }
+    }
+  
+    .text-picture-active{
+      transition: 0.8s;
+      background-color: aliceblue;
+      position: absolute;
+      bottom: 0;
+      margin: 0 Auto;
+      height: 200px;
+      opacity: 0.6;
+      width: 100vw;
+  
+  
+      h3{
+        font-size: 40px;
+        text-align: center;
+        padding: 2rem;
+      }
+      h4{
+        font-size: 35px;
+        text-align: center;
+      }
+      p{
+        font-size: 35px;
+        text-align: center;
+      }
+    }
+  }
+
+
+}
+
+@media (max-width: 700px) {
+  .places {
+    bottom: 0;
+
+    .image {
+      width: auto;
+      height: 25rem;
+      margin: auto;
+    }
+
+    .right-arrow {
+      top: 75%;
+
+    }
+    
+    .left-arrow {
+      top: 75%;
+
+    }
+
+  .text-picture{
+
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    margin: 0 Auto;
+    height: 0;
+    opacity: 0.6;
+    width: 100vw;
+    transition: 0.8s;
+
+    h3{
+      font-size: 40px;
+      text-align: center;
+      padding: 2rem;
+    }
+    h4{
+      font-size: 35px;
+      text-align: center;
+    }
+    p{
+      font-size: 35px;
+      text-align: center;
+    }
+  }
+
+  .text-picture-active{
+    transition: 0.8s;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 200px;
+    margin: 0 Auto;
+    height: 200px;
+    opacity: 0.6;
+    width: 100vw;
+
+
+    h3{
+      font-size: 40px;
+      text-align: center;
+      padding: 2rem;
+    }
+    h4{
+      font-size: 35px;
+      text-align: center;
+    }
+    p{
+      font-size: 35px;
+      text-align: center;
+    }
+  }
+  }
+
+
+
 }
