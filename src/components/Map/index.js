@@ -12,20 +12,23 @@ import philippe from './katerine.jpg';
 import './map.scss';
 
 // == Composant
-const Map = ({ viewport, setViewport }) => {
-  // const [viewport, setViewport] = useState({
-  //   latitude: 47.3212,
-  //   longitude: 5.0413,
-  //   width: '100vw',
-  //   height: '100vh',
-  //   zoom: 12.5,
-  // });
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  const [selectedHoverEvent, setSelectedHoverEvent] = useState(null);
-  const [popup, setPopup] = useState(false);
-  const [isShown, setIsShown] = useState(false);
-
-  return (
+const Map = ({
+  viewport,
+  setViewport,
+  selectedEvent,
+  selectedHoverEvent,
+  popup,
+  isShown,
+  setSelectedEvent,
+  setSelectedHoverEvent,
+  setPopup,
+  setIsShown,
+}) =>
+// const [selectedEvent, setSelectedEvent] = useState(null);
+// const [selectedHoverEvent, setSelectedHoverEvent] = useState(null);
+// const [popup, setPopup] = useState(false);
+// const [isShown, setIsShown] = useState(false);
+  (
     <div className="mapbox">
       <DayFilter />
       <ReactMapGL
@@ -55,11 +58,11 @@ const Map = ({ viewport, setViewport }) => {
                 setPopup(true);
               }}
               onMouseEnter={() => {
-                setIsShown(true);
+                setIsShown();
                 setSelectedHoverEvent(item);
               }}
               onMouseLeave={() => {
-                setIsShown(false);
+                setIsShown();
                 setSelectedHoverEvent(item);
               }}
             >
@@ -72,9 +75,6 @@ const Map = ({ viewport, setViewport }) => {
           className="myPopup-title"
           latitude={selectedHoverEvent.place.latitude}
           longitude={selectedHoverEvent.place.longitude}
-        /* onClose={() => {
-          setPopup(false);
-        }} */
         >
           <div className="popup-title">
             <h2>{selectedHoverEvent.name}</h2>
@@ -82,41 +82,54 @@ const Map = ({ viewport, setViewport }) => {
         </Popup>
         )}
         {popup && (
-          <Popup
-            className="myPopup"
-            latitude={selectedEvent.place.latitude}
-            longitude={selectedEvent.place.longitude}
-            /* onClose={() => {
-              setPopup(false);
-            }} */
-          >
-            <div className="popup-content">
-              <a href="#"><img src={philippe} className="philippe" alt="philippe" /></a>
-              <h2>{selectedEvent.name}</h2>
-              <h3>{selectedEvent.artists[0].firstname} {selectedEvent.artists[0].lastname}</h3>
-              <p>{selectedEvent.description}</p>
-              {selectedEvent.artists.map((artist) => (
-                <>
-                  <span className="type">{artist.type}</span>
-                  <Link
-                    to={`/artiste/${artist.slug}`}
-                    className="artist"
-                  >
-                    <span className="voir-plus">Voir plus</span>
-                  </Link>
-                </>
-              ))}
-            </div>
-          </Popup>
+        <Popup
+          className="myPopup"
+          latitude={selectedEvent.place.latitude}
+          longitude={selectedEvent.place.longitude}
+        >
+          <div className="popup-content">
+            <a href="#"><img src={philippe} className="philippe" alt="philippe" /></a>
+            <h2>{selectedEvent.name}</h2>
+            <h3>{selectedEvent.artists[0].firstname} {selectedEvent.artists[0].lastname}</h3>
+            <p>{selectedEvent.description}</p>
+            {selectedEvent.artists.map((artist) => (
+              <>
+                <span className="type">{artist.type}</span>
+                <Link
+                  to={`/artiste/${artist.slug}`}
+                  className="artist"
+                >
+                  <span className="voir-plus">Voir plus</span>
+                </Link>
+              </>
+            ))}
+          </div>
+        </Popup>
         )}
       </ReactMapGL>
     </div>
   );
-};
 Map.propTypes = {
   viewport: PropTypes.shape({
   }).isRequired,
+  selectedEvent: PropTypes.shape({
+  }),
+  selectedHoverEvent: PropTypes.shape({
+  }),
   setViewport: PropTypes.func.isRequired,
+  setSelectedEvent: PropTypes.func.isRequired,
+  setSelectedHoverEvent: PropTypes.func.isRequired,
+  popup: PropTypes.bool.isRequired,
+  isShown: PropTypes.bool.isRequired,
+  setPopup: PropTypes.func.isRequired,
+  setIsShown: PropTypes.func.isRequired,
+};
+Map.defaultProps = {
+  selectedEvent: null,
+  selectedHoverEvent: null,
 };
 // == Export
 export default Map;
+// selectedHoverEvent: PropTypes.arrrayOf(
+//   PropTypes.shape({}).isRequired,
+// ).isRequired,

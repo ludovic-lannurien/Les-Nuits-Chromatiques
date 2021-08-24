@@ -23,6 +23,26 @@ function mapReducer(state = initialState, action = {}) {
         ...state,
         viewport: action.viewport,
       };
+    case SET_SELECTED_EVENT:
+      return {
+        ...state,
+        selectedEvent: action.selectedEvent,
+      };
+    case SET_SELECTED_HOVER_EVENT:
+      return {
+        ...state,
+        selectedHoverEvent: action.selectedHoverEvent,
+      };
+    case SET_POPUP:
+      return {
+        ...state,
+        popup: !state.popup,
+      };
+    case SET_IS_SHOWN:
+      return {
+        ...state,
+        isShown: !state.isShown,
+      };
     default:
       return state;
   }

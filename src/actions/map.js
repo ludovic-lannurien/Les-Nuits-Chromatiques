@@ -10,11 +10,13 @@ export const setViewport = (viewport) => ({
   type: SET_VIEWPORT,
   viewport: viewport,
 });
-export const setSelectedEvent = () => ({
+export const setSelectedEvent = (selectedEvent) => ({
   type: SET_SELECTED_EVENT,
+  selectedEvent: selectedEvent,
 });
-export const setSelectedHoverEvent = () => ({
+export const setSelectedHoverEvent = (selectedHoverEvent) => ({
   type: SET_SELECTED_HOVER_EVENT,
+  selectedHoverEvent: selectedHoverEvent,
 });
 export const setPopup = () => ({
   type: SET_POPUP,

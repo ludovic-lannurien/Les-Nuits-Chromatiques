@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setViewport } from 'src/actions/map';
+import { setViewport, setSelectedEvent, setSelectedHoverEvent, setPopup, setIsShown } from 'src/actions/map';
 // on importe le composant de présentation
 import Map from 'src/components/Map';
 
@@ -8,6 +8,10 @@ import Map from 'src/components/Map';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   viewport: state.map.viewport,
+  selectedEvent: state.map.selectedEvent,
+  selectedHoverEvent: state.map.selectedHoverEvent,
+  popup: state.map.popup,
+  isShown: state.map.isShown,
 });
 
 // === mapDispatchToProps
@@ -17,6 +21,22 @@ const mapDispatchToProps = (dispatch) => ({
     const action = setViewport(viewport);
     dispatch(action);
   // nom de la prop à remplir: fonction qui dispatch l'action
+  },
+  setSelectedEvent: (selectedEvent) => {
+    const action = setSelectedEvent(selectedEvent);
+    dispatch(action);
+  },
+  setSelectedHoverEvent: (selectedHoverEvent) => {
+    const action = setSelectedHoverEvent(selectedHoverEvent);
+    dispatch(action);
+  },
+  setPopup: () => {
+    const action = setPopup();
+    dispatch(action);
+  },
+  setIsShown: () => {
+    const action = setIsShown();
+    dispatch(action);
   },
 });
 
