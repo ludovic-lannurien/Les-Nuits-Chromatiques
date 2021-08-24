@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import placeData from 'src/eventData';
+import { Link } from 'react-router-dom';
 // == Import
 
 import DayFilter from './DayFilter';
@@ -93,8 +94,17 @@ const Map = () => {
               <h2>{selectedEvent.name}</h2>
               <h3>{selectedEvent.artists[0].firstname} {selectedEvent.artists[0].lastname}</h3>
               <p>{selectedEvent.description}</p>
-              <a href="https://chkt.fr/"><span className="type">{selectedEvent.artists[0].type}</span></a>
-              <a href="https://chkt.fr/" className="voir-plus">Voir plus</a>
+              {selectedEvent.artists.map((artist) => (
+                <>
+                  <span className="type">{artist.type}</span>
+                  <Link
+                    to={`/artiste/${artist.slug}`}
+                    className="artist"
+                  >
+                    <span className="voir-plus">Voir plus</span>
+                  </Link>
+                </>
+              ))}
             </div>
           </Popup>
         )}
