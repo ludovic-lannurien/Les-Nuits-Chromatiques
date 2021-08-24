@@ -36,38 +36,7 @@ class ArtistController extends AbstractController
         }
 
         return $this->render('artist/read.html.twig', [
-            'artist' => $artist,
-        ]);
-    }
-
-    /**
-     * @Route("/admin/artist/add", name="admin_artist_add", methods={"GET","POST"})
-     */
-    public function add(Request $request, MySlugger $slugger): Response
-    {
-        $artist = new Artist();
-
-        $form = $this->createForm(ArtistType::class, $artist);
-        $form->add('Ajouter', SubmitType::class);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            if (null === $artist->getLastname()) {
-                $artist->setSlug($slugger->slugify($artist->getFirstname()));
-            } else {
-                $artist->setSlug($slugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
-            }
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($artist);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('admin_artist_browse', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('artist/add.html.twig', [
-            'artist' => $artist,
-            'form' => $form
+            'artist' => $artist
         ]);
     }
 
@@ -86,6 +55,7 @@ class ArtistController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             if (null === $artist->getLastname()) {
                 $artist->setSlug($slugger->slugify($artist->getFirstname()));
             } else {
@@ -100,6 +70,38 @@ class ArtistController extends AbstractController
         return $this->renderForm('artist/edit.html.twig', [
             'artist' => $artist,
             'form' => $form,
+        ]);
+    }
+
+    /**
+     * @Route("/admin/artist/add", name="admin_artist_add", methods={"GET","POST"})
+     */
+    public function add(Request $request, MySlugger $slugger): Response
+    {
+        $artist = new Artist();
+
+        $form = $this->createForm(ArtistType::class, $artist);
+        $form->add('Ajouter', SubmitType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            if (null === $artist->getLastname()) {
+                $artist->setSlug($slugger->slugify($artist->getFirstname()));
+            } else {
+                $artist->setSlug($slugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
+            }
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($artist);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_artist_read', ['slug' => $artist->getSlug()], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('artist/add.html.twig', [
+            'artist' => $artist,
+            'form' => $form
         ]);
     }
 
@@ -119,6 +121,6 @@ class ArtistController extends AbstractController
 
         // $this->addFlash('success', 'Le lieu a bien été supprimé.');
 
-        return $this->redirectToRoute('admin_artist_browse');
+        return $this->redirectToRoute('admin_artist_browse', [], Response::HTTP_SEE_OTHER);
     }
 }

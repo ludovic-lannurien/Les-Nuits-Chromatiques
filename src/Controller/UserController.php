@@ -94,7 +94,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('admin_user_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_user_read', ['id' => $user->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('user/add.html.twig', [

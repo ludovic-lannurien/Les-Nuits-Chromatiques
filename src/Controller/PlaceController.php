@@ -22,13 +22,8 @@ class PlaceController extends AbstractController
     {
         $places = $placeRepository->findAll();
 
-        // $places = $placeRepository->findBy(
-        //     [],
-        //     ['name' => 'ASC']
-        // );
-
         return $this->render('place/browse.html.twig', [
-            'places' => $places,
+            'places' => $places
         ]);
     }
 
@@ -62,6 +57,7 @@ class PlaceController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $place->setSlug($slugger->slugify($place->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -69,7 +65,7 @@ class PlaceController extends AbstractController
 
             // $this->addFlash('success', 'Le lieu a bien été modifié.');
 
-            return $this->redirectToRoute('admin_place_read', ['slug' => $place->getSlug()]);
+            return $this->redirectToRoute('admin_place_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('place/edit.html.twig', [
@@ -90,6 +86,7 @@ class PlaceController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $place->setSlug($slugger->slugify($place->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -98,7 +95,7 @@ class PlaceController extends AbstractController
 
             // $this->addFlash('success', 'Le lieu a bien été ajouté.');
 
-            return $this->redirectToRoute('admin_place_browse', ['slug' => $place->getSlug()]);
+            return $this->redirectToRoute('admin_place_read', ['slug' => $place->getSlug()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('place/add.html.twig', [
@@ -121,6 +118,6 @@ class PlaceController extends AbstractController
 
         // $this->addFlash('success', 'Le lieu a bien été supprimé.');
 
-        return $this->redirectToRoute('admin_place_browse');
+        return $this->redirectToRoute('admin_place_browse', [], Response::HTTP_SEE_OTHER);
     }
 }

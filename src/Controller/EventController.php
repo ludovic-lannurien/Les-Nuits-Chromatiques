@@ -57,6 +57,7 @@ class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $event->setSlug($slugger->slugify($event->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -64,7 +65,7 @@ class EventController extends AbstractController
 
             // $this->addFlash('success', 'Le l\'évènement a bien été modifié.');
 
-            return $this->redirectToRoute('admin_event_browse', ['slug' => $event->getSlug()]);
+            return $this->redirectToRoute('admin_event_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('event/edit.html.twig', [
@@ -85,13 +86,14 @@ class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $event->setSlug($slugger->slugify($event->getName()));
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($event);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin_event_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_event_read', ['slug' => $event->getSlug()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('event/add.html.twig', [
@@ -115,6 +117,6 @@ class EventController extends AbstractController
 
         // $this->addFlash('success', 'L\'évènement a bien été supprimé.');
 
-        return $this->redirectToRoute('admin_event_browse');
+        return $this->redirectToRoute('admin_event_browse', [], Response::HTTP_SEE_OTHER);
     }
 }

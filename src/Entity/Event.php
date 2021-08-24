@@ -87,11 +87,11 @@ class Event
     private $place;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Artist::class, mappedBy="events")
+     * @ORM\ManyToMany(targetEntity=Artist::class, inversedBy="events")
      * @ORM\GeneratedValue
      * @Groups("events_get")
      * @Groups("places_get")
-     * @Assert\NotBlank
+     * @Assert\Count(min=1)
      */
     private $artists;
 

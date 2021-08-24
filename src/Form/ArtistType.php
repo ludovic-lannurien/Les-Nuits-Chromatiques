@@ -21,7 +21,7 @@ class ArtistType extends AbstractType
         $builder
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom / Nom de scène',
-                'help' => 'Nom de scène si un seul nom'
+                'help' => 'Prénom ou nom de scène si un seul nom'
                 ])
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',

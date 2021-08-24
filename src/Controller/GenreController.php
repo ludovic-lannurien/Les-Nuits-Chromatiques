@@ -42,6 +42,7 @@ class GenreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $genre->setSlug($slugger->slugify($genre->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -49,7 +50,7 @@ class GenreController extends AbstractController
 
             // $this->addFlash('success', 'Le genre a bien été modifié.');
 
-            return $this->redirectToRoute('admin_genre_browse', ['slug' => $genre->getSlug()]);
+            return $this->redirectToRoute('admin_genre_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('genre/edit.html.twig', [
@@ -70,6 +71,7 @@ class GenreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $genre->setSlug($slugger->slugify($genre->getName()));
 
             $em = $this->getDoctrine()->getManager();
@@ -78,7 +80,7 @@ class GenreController extends AbstractController
 
             // $this->addFlash('success', 'Le genre a bien été ajouté.');
 
-            return $this->redirectToRoute('admin_genre_browse', ['slug' => $genre->getSlug()]);
+            return $this->redirectToRoute('admin_genre_browse', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('genre/add.html.twig', [
@@ -101,6 +103,6 @@ class GenreController extends AbstractController
 
         // $this->addFlash('success', 'Le genre a bien été supprimé.');
 
-        return $this->redirectToRoute('admin_genre_browse');
+        return $this->redirectToRoute('admin_genre_browse', [], Response::HTTP_SEE_OTHER);
     }
 }
