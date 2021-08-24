@@ -24,26 +24,11 @@ class UserType extends AbstractType
     {
         $this->security = $security;
     }
-    
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email');
-            
-        if ($this->security->isGranted('ROLE_SUPER_ADMIN')) {
-            $builder
-                ->add('roles', ChoiceType::class, [
-                    'label' => 'Rôle',
-                    'choices' => [
-                        'Administrateur' => 'ROLE_ADMIN',
-                        'Super-administrateur' => 'ROLE_SUPER_ADMIN'
-                    ],
-                    'multiple' => true,
-                    'expanded' => true
-                ]);
-        }
-        
-        $builder
+            ->add('email')
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                 $form = $event->getForm();
 
@@ -79,8 +64,20 @@ class UserType extends AbstractType
                         'second_options' => ['label' => 'Répéter le mot de passe'],
                     ]);
                 }
-            })
-        ;
+            });
+
+        if ($this->security->isGranted('ROLE_SUPER_ADMIN')) {
+            $builder
+                ->add('roles', ChoiceType::class, [
+                    'label' => 'Rôle',
+                    'choices' => [
+                        'Administrateur' => 'ROLE_ADMIN',
+                        'Super-administrateur' => 'ROLE_SUPER_ADMIN'
+                    ],
+                    'multiple' => true,
+                    'expanded' => true
+                ]);
+        }
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -32,7 +32,11 @@ class EventType extends AbstractType
                 'label' => 'Artiste(s)',
                 'class' => Artist::class,
                 'multiple' => true,
-                'choice_label' => 'firstname',
+                'choice_label' => function ($artist) {
+                    $firstname = $artist->getFirstname();
+                    $lastname = $artist->getLastname();
+                    return $firstname . ' ' . $lastname;
+                },
                 'expanded' => true,
                 'query_builder' => function (ArtistRepository $ar) {
                     return $ar->createQueryBuilder('a')
