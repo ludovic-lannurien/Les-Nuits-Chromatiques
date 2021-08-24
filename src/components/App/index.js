@@ -9,7 +9,7 @@ import Nav from 'src/components/Nav';
 import Prog from 'src/components/Prog';
 import Artist from 'src/components/Prog/Artist';
 import Festival from 'src/components/Festival';
-import Places from 'src/components/Places';
+import Places from 'src/containers/Places';
 import './app.scss';
 
 // == Composant

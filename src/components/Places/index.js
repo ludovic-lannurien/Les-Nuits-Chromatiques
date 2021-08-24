@@ -6,8 +6,22 @@ import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import './places.scss';
 
 // == Composant
-const Places = ({ places }) => {
-  const [current, setCurrent] = useState(0);
+const Places = ({
+  places,
+  current,
+  placeName,
+  placeAdress,
+  placeZip,
+  placeCity,
+  onMouse,
+  setCurrent,
+  setPlaceName,
+  setPlaceAdress,
+  setPlaceZip,
+  setPlaceCity,
+  setOnMouse,
+}) => {
+  // const [current, setCurrent] = useState(0);
   const { length } = places;
 
   const nextSlide = () => {
@@ -16,11 +30,11 @@ const Places = ({ places }) => {
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
-  const [placeName, setPlaceName] = useState(null);
+/*   const [placeName, setPlaceName] = useState(null);
   const [placeAdress, setPlaceAdress] = useState(null);
   const [placeZip, setPlaceZip] = useState(null);
   const [placeCity, setPlaceCity] = useState(null);
-  const [onMouse, setOnMouse] = useState(false);
+  const [onMouse, setOnMouse] = useState(false); */
   let textCssClass = 'text-picture';
   if (onMouse) {
     textCssClass += '-active';
@@ -72,6 +86,18 @@ const Places = ({ places }) => {
   );
 };
 Places.propTypes = {
+  current: PropTypes.number.isRequired,
+  setCurrent: PropTypes.func.isRequired,
+  placeName: PropTypes.string,
+  placeAdress: PropTypes.string,
+  placeZip: PropTypes.number,
+  placeCity: PropTypes.string,
+  setPlaceName: PropTypes.func.isRequired,
+  setPlaceAdress: PropTypes.func.isRequired,
+  setPlaceZip: PropTypes.func.isRequired,
+  setPlaceCity: PropTypes.func.isRequired,
+  onMouse: PropTypes.bool.isRequired,
+  setOnMouse: PropTypes.func.isRequired,
   places: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -79,6 +105,13 @@ Places.propTypes = {
       name: PropTypes.string.isRequired,
     }),
   ).isRequired,
+};
+
+Places.defaultProps = {
+  placeName: null,
+  placeAdress: null,
+  placeZip: null,
+  placeCity: null,
 };
 // == Export
 export default Places;
