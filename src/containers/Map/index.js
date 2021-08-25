@@ -1,5 +1,12 @@
 import { connect } from 'react-redux';
-import { setViewport, setSelectedEvent, setSelectedHoverEvent, setPopup, setIsShown } from 'src/actions/map';
+import {
+  setViewport,
+  setSelectedEvent,
+  setSelectedHoverEvent,
+  setPopup,
+  setIsShown,
+  setGetOut,
+} from 'src/actions/map';
 // on importe le composant de présentation
 import Map from 'src/components/Map';
 
@@ -36,6 +43,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   setIsShown: () => {
     const action = setIsShown();
+    dispatch(action);
+  },
+  setGetOut: () => {
+    const action = setGetOut();
     dispatch(action);
   },
 });

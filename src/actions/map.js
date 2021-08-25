@@ -4,6 +4,7 @@ export const SET_SELECTED_EVENT = 'SET_SELECTED_EVENT';
 export const SET_SELECTED_HOVER_EVENT = 'SET_SELECTED_HOVER_EVENT';
 export const SET_POPUP = 'SET_POPUP';
 export const SET_IS_SHOWN = 'SET_IS_SHOWN';
+export const SET_GETOUT = 'SET_GETOUT';
 
 // action creators
 export const setViewport = (viewport) => ({
@@ -21,6 +22,12 @@ export const setSelectedHoverEvent = (selectedHoverEvent) => ({
 export const setPopup = () => ({
   type: SET_POPUP,
 });
+
+export const setGetOut = () => ({
+  type: SET_GETOUT,
+});
+
+
 export const setIsShown = () => ({
   type: SET_IS_SHOWN,
 });

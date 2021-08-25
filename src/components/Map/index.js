@@ -23,6 +23,7 @@ const Map = ({
   setSelectedHoverEvent,
   setPopup,
   setIsShown,
+  setGetOut,
 }) =>
 // const [selectedEvent, setSelectedEvent] = useState(null);
 // const [selectedHoverEvent, setSelectedHoverEvent] = useState(null);
@@ -40,7 +41,7 @@ const Map = ({
         }}
         onClick={(event) => {
           event.preventDefault();
-          setPopup(false);
+          setGetOut();
         }}
       >
         {placeData.map((item) => (
@@ -55,7 +56,7 @@ const Map = ({
               onClick={(event) => {
                 event.preventDefault();
                 setSelectedEvent(item);
-                setPopup(true);
+                setPopup();
               }}
               onMouseEnter={() => {
                 setIsShown();
@@ -144,6 +145,7 @@ Map.propTypes = {
   isShown: PropTypes.bool.isRequired,
   setPopup: PropTypes.func.isRequired,
   setIsShown: PropTypes.func.isRequired,
+  setGetOut: PropTypes.func.isRequired,
 
 };
 Map.defaultProps = {

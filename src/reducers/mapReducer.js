@@ -1,5 +1,5 @@
 import {
-  SET_VIEWPORT, SET_SELECTED_EVENT, SET_SELECTED_HOVER_EVENT, SET_POPUP, SET_IS_SHOWN,
+  SET_VIEWPORT, SET_SELECTED_EVENT, SET_SELECTED_HOVER_EVENT, SET_POPUP, SET_IS_SHOWN, SET_GETOUT
 } from 'src/actions/map';
 
 const initialState = {
@@ -42,6 +42,12 @@ function mapReducer(state = initialState, action = {}) {
       return {
         ...state,
         isShown: !state.isShown,
+      };
+    case SET_GETOUT:
+      return {
+        ...state,
+        isShown: false,
+        popup: false,
       };
     default:
       return state;
