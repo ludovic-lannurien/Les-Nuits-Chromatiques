@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class EventController extends AbstractController
 {
     /**
-     * @Route("/admin/event/browse", name="admin_event_browse")
+     * @Route("/admin/event/browse", name="admin_event_browse", methods={"GET"})
      */
     public function browse(EventRepository $eventRepository): Response
     {

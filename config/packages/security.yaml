@@ -36,8 +36,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin/(event|place|artist|genre)/(browse|read|edit|add|delete), roles: ROLE_ADMIN }
-        - { path: ^/admin/user/(read|edit), roles: ROLE_ADMIN }
-        - { path: ^/admin/[a-z]+/(browse|add|delete), roles: ROLE_SUPER_ADMIN }
+        - { path: ^/admin/[a-z]+, roles: ROLE_SUPER_ADMIN }
 
     role_hierarchy:
         ROLE_SUPER_ADMIN: ROLE_ADMIN
