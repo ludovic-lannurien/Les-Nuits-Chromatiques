@@ -58,7 +58,9 @@ class AppFixtures extends Fixture
             $place->setDescription($data['description']);
             $place->setPicture($data['picture']);
             $place->setSlug($this->mySlugger->slugify($place->getName()));
+
             $placesList[] = $place;
+
             $manager->persist($place);
         };
 
@@ -66,19 +68,17 @@ class AppFixtures extends Fixture
 
         foreach (EventData::$eventData as $data) {
             $event = new Event();
-            
+
 
             $event->setName($data['name']);
             $event->setStartDatetime(new DateTime($data['start_datetime']));
             $event->setEndDatetime(new DateTime($data['end_datetime']));
             $event->setDescription($data['description']);
             $event->setSlug($this->mySlugger->slugify($event->getName()));
-            for ($i = 1; $i <= mt_rand(1, 7); $i++) 
-            {
-            $event->setPlace($placesList[array_rand($placesList)]);
+
+            for ($i = 1; $i <= mt_rand(1, 7); $i++) {
+                $event->setPlace($placesList[array_rand($placesList)]);
             }
-            // $event->setPlace(($place));
-            ;
 
             $eventsList[] = $event;
 
