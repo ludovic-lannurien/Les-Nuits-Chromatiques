@@ -4,11 +4,11 @@ import {
 
 const initialState = {
   viewport: {
-    latitude: 47.3212,
-    longitude: 5.0413,
+    latitude: 47.332665,
+    longitude: 5.045888,
     width: '100vw',
     height: '100vh',
-    zoom: 12.5,
+    zoom: 13,
   },
   selectedEvent: null,
   selectedHoverEvent: null,

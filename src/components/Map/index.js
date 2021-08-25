@@ -118,9 +118,9 @@ Map.propTypes = {
   selectedEvent: PropTypes.shape({
     id: PropTypes.number.isRequired,
     place: PropTypes.shape({
-      latitude: PropTypes.number.isRequired,
-      longitude: PropTypes.number.isRequired,
-    }).isRequired,
+      latitude: PropTypes.number,
+      longitude: PropTypes.number,
+    }),
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     artists: PropTypes.arrayOf(
@@ -132,9 +132,9 @@ Map.propTypes = {
   }),
   selectedHoverEvent: PropTypes.shape({
     place: PropTypes.shape({
-      latitude: PropTypes.number.isRequired,
-      longitude: PropTypes.number.isRequired,
-    }).isRequired,
+      latitude: PropTypes.number,
+      longitude: PropTypes.number,
+    }),
     name: PropTypes.string.isRequired,
   }),
   setViewport: PropTypes.func.isRequired,
@@ -150,6 +150,7 @@ Map.defaultProps = {
   selectedEvent: null,
   selectedHoverEvent: null,
 };
+
 // == Export
 export default Map;
 // selectedHoverEvent: PropTypes.arrrayOf(
