@@ -15,37 +15,33 @@
 	<body>
 
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-		<nav>
-			<ul>
-				<li>
-					<a class="{% block active_event %}{% endblock %}" href="{{ path('admin_event_browse') }}">Évènements</a>
-				</li>
-				<li>
-					<a class="{% block active_place %}{% endblock %}" href="{{ path('admin_place_browse') }}">Lieux</a>
-				</li>
-				<li>
-					<a class="{% block active_artist %}{% endblock %}" href="{{ path('admin_artist_browse') }}">Artistes</a>
-				</li>
-				<li>
-					<a class="{% block active_genre %}{% endblock %}" href="{{ path('admin_genre_browse') }}">Genres</a>
-				</li>
-				<li>
-					<a class="{% block active_user %}{% endblock %}" href="{{ path('admin_user_browse') }}">
-						{% if is_granted('ROLE_SUPER_ADMIN') %}
-							Utilisateurs
-						{% else %}
-							Mon compte
-						{% endif %}
-					</a>
-				</li>
-			</ul>
+			<nav>
+				<ul>
+					<li>
+						<a class="{% block active_event %}{% endblock %}" href="{{ path('admin_event_browse') }}">Évènements</a>
+					</li>
+					<li>
+						<a class="{% block active_place %}{% endblock %}" href="{{ path('admin_place_browse') }}">Lieux</a>
+					</li>
+					<li>
+						<a class="{% block active_artist %}{% endblock %}" href="{{ path('admin_artist_browse') }}">Artistes</a>
+					</li>
+					<li>
+						<a class="{% block active_genre %}{% endblock %}" href="{{ path('admin_genre_browse') }}">Genres</a>
+					</li>
+					{% if is_granted('ROLE_SUPER_ADMIN') %}
+						<li>
+							<a class="{% block active_user %}{% endblock %}" href="{{ path('admin_user_browse') }}">Utilisateurs</a>
+						</li>
+					{% endif %}
+				</ul>
 
-			<ul>
-				<li>
-                    <a class="logout" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
-                </li>
-			</ul>
-		</nav>
+				<ul>
+					<li>
+						<a class="logout" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
+					</li>
+				</ul>
+			</nav>
 		{% endif %}
 
 		{% block body %}{% endblock %}
