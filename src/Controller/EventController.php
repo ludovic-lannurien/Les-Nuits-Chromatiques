@@ -63,7 +63,7 @@ class EventController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            // $this->addFlash('success', 'Le l\'évènement a bien été modifié.');
+            $this->addFlash('success', 'L\'évènement a bien été modifié.');
 
             return $this->redirectToRoute('admin_event_browse', [], Response::HTTP_SEE_OTHER);
         }
@@ -93,6 +93,8 @@ class EventController extends AbstractController
             $entityManager->persist($event);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'évènement a bien été ajouté.');
+
             return $this->redirectToRoute('admin_event_read', ['slug' => $event->getSlug()], Response::HTTP_SEE_OTHER);
         }
 
@@ -115,7 +117,7 @@ class EventController extends AbstractController
         $em->remove($event);
         $em->flush();
 
-        // $this->addFlash('success', 'L\'évènement a bien été supprimé.');
+        $this->addFlash('success', 'L\'évènement a bien été supprimé.');
 
         return $this->redirectToRoute('admin_event_browse', [], Response::HTTP_SEE_OTHER);
     }

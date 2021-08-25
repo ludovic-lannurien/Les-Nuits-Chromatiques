@@ -9,6 +9,8 @@
 		<section class="container list">
 			<h1>Liste des artistes</h1>
 
+			{{ include('_flash_messages.html.twig') }}
+
             <a class="btn btn-item btn-secondary" href="{{ path('admin_artist_add') }}">Ajouter un artiste</a>
 
 			<table class="table table-striped table-dark">

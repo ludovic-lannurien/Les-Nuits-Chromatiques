@@ -9,6 +9,8 @@
 		<section class="container place">
 			<h1>{{ place.name }}</h1>
 
+			{{ include('_flash_messages.html.twig') }}
+
             <a class="btn btn-item btn-primary" href="{{ path('admin_place_browse') }}">Liste des lieux</a>
 
 			<table class="table table-striped table-light">

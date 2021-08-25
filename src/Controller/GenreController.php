@@ -48,7 +48,7 @@ class GenreController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            // $this->addFlash('success', 'Le genre a bien été modifié.');
+            $this->addFlash('success', 'Le genre a bien été modifié.');
 
             return $this->redirectToRoute('admin_genre_browse', [], Response::HTTP_SEE_OTHER);
         }
@@ -78,7 +78,7 @@ class GenreController extends AbstractController
             $em->persist($genre);
             $em->flush();
 
-            // $this->addFlash('success', 'Le genre a bien été ajouté.');
+            $this->addFlash('success', 'Le genre a bien été ajouté.');
 
             return $this->redirectToRoute('admin_genre_browse', [], Response::HTTP_SEE_OTHER);
         }
@@ -101,7 +101,7 @@ class GenreController extends AbstractController
         $em->remove($genre);
         $em->flush();
 
-        // $this->addFlash('success', 'Le genre a bien été supprimé.');
+        $this->addFlash('success', 'Le genre a bien été supprimé.');
 
         return $this->redirectToRoute('admin_genre_browse', [], Response::HTTP_SEE_OTHER);
     }

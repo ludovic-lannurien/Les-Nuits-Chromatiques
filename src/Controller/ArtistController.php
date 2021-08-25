@@ -64,6 +64,8 @@ class ArtistController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'L\'artiste a bien été modifié.');
+
             return $this->redirectToRoute('admin_artist_browse', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -96,6 +98,8 @@ class ArtistController extends AbstractController
             $entityManager->persist($artist);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'artiste a bien été ajouté.');
+
             return $this->redirectToRoute('admin_artist_read', ['slug' => $artist->getSlug()], Response::HTTP_SEE_OTHER);
         }
 
@@ -119,7 +123,7 @@ class ArtistController extends AbstractController
         $em->remove($artist);
         $em->flush();
 
-        // $this->addFlash('success', 'Le lieu a bien été supprimé.');
+        $this->addFlash('success', 'L\'artiste a bien été supprimé.');
 
         return $this->redirectToRoute('admin_artist_browse', [], Response::HTTP_SEE_OTHER);
     }

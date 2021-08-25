@@ -9,6 +9,8 @@
 		<section class="container list">
 			<h1>Liste des lieux</h1>
 
+			{{ include('_flash_messages.html.twig') }}
+
             <a class="btn btn-item btn-secondary" href="{{ path('admin_place_add') }}">Ajouter un lieu</a>
 
 			<table class="table table-striped table-dark">

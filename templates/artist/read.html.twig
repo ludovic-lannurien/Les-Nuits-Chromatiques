@@ -9,6 +9,8 @@
 		<section class="container artist">
 			<h1>{{ artist.firstname }} {{ artist.lastname }}</h1>
 
+			{{ include('_flash_messages.html.twig') }}
+
             <a class="btn btn-item btn-primary" href="{{ path('admin_artist_browse') }}">Liste des artistes</a>
 
 			<table class="table table-striped table-light">
