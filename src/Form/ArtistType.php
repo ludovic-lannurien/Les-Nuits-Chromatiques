@@ -25,13 +25,13 @@ class ArtistType extends AbstractType
                 ])
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
-                'help' => 'Facultatif si nom de scène'
+                'help' => 'Nom de famille (facultatif si nom de scène)'
                 ])
             ->add('picture', UrlType::class, ['label' => 'Image'])
             ->add('description')
             ->add('videoLink', UrlType::class, [
                 'label' => 'Lien vidéo',
-                'help' => 'Lien Youtube ou Viméo',
+                'help' => 'Lien Youtube ou Viméo (facultatif)',
             ])
             ->add('genres', EntityType::class, [
                 'class' => Genre::class,
