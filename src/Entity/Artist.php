@@ -83,7 +83,7 @@ class Artist
     private $slug;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="artists")
+     * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="artists")
      * @Groups("artists_get")
      * @Groups("genres_get")
      * @Assert\NotBlank
