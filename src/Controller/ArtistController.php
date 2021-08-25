@@ -66,7 +66,7 @@ class ArtistController extends AbstractController
 
             $this->addFlash('success', 'L\'artiste a bien été modifié.');
 
-            return $this->redirectToRoute('admin_artist_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_artist_read', ['slug' => $artist->getSlug()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('artist/edit.html.twig', [

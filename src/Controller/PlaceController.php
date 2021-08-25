@@ -65,7 +65,7 @@ class PlaceController extends AbstractController
 
             $this->addFlash('success', 'Le lieu a bien été modifié.');
 
-            return $this->redirectToRoute('admin_place_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_place_read', ['slug' => $place->getSlug()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('place/edit.html.twig', [

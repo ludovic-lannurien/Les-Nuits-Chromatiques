@@ -65,7 +65,7 @@ class EventController extends AbstractController
 
             $this->addFlash('success', 'L\'évènement a bien été modifié.');
 
-            return $this->redirectToRoute('admin_event_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_event_read', ['slug' => $event->getSlug()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('event/edit.html.twig', [

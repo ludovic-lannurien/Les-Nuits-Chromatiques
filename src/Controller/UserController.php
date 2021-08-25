@@ -66,7 +66,7 @@ class UserController extends AbstractController
 
             $this->addFlash('success', 'L\'utilisateur a bien été modifié.');
 
-            return $this->redirectToRoute('admin_user_browse', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_user_read', ['id' => $user-> getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('user/edit.html.twig', [
