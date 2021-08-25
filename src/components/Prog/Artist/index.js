@@ -15,7 +15,7 @@ import './artist.scss';
 const Artist = ({ artists }) => {
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
-  console.log(artist.picture);
+  console.log(artist);
 
   return (
     <div className="artist-page">

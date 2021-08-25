@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import philippe from './katerine.jpg';
 
+import philippe from './katerine.jpg';
 import './prog.scss';
 
-const ArtistCard = ({ firstname, lastname, slug, id }) => {
+const ArtistCard = ({
+  firstname, lastname, slug, id,
+}) => {
   console.log(firstname);
   return (
     <Link
@@ -18,10 +20,12 @@ const ArtistCard = ({ firstname, lastname, slug, id }) => {
         <a href="#"><img src={philippe} alt={firstname} /></a>
       </div>
     </Link>
+
   );
 };
 
 ArtistCard.propTypes = {
+  id: PropTypes.number.isRequired,
   firstname: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
