@@ -2,10 +2,8 @@
 
 namespace App\Form;
 
-use App\Entity\Event;
 use App\Entity\Genre;
 use App\Entity\Artist;
-use App\Repository\EventRepository;
 use App\Repository\GenreRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -40,17 +38,6 @@ class ArtistType extends AbstractType
                 'query_builder' => function (GenreRepository $gr) {
                     return $gr->createQueryBuilder('g')
                         ->orderBy('g.name', 'ASC');
-                },
-                'choice_label' => 'name'
-            ])
-            ->add('events', EntityType::class, [
-                'label' => 'Evènements',
-                'class' => Event::class,
-                'multiple' => true,
-                'expanded' => true,
-                'query_builder' => function (EventRepository $er) {
-                    return $er->createQueryBuilder('e')
-                        ->orderBy('e.name', 'ASC');
                 },
                 'choice_label' => 'name'
             ]);
