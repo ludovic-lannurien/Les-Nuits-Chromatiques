@@ -53,6 +53,7 @@ class RoleAdminTest extends WebTestCase
 
         // Genre
         yield ['GET', '/admin/genre/browse'];
+        yield ['GET', '/admin/genre/read/musique'];
         yield ['GET', '/admin/genre/edit/musique'];
         yield ['GET', '/admin/genre/add'];
         yield ['POST', '/admin/genre/edit/musique'];
