@@ -102,7 +102,7 @@ class Place
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=320)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")
@@ -112,7 +112,7 @@ class Place
     private $picture;
 
     /**
-     * @ORM\Column(type="string", length=320, unique=true)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Groups("places_get")
      * @Groups("artists_get")
      * @Groups("events_get")

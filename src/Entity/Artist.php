@@ -45,7 +45,7 @@ class Artist
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Groups("artists_get")
      * @Groups("events_get")
      * @Groups("genres_get")
