@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Artist;
 use App\Form\ArtistType;
 use App\Repository\ArtistRepository;
+use App\Service\FileUploader;
 use App\Service\MySlugger;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,7 +44,7 @@ class ArtistController extends AbstractController
     /**
      * @Route("/admin/artist/edit/{slug}", name="admin_artist_edit", methods={"GET","POST"})
      */
-    public function edit(Artist $artist = null, Request $request, MySlugger $slugger): Response
+    public function edit(Artist $artist = null, Request $request, MySlugger $slugger, FileUploader $fileUploader): Response
     {
         // 404 ?
         if (null === $artist) {
@@ -62,6 +63,14 @@ class ArtistController extends AbstractController
                 $artist->setSlug($slugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
             }
 
+            $picture = $form->get('picture')->getData();
+
+            if ($picture) {
+
+                $pictureFilename = $fileUploader->upload($picture);
+                $artist->setPicture($pictureFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'L\'artiste a bien été modifié.');
@@ -78,7 +87,7 @@ class ArtistController extends AbstractController
     /**
      * @Route("/admin/artist/add", name="admin_artist_add", methods={"GET","POST"})
      */
-    public function add(Request $request, MySlugger $slugger): Response
+    public function add(Request $request, MySlugger $slugger, FileUploader $fileUploader): Response
     {
         $artist = new Artist();
 
@@ -92,6 +101,14 @@ class ArtistController extends AbstractController
                 $artist->setSlug($slugger->slugify($artist->getFirstname()));
             } else {
                 $artist->setSlug($slugger->slugify(($artist->getFirstname()) . '-' . ($artist->getLastname())));
+            }
+
+            $picture = $form->get('picture')->getData();
+
+            if ($picture) {
+
+                $pictureFilename = $fileUploader->upload($picture);
+                $artist->setPicture($pictureFilename);
             }
 
             $entityManager = $this->getDoctrine()->getManager();
