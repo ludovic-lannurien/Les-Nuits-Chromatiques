@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
   selectedHoverEvent: state.map.selectedHoverEvent,
   popup: state.map.popup,
   isShown: state.map.isShown,
+  events: state.map.eventsList,
 });
 
 // === mapDispatchToProps

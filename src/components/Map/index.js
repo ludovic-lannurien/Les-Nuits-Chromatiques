@@ -2,17 +2,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import placeData from 'src/eventData';
 import { Link } from 'react-router-dom';
 // == Import
 
 import DayFilter from './DayFilter';
 import cible from './cible.png';
-import philippe from './katerine.jpg';
 import './map.scss';
 
 // == Composant
 const Map = ({
+  events,
   viewport,
   setViewport,
   selectedEvent,
@@ -44,7 +43,7 @@ const Map = ({
           setGetOut();
         }}
       >
-        {placeData.map((item) => (
+        {events.map((item) => (
           <Marker
             key={item.place.id}
             latitude={item.place.latitude}
@@ -89,15 +88,26 @@ const Map = ({
           longitude={selectedEvent.place.longitude}
         >
           <div className="popup-content">
-            <a href="#"><img src={philippe} className="philippe" alt="philippe" /></a>
-            <h2>{selectedEvent.name}</h2>
+
             {selectedEvent.artists.map((artist) => (
-              <h3 key={artist.slug}>{artist.firstname} {artist.lastname}</h3>
+              <div key={artist.id}>
+                <a href="#"><img src={artist.picture} className="philippe" alt="philippe" /></a>
+                <h2>{selectedEvent.name}</h2>
+
+                <h3 key={artist.slug}>{artist.firstname} {artist.lastname}</h3>
+              </div>
             ))}
             <p>{selectedEvent.description}</p>
             {selectedEvent.artists.map((artist) => (
               <div key={artist.id}>
-                <span className="type">{artist.type} </span>
+                {artist.genres.map((item) => (
+                  <span 
+                    key={item.id}
+                    className="genre"
+                  >
+                    {item.name}
+                  </span>
+                ))}
                 <Link
                   key={artist.id}
                   to={`/artiste/${artist.slug}`}
@@ -127,7 +137,7 @@ Map.propTypes = {
     artists: PropTypes.arrayOf(
       PropTypes.shape({
         firstname: PropTypes.string.isRequired,
-        lastname: PropTypes.string.isRequired,
+        lastname: PropTypes.string,
       }).isRequired,
     ).isRequired,
   }),
@@ -146,10 +156,25 @@ Map.propTypes = {
   setPopup: PropTypes.func.isRequired,
   setIsShown: PropTypes.func.isRequired,
   setGetOut: PropTypes.func.isRequired,
-
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      place: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        latitude: PropTypes.number.isRequired,
+        longitude: PropTypes.number.isRequired,
+      }),
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 Map.defaultProps = {
-  selectedEvent: null,
+  selectedEvent: PropTypes.shape({
+    artists: PropTypes.arrayOf(
+      PropTypes.shape({
+        lastname: null,
+      }),
+    ),
+  }),
   selectedHoverEvent: null,
 };
 

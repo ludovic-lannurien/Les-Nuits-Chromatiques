@@ -28,13 +28,13 @@ const Artist = ({ artists }) => {
         to="/"
       >
         <div className="back-to-map">
-          <img src={cible} alt="map" className="cible" />
-          <span className="back-to-map-text">Voir la map</span>
+          <img src={cible} alt="map" className="back-to-map-cible" />
+          <span className="back-to-map-text">Map</span>
         </div>
       </Link>
       <div className="artist-picture">
         <a href="#">
-          <img src={philippe} alt={`${artist.firstname} ${artist.lastname}`} />
+          <img src={artist.picture} alt={`${artist.firstname} ${artist.lastname}`} />
         </a>
       </div>
       <div className="artist-content">
