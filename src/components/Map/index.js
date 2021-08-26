@@ -101,7 +101,7 @@ const Map = ({
             {selectedEvent.artists.map((artist) => (
               <div key={artist.id}>
                 {artist.genres.map((item) => (
-                  <span 
+                  <span
                     key={item.id}
                     className="genre"
                   >

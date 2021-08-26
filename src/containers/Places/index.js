@@ -21,6 +21,7 @@ const mapStateToProps = (state) => ({
   placeZip: state.places.placeZip,
   placeCity: state.places.placeCity,
   onMouse: state.places.onMouse,
+  places: state.places.placesList,
 });
 
 // === mapDispatchToProps

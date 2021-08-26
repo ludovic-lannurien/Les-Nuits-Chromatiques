@@ -1,5 +1,11 @@
 import {
-  SET_CURRENT, SET_PLACENAME, SET_PLACEADRESS, SET_PLACEZIP, SET_PLACECITY, SET_ONMOUSE,
+  SET_CURRENT,
+  SET_PLACENAME,
+  SET_PLACEADRESS,
+  SET_PLACEZIP,
+  SET_PLACECITY,
+  SET_ONMOUSE,
+  SAVE_PLACES,
 } from 'src/actions/places';
 
 const initialState = {
@@ -10,6 +16,7 @@ const initialState = {
   placeZip: null,
   placeCity: null,
   onMouse: false,
+  placesList: [],
 };
 
 function placesReducer(state = initialState, action = {}) {
@@ -43,6 +50,11 @@ function placesReducer(state = initialState, action = {}) {
       return {
         ...state,
         onMouse: !state.onMouse,
+      };
+    case SAVE_PLACES:
+      return {
+        ...state,
+        placesList: action.places,
       };
     default:
       return state;

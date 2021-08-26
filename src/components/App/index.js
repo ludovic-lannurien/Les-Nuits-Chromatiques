@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // == Import
 // import artistData from 'src/artistData';
-import placeData from 'src/placeData';
 import Map from 'src/containers/Map';
 import Nav from 'src/components/Nav';
 import Prog from 'src/containers/Prog';
@@ -14,10 +13,11 @@ import Artist from 'src/containers/Artist';
 import './app.scss';
 
 // == Composant
-const App = ({ loadArtists, loadEvents }) => {
+const App = ({ loadArtists, loadEvents, loadPlaces }) => {
   useEffect(() => {
     loadArtists();
     loadEvents();
+    loadPlaces();
   }, []);
   return (
     <div className="app">
@@ -30,7 +30,7 @@ const App = ({ loadArtists, loadEvents }) => {
           <Prog />
         </Route>
         <Route path="/lieux">
-          <Places places={placeData} />
+          <Places />
         </Route>
         <Route path="/artiste/:slug">
           <Artist />
@@ -45,6 +45,7 @@ const App = ({ loadArtists, loadEvents }) => {
 App.propTypes = {
   loadArtists: PropTypes.func.isRequired,
   loadEvents: PropTypes.func.isRequired,
+  loadPlaces: PropTypes.func.isRequired,
 };
 // == Export
 export default App;

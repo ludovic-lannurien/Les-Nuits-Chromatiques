@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import App from 'src/components/App';
 import { fetchArtists } from '../../actions/artists';
 import { fetchEvents } from '../../actions/map';
+import { fetchPlaces } from '../../actions/places';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -20,6 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadEvents: () => {
     dispatch(fetchEvents());
+  },
+  loadPlaces: () => {
+    dispatch(fetchPlaces());
   },
 });
 

@@ -5,6 +5,8 @@ export const SET_PLACEADRESS = 'SET_PLACEADRESS';
 export const SET_PLACEZIP = 'SET_PLACEZIP';
 export const SET_PLACECITY = 'SET_PLACECITY';
 export const SET_ONMOUSE = 'SET_ONMOUSE';
+export const FETCH_PLACES = 'FETCH_PLACES';
+export const SAVE_PLACES = 'SAVE_PLACES';
 
 // action creators
 export const setCurrent = (current) => ({
@@ -29,4 +31,12 @@ export const setPlaceCity = (placeCity) => ({
 });
 export const setOnMouse = () => ({
   type: SET_ONMOUSE,
+});
+
+export const fetchPlaces = () => ({
+  type: FETCH_PLACES,
+});
+export const savePlaces = (places) => ({
+  type: SAVE_PLACES,
+  places: places,
 });
