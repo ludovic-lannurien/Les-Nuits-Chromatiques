@@ -3,34 +3,45 @@
 {% block title %}LNC | Se connecter{% endblock %}
 
 {% block body %}
-	<main>
-		<section class="container">
-			<form method="post">
-				{% if error %}
-					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-				{% endif %}
+	<body class="bg-img">
+		<main>
+			<section class="container login">
 
-				{% if app.user %}
-					<div class="mb-3">Vous êtes connecté(e) en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a></div>
-				{% endif %}
+				<p><img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo Les Nuits Chromatiques"></p>
 
 				<h1>Se connecter</h1>
-				
-				<label for="inputEmail">Email</label>
-				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-				<label for="inputPassword">Mot de passe</label>
-				<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<form method="post">
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
 
-				<div class="checkbox mb-3">
-					<label>
-						<input type="checkbox" name="_remember_me"> Se souvenir de moi
-					</label>
-				</div>
+					{% if app.user %}
+						<div class="mb-3">Vous êtes connecté(e) en tant que
+							{{ app.user.username }},
+							<a href="{{ path('app_logout') }}">Se déconnecter</a>
+						</div>
+					{% endif %}
 
-				<button class="btn btn-lg btn-primary" type="submit">Connexion</button>
-			</form>
-		</section>
-	</main>
+					<label for="inputEmail">Email</label>
+					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+					<label for="inputPassword">Mot de passe</label>
+					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					<div class="checkbox mb-3">
+						<label>
+							<input type="checkbox" name="_remember_me">
+							Se souvenir de moi
+						</label>
+					</div>
+
+					<div class="button">
+						<button class="btn btn-lg btn-primary" type="submit">Connexion</button>
+					</div>
+				</form>
+			</section>
+		</main>
+	</body>
 {% endblock %}

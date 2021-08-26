@@ -18,6 +18,7 @@
 					<tr>
                         <th scope="col">#</th>
 						<th scope="col">Nom</th>
+						<th scope="col">Afficher</th>
                         <th scope="col">Modifier</th>
                         <th scope="col">Supprimer</th>
 					</tr>
@@ -27,6 +28,7 @@
 						<tr>
                             <th scope="row">{{ genre.id }}</th>
 							<td>{{ genre.name }}</td>
+							<td><a class="btn btn-primary" href="{{ path('admin_genre_read', { slug: genre.slug }) }}"><i class="fas fa-eye"></i></a></td>
                             <td><a class="btn btn-success" href="{{ path('admin_genre_edit', { slug: genre.slug }) }}"><i class="fas fa-edit"></i></a></td>
                             <td><a class="btn btn-danger" href="{{ path('admin_genre_delete', { slug: genre.slug }) }}" onclick="return confirm('Etes-vous sûr de vouloir supprimer le genre {{ genre.name }} ?')"><i class="fas fa-trash-alt"></i></a></td>
 						</tr>

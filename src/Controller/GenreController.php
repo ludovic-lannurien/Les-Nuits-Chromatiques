@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 class GenreController extends AbstractController
 {
     /**
-     * @Route("/admin/genre/browse", name="admin_genre_browse", methods="GET")
+     * @Route("/admin/genre/browse", name="admin_genre_browse", methods={"GET"})
      */
     public function browse(GenreRepository $genreRepository): Response
     {
@@ -24,6 +24,21 @@ class GenreController extends AbstractController
 
         return $this->render('genre/browse.html.twig', [
             'genres' => $genres
+        ]);
+    }
+
+    /**
+     * @Route("/admin/genre/read/{slug}", name="admin_genre_read", methods={"GET"})
+     */
+    public function read(Genre $genre = null): Response
+    {
+        // 404
+        if (null === $genre) {
+            throw $this->createNotFoundException('Genre non trouvé.');
+        }
+
+        return $this->render('genre/read.html.twig', [
+            'genre' => $genre
         ]);
     }
 
@@ -89,7 +104,7 @@ class GenreController extends AbstractController
     }
 
     /**
-     * @Route("/admin/genre/delete/{slug}", name="admin_genre_delete", methods="GET")
+     * @Route("/admin/genre/delete/{slug}", name="admin_genre_delete", methods={"GET"})
      */
     public function delete(Genre $genre = null, EntityManagerInterface $em): Response
     {

@@ -13,7 +13,6 @@
 	</head>
 
 	<body>
-
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<nav>
 				<ul>
@@ -38,13 +37,13 @@
 
 				<ul>
 					<li class="nav-item">
-                    	<span class="badge bg-primary me-3">{{ app.user.email }}</span>
+                    	<span class="badge bg-success me-3">{{ app.user.email }}</span>
 					</li>
 					<li>
 					{% if is_granted('ROLE_SUPER_ADMIN') %}
-						<span class="badge bg-secondary me-3">Super-Administrateur</span>
+						<span class="badge bg-primary me-3">Super-Administrateur</span>
 					{% else %}
-						<span class="badge bg-secondary me-3">Administrateur</span>
+						<span class="badge bg-primary me-3">Administrateur</span>
 					{% endif %}
                 	</li>
 					<li>

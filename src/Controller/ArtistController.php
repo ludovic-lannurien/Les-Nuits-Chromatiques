@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ArtistController extends AbstractController
 {
     /**
-     * @Route("/admin/artist/browse", name="admin_artist_browse")
+     * @Route("/admin/artist/browse", name="admin_artist_browse", methods={"GET"})
      */
     public function browse(ArtistRepository $artistRepository): Response
     {

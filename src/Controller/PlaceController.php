@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 class PlaceController extends AbstractController
 {
     /**
-     * @Route("/admin/place/browse", name="admin_place_browse", methods="GET")
+     * @Route("/admin/place/browse", name="admin_place_browse", methods={"GET"})
      */
     public function browse(PlaceRepository $placeRepository): Response
     {
@@ -28,7 +28,7 @@ class PlaceController extends AbstractController
     }
 
     /**
-     * @Route("/admin/place/read/{slug}", name="admin_place_read", methods="GET")
+     * @Route("/admin/place/read/{slug}", name="admin_place_read", methods={"GET"})
      */
     public function read(Place $place = null): Response
     {
@@ -104,7 +104,7 @@ class PlaceController extends AbstractController
     }
 
     /**
-     * @Route("/admin/place/delete/{slug}", name="admin_place_delete", methods="GET")
+     * @Route("/admin/place/delete/{slug}", name="admin_place_delete", methods={"GET"})
      */
     public function delete(Place $place = null, EntityManagerInterface $em): Response
     {

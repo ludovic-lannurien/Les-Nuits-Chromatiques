@@ -83,12 +83,75 @@ nav span {
     margin-bottom: 2em;
 }
 
-.place img,
-.artist img {
+.event,
+.place {
+    background-color: #ecedee;
+    padding: 1em;
+}
+
+.event img,
+.place img {
     width: 30em;
-    box-shadow: 3px 5px 9px #333;
 }
 
 .description td {
+    vertical-align: baseline;
     text-align: justify;
+    padding: 1em;
+}
+
+/* -- Login -- */
+
+.bg-img {
+    background: center no-repeat url('../img/fond.png') fixed;
+    background-size: cover;
+}
+
+.logo {
+    position: fixed;
+    left: 2rem;
+    top: 1rem;
+    width: 20em;
+}
+
+.login h1 {
+    color: #fff;
+}
+
+.login form {
+    background-color: #fff;
+    border-radius: 0.5em;
+    align-items: center;
+    max-width: 25em;
+    margin: auto;
+    padding: 1em;
+    
+}
+
+.login form input {
+    margin-bottom: 1.5em;
+}
+
+.button {
+    text-align: center;
+}
+
+/* -- Event -- */
+
+.event a {
+    color: #fff;
+}
+
+.event .description {
+    margin: 0;
+}
+
+/* -- Place -- */
+
+.place div {
+    display: flex;
+}
+
+.place .description {
+    margin: 0 0 0 1em;
 }
