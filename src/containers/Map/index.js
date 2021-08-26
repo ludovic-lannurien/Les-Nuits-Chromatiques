@@ -20,6 +20,7 @@ const mapStateToProps = (state) => ({
   popup: state.map.popup,
   isShown: state.map.isShown,
   events: state.map.eventsList,
+  loadingMap: state.map.loadingMap,
 });
 
 // === mapDispatchToProps

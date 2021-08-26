@@ -21,6 +21,7 @@ const initialState = {
   popup: false,
   isShown: false,
   eventsList: [],
+  loadingMap: true,
 };
 
 function mapReducer(state = initialState, action = {}) {
@@ -59,6 +60,7 @@ function mapReducer(state = initialState, action = {}) {
     case SAVE_EVENTS:
       return {
         ...state,
+        loadingMap: false,
         eventsList: action.events,
       };
     default:

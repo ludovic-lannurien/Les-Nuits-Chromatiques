@@ -36,6 +36,7 @@ export const setIsShown = () => ({
 export const fetchEvents = () => ({
   type: FETCH_EVENTS,
 });
+
 export const saveEvents = (events) => ({
   type: SAVE_EVENTS,
   events: events,
