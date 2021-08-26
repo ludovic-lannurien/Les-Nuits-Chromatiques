@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
-import { getArtistBySlug } from 'src/utils';
+import { getArtistBySlug, getDateString } from 'src/utils';
 import cible from './cible.png';
 
 // == Import
@@ -52,7 +52,7 @@ const Artist = ({ artists }) => {
           <div className="bloc-event" key={event.id}>
             <div className="event-date">
               <GrSchedule className="react-icons" />
-              <span>{event.startDatetime}</span>
+              <span>{getDateString(event.startDatetime)}</span>
             </div>
             <div className="event-name">
               <span>{event.name}</span>

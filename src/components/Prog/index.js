@@ -13,7 +13,7 @@ const Prog = ({ artists }) => {
   console.log(artists);
   return (
     <div className="prog">
-      <ProgFilter />
+      <ProgFilter artists={artists} />
       <div className="row">
         {artists.map((artist) => (
           <ArtistCard

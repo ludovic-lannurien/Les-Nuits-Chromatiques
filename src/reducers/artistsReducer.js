@@ -3,6 +3,7 @@ import { SAVE_ARTISTS } from 'src/actions/artists';
 const initialState = {
   artistsList: [],
   artistsLoaded: false,
+  artistDayTime: null,
 };
 
 function artistsReducer(state = initialState, action = {}) {

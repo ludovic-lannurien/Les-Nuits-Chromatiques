@@ -17,3 +17,17 @@ export const getNextId = (dataArray) => {
   // retourner id max + 1
   return highestId + 1;
 };
+
+export const getDateString = (dateTime) => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const dayTime = new Date(dateTime);
+  const dayTimeString = dayTime.toLocaleDateString('fr-FR', options);
+  const dayOfficial = dayTimeString.slice(0, 17);
+  console.log(dayOfficial);
+  return dayOfficial;
+};
