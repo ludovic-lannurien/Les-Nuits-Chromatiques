@@ -5,7 +5,6 @@ import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug } from 'src/utils';
-import philippe from './katerine.jpg';
 import cible from './cible.png';
 
 // == Import
@@ -16,6 +15,8 @@ const Artist = ({ artists }) => {
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
   console.log(artist);
+
+  /// prog-dayfilter branch
 
   return (
     <div className="artist-page">
