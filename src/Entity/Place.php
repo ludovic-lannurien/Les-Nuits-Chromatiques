@@ -108,7 +108,6 @@ class Place
      * @Groups("events_get")
      * @Groups("genres_get")
      * @Assert\NotBlank
-     * @Assert\Length(max=320)
      */
     private $picture;
 
