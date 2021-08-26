@@ -7,6 +7,56 @@
   height: 100vh;
   width: 70vw;
 
+  .back-to-prog {
+    cursor: pointer;
+    background-color: #e3a303a1;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    padding: 1rem;
+    font-size: 25px;
+    border-radius: 15px;
+    color: white;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: white;
+      transform: scale(1.1);
+      transition: 0.5s;
+      color: #e3a303a1;
+      border: 1px solid #e3a303a1;
+    }
+  }
+
+  .back-to-map {
+    background-color: red;
+    cursor: pointer;
+    position: relative;
+    top: 7rem;
+    left: 2rem;
+    font-size: 25px;
+
+    .back-to-map-text {
+      position: absolute;
+      top: 2.5rem;
+      left: 1.6rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.3);
+        transition: 0.5s;
+      }
+    }
+
+    .back-to-map-cible {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   .artist-picture {
     background-size: auto 100%;
     width: 100%;

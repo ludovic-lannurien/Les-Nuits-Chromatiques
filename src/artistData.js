@@ -21,7 +21,7 @@ export default [{
 }, {
   id: 2,
   firstname: 'THEORIZ',
-  lastname: '',
+  lastname: null,
   picture: '',
   description: 'Th\u00e9oriz est un studio de cr\u00e9ation Art et Technologie sp\u00e9cialis\u00e9 dans la conception installations immersives et de spectacles audiovisuels innovant',
   videoLink: '\u003Ciframe src=\u0022https:\/\/player.vimeo.com\/video\/194838088?h=ff41b03408\u0026color=45B7D9\u0022 width=\u0022640\u0022 height=\u0022360\u0022 frameborder=\u00220\u0022 allow=\u0022autoplay; fullscreen; picture-in-picture\u0022 allowfullscreen\u003E\u003C\/iframe\u003E',
@@ -51,7 +51,7 @@ export default [{
 }, {
   id: 3,
   firstname: 'SAPIA',
-  lastname: '',
+  lastname: null,
   picture: '',
   description: '',
   videoLink: '\u003Ciframe width=\u0022100%\u0022 height=\u0022300\u0022 scrolling=\u0022no\u0022 frameborder=\u0022no\u0022 allow=\u0022autoplay\u0022 src=\u0022https:\/\/w.soundcloud.com\/player\/?url=https%3A\/\/api.soundcloud.com\/tracks\/335567162\u0026color=%23ff5500\u0026auto_play=false\u0026hide_related=false\u0026show_comments=true\u0026show_user=true\u0026show_reposts=false\u0026show_teaser=true\u0026visual=true\u0022\u003E\u003C\/iframe\u003E',

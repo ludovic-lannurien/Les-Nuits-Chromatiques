@@ -1,0 +1,35 @@
+.spinner {
+  margin-top: 15%;
+  margin-left: 37%;
+  width: 150px;
+  height: 150px;
+  animation: rotateplane 0.001s infinite;
+  opacity: 0.5;
+}
+
+@keyframes rotateplane {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(-180deg);
+  }
+}
+
+
+/* 
+@keyframes rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+ */

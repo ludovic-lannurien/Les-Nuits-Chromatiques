@@ -1,11 +1,12 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug } from 'src/utils';
 import philippe from './katerine.jpg';
+import cible from './cible.png';
 
 // == Import
 import './artist.scss';
@@ -14,13 +15,26 @@ import './artist.scss';
 const Artist = ({ artists }) => {
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
-  console.log(artist.picture);
+  console.log(artist);
 
   return (
     <div className="artist-page">
+      <Link
+        to="/programmation"
+      >
+        <div className="back-to-prog">Voir la programmation</div>
+      </Link>
+      <Link
+        to="/"
+      >
+        <div className="back-to-map">
+          <img src={cible} alt="map" className="back-to-map-cible" />
+          <span className="back-to-map-text">Map</span>
+        </div>
+      </Link>
       <div className="artist-picture">
         <a href="#">
-          <img src={philippe} alt={`${artist.firstname} ${artist.lastname}`} />
+          <img src={artist.picture} alt={`${artist.firstname} ${artist.lastname}`} />
         </a>
       </div>
       <div className="artist-content">
@@ -34,7 +48,7 @@ const Artist = ({ artists }) => {
       <div className="event-content">
         <span className="prog-span">Programmation :</span>
         {artist.events.map((event) => (
-          <div className="bloc-event">
+          <div className="bloc-event" key={event.id}>
             <div className="event-date">
               <GrSchedule className="react-icons" />
               <span>{event.startDatetime}</span>
@@ -65,6 +79,7 @@ Artist.propTypes = {
   artists: PropTypes.arrayOf(
     PropTypes.shape({
       firstname: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
 };

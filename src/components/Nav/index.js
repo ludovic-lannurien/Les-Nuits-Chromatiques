@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 // == Import
 import Logo from './logo.png';
@@ -12,7 +12,12 @@ const Nav = () => (
     <button className="navbar__burger" type="button">
       <span className="burger-bar" />
     </button>
-    <a href="#"><img src={Logo} alt="react logo" className="logo" /></a>
+    <Link
+      to="/"
+    >
+      <a href="#"><img src={Logo} alt="react logo" className="logo" /></a>
+    </Link>
+
     <ul className="navList">
       <NavLink
         to="/"
