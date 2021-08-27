@@ -38,5 +38,8 @@ security:
         - { path: ^/admin/(event|place|artist|genre)/(browse|read|edit|add|delete), roles: ROLE_ADMIN }
         - { path: ^/admin/[a-z]+, roles: ROLE_SUPER_ADMIN }
 
+        # API
+        - { path: ^/api/(events|places|artists|genres)/(edit|add|delete), roles: ROLE_ADMIN }
+
     role_hierarchy:
         ROLE_SUPER_ADMIN: ROLE_ADMIN
