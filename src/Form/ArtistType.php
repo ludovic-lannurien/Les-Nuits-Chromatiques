@@ -29,6 +29,8 @@ class ArtistType extends AbstractType
             ->add('picture', FileType::class, [
                 'label' => 'Image',
                 'data_class' => null,
+                'mapped' => false,
+                'required' => false,
                 'constraints' => [
                     new File([
                         'mimeTypes' => [
