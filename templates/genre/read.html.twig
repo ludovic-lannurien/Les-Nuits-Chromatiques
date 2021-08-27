@@ -22,10 +22,10 @@
                 </thead>
                 <tbody>
                     {% for artist in genre.artists %}
-                    <tr>
-                        <th scope="row">{{ artist.id }}</th>
-                        <td><a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }} {{ artist.lastname }}</a></td>
-                    </tr>
+                        <tr>
+                            <th scope="row">{{ artist.id }}</th>
+                            <td><a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }} {{ artist.lastname }}</a></td>
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>

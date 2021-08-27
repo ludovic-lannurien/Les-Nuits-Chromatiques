@@ -89,6 +89,11 @@ nav span {
     padding: 1em;
 }
 
+.event a,
+.artist a {
+    color: #fff;
+}
+
 .event img,
 .place img {
     width: 30em;
@@ -142,10 +147,6 @@ nav span {
 
 /* -- Event -- */
 
-.event a {
-    color: #fff;
-}
-
 .event .description {
     margin: 0;
 }
@@ -159,3 +160,6 @@ nav span {
 .place .description {
     margin: 0 0 0 1em;
 }
+
+/* -- Artist -- */
+

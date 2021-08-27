@@ -29,13 +29,13 @@
 							<td>{{ event.startDatetime|date('d/m/Y à H:i') }}</td>
 							<td>{{ event.endDatetime|date('d/m/Y à H:i') }}</td>
 							<td>
-							{% for artist in event.artists %}
-								{% if artist.lastname is not empty %}
-									<a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }} {{ artist.lastname }}</a>{{ loop.last ? '' : ', ' }}
-								{% else %}
-									<a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }}</a>{{ loop.last ? '' : ', ' }}
-								{% endif %}
-							{% endfor %}
+								{% for artist in event.artists %}
+									{% if artist.lastname is not empty %}
+										<a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }} {{ artist.lastname }}</a>{{ loop.last ? '' : ', ' }}
+									{% else %}
+										<a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }}</a>{{ loop.last ? '' : ', ' }}
+									{% endif %}
+								{% endfor %}
 							</td>
 						</tr>
 					</tbody>

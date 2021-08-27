@@ -29,11 +29,11 @@ class ArtistController extends AbstractController
     /**
      * @Route("/admin/artist/read/{slug}", name="admin_artist_read", methods={"GET"})
      */
-    public function read(Artist $artist): Response
+    public function read(Artist $artist = null): Response
     {
         // 404 ?
         if (null === $artist) {
-            throw $this->createNotFoundException('artiste non trouvé.');
+            throw $this->createNotFoundException('Artiste non trouvé.');
         }
 
         return $this->render('artist/read.html.twig', [
@@ -80,7 +80,7 @@ class ArtistController extends AbstractController
 
         return $this->renderForm('artist/edit.html.twig', [
             'artist' => $artist,
-            'form' => $form,
+            'form' => $form
         ]);
     }
 
