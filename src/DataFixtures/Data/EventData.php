@@ -48,8 +48,7 @@ class EventData
 
     public static $placeData;
 
-
-    public function place_id()
+    public function placeId()
     {
         return $this->placeData[array_rand($this->id)];
     }
