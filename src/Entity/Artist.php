@@ -65,11 +65,12 @@ class Artist
     private $description;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      * @Groups("artists_get")
      * @Groups("events_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Assert\NotBlank
      */
     private $videoLink;
 

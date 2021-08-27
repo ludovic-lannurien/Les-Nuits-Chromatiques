@@ -84,8 +84,10 @@ nav span {
 }
 
 .event,
+.artist,
 .place {
     background-color: #ecedee;
+    margin-bottom: 1em;
     padding: 1em;
 }
 
@@ -94,9 +96,20 @@ nav span {
     color: #fff;
 }
 
+.artist div,
+.place div {
+    display: flex;
+}
+
 .event img,
+.artist div img,
 .place img {
     width: 30em;
+}
+
+.artist .description,
+.place .description {
+    margin: 0 0 0 1em;
 }
 
 .description td {
@@ -151,15 +164,14 @@ nav span {
     margin: 0;
 }
 
-/* -- Place -- */
-
-.place div {
-    display: flex;
-}
-
-.place .description {
-    margin: 0 0 0 1em;
-}
-
 /* -- Artist -- */
 
+.video-link {
+    margin: 1em 0 0 0;
+}
+
+.video-link td {
+    word-break: break-all;
+    text-align: left;
+    padding: 1em;
+}

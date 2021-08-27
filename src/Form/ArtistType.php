@@ -10,7 +10,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -42,9 +41,9 @@ class ArtistType extends AbstractType
                 ]
             ])
             ->add('description')
-            ->add('videoLink', UrlType::class, [
-                'label' => 'Lien vidéo',
-                'help' => 'Lien Youtube ou Viméo (facultatif)',
+            ->add('videoLink', TextType::class, [
+                'label' => 'Intégration vidéo',
+                'help' => '<iframe>',
             ])
             ->add('genres', EntityType::class, [
                 'class' => Genre::class,
