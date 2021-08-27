@@ -5,21 +5,22 @@
 {% block body %}
 	<body class="bg-img">
 		<main>
-			<section class="container login">
-
-				<p><img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo Les Nuits Chromatiques"></p>
-
+			<section class="container login {% if app.user is null %}login-connected{% endif %}">
 				<h1>Se connecter</h1>
 
-				<form method="post">
+				<form {% if app.user %} class="form-connected" {% endif %} method="post">
 					{% if error %}
 						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 					{% endif %}
 
 					{% if app.user %}
-						<div class="mb-3">Vous êtes connecté(e) en tant que
-							{{ app.user.username }},
-							<a href="{{ path('app_logout') }}">Se déconnecter</a>
+						<div class="connected mb-3">
+							<span>Vous êtes connecté(e) en tant que :</span>
+							<span>
+								<strong>{{ app.user.username }}</strong>
+								|
+								<a href="{{ path('app_logout') }}">Se déconnecter</a>
+							</span>
 						</div>
 					{% endif %}
 

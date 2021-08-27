@@ -120,20 +120,18 @@ nav span {
 
 /* -- Login -- */
 
-.login {
+.login-connected {
     margin: 5em auto;
+}
+
+.connected span {
+    display: block;
+    text-align: center;
 }
 
 .bg-img {
     background: center no-repeat url('../img/fond.png') fixed;
     background-size: cover;
-}
-
-.logo {
-    position: fixed;
-    left: 2rem;
-    top: 1rem;
-    width: 20em;
 }
 
 .login h1 {
@@ -147,7 +145,11 @@ nav span {
     max-width: 25em;
     margin: auto;
     padding: 1em;
-    
+}
+
+.login .form-connected {
+    background-color: #ecedee;
+    box-shadow: 1px 2px 3px #333;
 }
 
 .login form input {
