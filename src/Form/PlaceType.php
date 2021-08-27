@@ -26,6 +26,8 @@ class PlaceType extends AbstractType
             ->add('picture', FileType::class, [
                 'label' => 'Image',
                 'data_class' => NULL,
+                'mapped' => false,
+                'required' => false,
                 'constraints' => [
                     new File([
                         'mimeTypes' => [
