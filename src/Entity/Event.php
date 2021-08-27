@@ -20,10 +20,7 @@ class Event
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("events_get")
-     * @Groups("artists_get")
-     * @Groups("genres_get")
-     * @Groups("places_get")
+     * @Groups({"events_get", "artists_get", "genres_get", "places_get"})
      */
     private $id;
 
@@ -53,6 +50,7 @@ class Event
      * @Groups("artists_get")
      * @Groups("genres_get")
      * @Groups("places_get")
+     * @Groups("dates_get")
      * @Assert\NotBlank
      */
     private $startDatetime;

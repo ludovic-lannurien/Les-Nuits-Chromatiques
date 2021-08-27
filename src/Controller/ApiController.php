@@ -10,6 +10,7 @@ use App\Repository\EventRepository;
 use App\Repository\GenreRepository;
 use App\Repository\PlaceRepository;
 use App\Repository\ArtistRepository;
+use DateTime;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -119,5 +120,20 @@ class ApiController extends AbstractController
         }
 
         return $this->json($genre, Response::HTTP_OK, [], ['groups' => 'genres_get']);
+    }
+
+    /**
+     * @Route("/api/dates", name="api_dates_get", methods="GET")
+     */
+    public function getDates(EventRepository $eventRepository): Response
+    {
+        $events = $eventRepository->findBy(
+            [],
+            ['startDatetime' => 'ASC']
+        );
+
+        // https://kourou.oclock.io/ressources/recap-quotidien/trinity-symfony-e18-api-suite-post-deserializer/
+
+        return $this->json($events, Response::HTTP_OK, [], ['groups' => 'dates_get']);
     }
 }
