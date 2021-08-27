@@ -102,6 +102,10 @@ nav span {
 
 /* -- Login -- */
 
+.login {
+    margin: 10em auto;
+}
+
 .bg-img {
     background: center no-repeat url('../img/fond.png') fixed;
     background-size: cover;
