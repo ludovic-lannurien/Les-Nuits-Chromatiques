@@ -9,11 +9,11 @@ import ArtistCard from './ArtistCard';
 import './prog.scss';
 
 // == Composant
-const Prog = ({ artists }) => {
+const Prog = ({ artists, dates }) => {
   console.log(artists);
   return (
     <div className="prog">
-      <ProgFilter artists={artists} />
+      <ProgFilter artists={artists} dates={dates} />
       <div className="row">
         {artists.map((artist) => (
           <ArtistCard
@@ -31,6 +31,8 @@ Prog.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
     }),
+  ).isRequired,
+  dates: PropTypes.arrayOf(
   ).isRequired,
 };
 

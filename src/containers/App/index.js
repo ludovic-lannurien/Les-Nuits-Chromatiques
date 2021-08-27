@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 // on importe le composant de présentation
 import App from 'src/components/App';
-import { fetchArtists } from '../../actions/artists';
+import { fetchArtists, fetchDates } from '../../actions/artists';
 import { fetchEvents } from '../../actions/map';
 import { fetchPlaces } from '../../actions/places';
 
@@ -24,6 +24,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadPlaces: () => {
     dispatch(fetchPlaces());
+  },
+  loadDates: () => {
+    dispatch(fetchDates());
   },
 });
 

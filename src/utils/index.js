@@ -31,3 +31,18 @@ export const getDateString = (dateTime) => {
   console.log(dayOfficial);
   return dayOfficial;
 };
+
+export const displayUniqueDate = (datesArray) => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const dayTime = new Date(datesArray);
+  const dayTimeString = dayTime.toLocaleDateString('fr-FR', options);
+  const dayOfficial = dayTimeString.slice(0, 17);
+  console.log(dayOfficial);
+  const uniqueDate = [...new Set(dayOfficial)];
+  return uniqueDate;
+};

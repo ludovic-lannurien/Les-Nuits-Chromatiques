@@ -14,11 +14,17 @@ import Artist from 'src/containers/Artist';
 import './app.scss';
 
 // == Composant
-const App = ({ loadArtists, loadEvents, loadPlaces }) => {
+const App = ({
+  loadArtists,
+  loadEvents,
+  loadPlaces,
+  loadDates,
+}) => {
   useEffect(() => {
     loadArtists();
     loadEvents();
     loadPlaces();
+    loadDates();
   }, []);
   return (
     <div className="app">
@@ -52,6 +58,7 @@ App.propTypes = {
   loadArtists: PropTypes.func.isRequired,
   loadEvents: PropTypes.func.isRequired,
   loadPlaces: PropTypes.func.isRequired,
+  loadDates: PropTypes.func.isRequired,
 };
 // == Export
 export default App;

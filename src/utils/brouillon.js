@@ -10,7 +10,7 @@ import './progfilter.scss';
 const ProgFilter = ({ artists, dates }) => {
   console.log(dates);
   return (
-    <div className="progfilter">
+    <ul className="progfilter">
       <li><a href="#">Par jour</a></li>
       <li><a href="#">Par genre</a></li>
       <select name="pets" id="pet-select">
@@ -22,7 +22,7 @@ const ProgFilter = ({ artists, dates }) => {
           ))
         ))}
       </select>
-    </div>
+    </ul>
   );
 };
 ProgFilter.propTypes = {
