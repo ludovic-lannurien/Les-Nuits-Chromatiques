@@ -15,7 +15,7 @@ const Nav = () => (
     <Link
       to="/"
     >
-      <a href="#"><img src={Logo} alt="react logo" className="logo" /></a>
+      <img src={Logo} alt="react logo" className="logo" />
     </Link>
 
     <ul className="navList">

@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
@@ -11,12 +11,13 @@ import cible from './cible.png';
 import './artist.scss';
 
 // == Composant
-const Artist = ({ artists }) => {
+const Artist = ({ artists, loadArtists }) => {
+  useEffect(() => {
+    loadArtists();
+  }, []);
+  console.log(artists);
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
-  console.log(artist);
-
-  /// prog-dayfilter branch
 
   return (
     <div className="artist-page">
@@ -81,8 +82,10 @@ Artist.propTypes = {
     PropTypes.shape({
       firstname: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
+      picture: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  loadArtists: PropTypes.func.isRequired,
 };
 
 // == Export

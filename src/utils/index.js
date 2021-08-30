@@ -24,12 +24,12 @@ export const getDateString = (dateTime) => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
   };
   const dayTime = new Date(dateTime);
   const dayTimeString = dayTime.toLocaleDateString('fr-FR', options);
-  const dayOfficial = dayTimeString.slice(0, 17);
-  console.log(dayOfficial);
-  return dayOfficial;
+  return dayTimeString;
 };
 
 export const displayUniqueDate = (datesArray) => {
@@ -42,7 +42,6 @@ export const displayUniqueDate = (datesArray) => {
   const dayTime = new Date(datesArray);
   const dayTimeString = dayTime.toLocaleDateString('fr-FR', options);
   const dayOfficial = dayTimeString.slice(0, 17);
-  console.log(dayOfficial);
   const uniqueDate = [...new Set(dayOfficial)];
   return uniqueDate;
 };

@@ -18,14 +18,12 @@ const App = ({
   loadArtists,
   loadEvents,
   loadPlaces,
-  loadDates,
 }) => {
   useEffect(() => {
     loadArtists();
     loadEvents();
     loadPlaces();
-    loadDates();
-  }, []);
+  });
   return (
     <div className="app">
       <Nav />
@@ -58,7 +56,6 @@ App.propTypes = {
   loadArtists: PropTypes.func.isRequired,
   loadEvents: PropTypes.func.isRequired,
   loadPlaces: PropTypes.func.isRequired,
-  loadDates: PropTypes.func.isRequired,
 };
 // == Export
 export default App;
