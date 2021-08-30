@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './prog.scss';
 
 const ArtistCard = ({
-  firstname, lastname, slug, id, picture
+  firstname, lastname, slug, id, picture,
 }) => {
   console.log(firstname);
   return (
@@ -13,9 +13,9 @@ const ArtistCard = ({
       className="artist"
       key={id}
     >
-      <a href="#"><h1>{firstname} {lastname}</h1></a>
+      <h1>{firstname} {lastname}</h1>
       <div className="picture">
-        <a href="#"><img src={picture} alt={firstname} /></a>
+        <img src={picture} alt={firstname} className="artist-picture" />
       </div>
     </Link>
 
