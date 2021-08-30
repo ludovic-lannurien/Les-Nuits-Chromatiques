@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
 use App\Entity\Event;
 use App\Entity\Genre;
@@ -10,7 +10,6 @@ use App\Repository\EventRepository;
 use App\Repository\GenreRepository;
 use App\Repository\PlaceRepository;
 use App\Repository\ArtistRepository;
-use DateTime;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
