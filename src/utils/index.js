@@ -17,6 +17,10 @@ export const getNextId = (dataArray) => {
   // retourner id max + 1
   return highestId + 1;
 };
+export const getIframe = (string) => {
+  const iframe = string.slice(7);
+  return iframe;
+};
 
 export const getDateString = (dateTime) => {
   const options = {

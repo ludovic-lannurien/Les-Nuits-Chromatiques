@@ -18,7 +18,7 @@
     border-radius: 15px;
     color: white;
     transition: 0.5s;
-
+    z-index: 1;
     &:hover {
       background-color: white;
       transform: scale(1.1);
@@ -35,6 +35,7 @@
     top: 7rem;
     left: 2rem;
     font-size: 25px;
+    z-index: 1;
 
     .back-to-map-text {
       position: absolute;
@@ -61,19 +62,22 @@
     background-size: auto 100%;
     width: 100%;
     height: 20rem;
-
-    &:hover {
-      background-size: auto 110%;
-      height: 20rem;
-    }
-
-
-
+    background: #6ec6d9;
+    overflow: hidden;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-
+      opacity: .7;
+      -webkit-transform: scale(1);
+	      transform: scale(1);
+	      -webkit-transition: .3s ease-in-out;
+	      transition: .3s ease-in-out;
+      &:hover{
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        opacity: 1;
+      }
     }
   }
 
@@ -143,7 +147,7 @@
         font-weight: 600;
         text-transform: uppercase;
         margin-bottom: 1rem;
-        background-color: #07e22be8;
+        background-color: #e7b003;
       }
 
       .event-place {

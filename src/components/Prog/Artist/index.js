@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
-import { getArtistBySlug, getDateString } from 'src/utils';
+import { getArtistBySlug, getDateString, getIframe } from 'src/utils';
 import cible from './cible.png';
 
 // == Import
@@ -66,7 +66,7 @@ const Artist = ({ artists }) => {
         ))}
 
         <div className="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/6JMCgVFYAqQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" className="video-iframe" allowFullScreen />
+          {getIframe(artist.videoLink)}
         </div>
 
       </div>
