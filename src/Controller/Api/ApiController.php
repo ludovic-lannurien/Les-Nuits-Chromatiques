@@ -132,6 +132,7 @@ class ApiController extends AbstractController
         );
 
         // https://kourou.oclock.io/ressources/recap-quotidien/trinity-symfony-e18-api-suite-post-deserializer/
+        // https://symfony.com/doc/current/components/serializer.html#deserializing-in-an-existing-object
 
         return $this->json($events, Response::HTTP_OK, [], ['groups' => 'dates_get']);
     }
