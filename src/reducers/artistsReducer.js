@@ -11,6 +11,7 @@ function artistsReducer(state = initialState, action = {}) {
       return {
         ...state,
         artistsList: action.artists,
+        artistsLoaded: true,
       };
 
     default:

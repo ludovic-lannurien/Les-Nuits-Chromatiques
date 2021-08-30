@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Link } from 'react-router-dom';
@@ -33,8 +33,8 @@ const Map = ({
   (
     <div className="mapbox">
       <DayFilter />
-      {loadingMap && <Spinner />}
-      {!loadingMap && (
+      {!loadingMap && <Spinner />}
+      {loadingMap && (
         <ReactMapGL
           {...viewport}
           mapboxApiAccessToken="pk.eyJ1IjoiY291Y291dG9pIiwiYSI6ImNrc2hsanYwZzF2ajIycW9kOGRsdnJqbTAifQ.hAOB8WH3YU4QmpPiEVDaEg"

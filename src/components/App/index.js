@@ -9,6 +9,7 @@ import Nav from 'src/containers/Nav';
 import Prog from 'src/containers/Prog';
 import Festival from 'src/components/Festival';
 import NotFound from 'src/components/NotFound';
+import Spinner from 'src/components/Spinner';
 import Places from 'src/containers/Places';
 import Artist from 'src/containers/Artist';
 import './app.scss';
@@ -18,6 +19,7 @@ const App = ({
   loadArtists,
   loadEvents,
   loadPlaces,
+  artistsLoaded,
 }) => {
   useEffect(() => {
     loadArtists();
@@ -38,9 +40,12 @@ const App = ({
           <Route path="/lieux">
             <Places />
           </Route>
+          {!artistsLoaded && <Spinner />}
+          {artistsLoaded && (
           <Route path="/artiste/:slug">
             <Artist />
           </Route>
+          )}
           <Route path="/festival">
             <Festival />
           </Route>
@@ -57,6 +62,7 @@ App.propTypes = {
   loadArtists: PropTypes.func.isRequired,
   loadEvents: PropTypes.func.isRequired,
   loadPlaces: PropTypes.func.isRequired,
+  artistsLoaded: PropTypes.bool.isRequired,
 };
 // == Export
 export default App;
