@@ -55,20 +55,44 @@ nav a {
     padding: 0.75em;
 }
 
-nav a:hover {
+nav span {
+    margin-left: 0.5em;
+}
+
+nav > ul > li:hover > ul {
+    display: block;
+}
+
+.menu:hover {
     background-color: #444;
     border-radius: 0.25em;
     color: #fff;
 }
 
-nav span {
-    margin-left: 0.5em;
+.subnav {
+    display: none;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
-.active,
-.active:hover {
+.subnav li {
+    border-bottom: 1px solid #212529;
+}
+
+.subnav li:hover {
+    background-color: #ecedee;
+}
+
+.subnav a {
+    color: #212529;
+    padding: 0.75em;
+}
+
+.subnav .active,
+.subnav .active:hover {
     background-color: #ccc;
-    border-radius: 0.25em;
     color: #212529;
 }
 

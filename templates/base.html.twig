@@ -17,37 +17,45 @@
 			<nav>
 				<ul>
 					<li>
-						<a class="{% block active_event %}{% endblock %}" href="{{ path('admin_event_browse') }}">Évènements</a>
+						<a class="menu" href="#">
+							<i class="fas fa-bars"></i>
+							<span>Menu</span>
+						</a>
+						<ul class="subnav">
+							<li class="{% block active_event %}{% endblock %}">
+								<a href="{{ path('admin_event_browse') }}">Évènements</a>
+							</li>
+							<li class="{% block active_place %}{% endblock %}">
+								<a href="{{ path('admin_place_browse') }}">Lieux</a>
+							</li>
+							<li class="{% block active_artist %}{% endblock %}">
+								<a href="{{ path('admin_artist_browse') }}">Artistes</a>
+							</li>
+							<li class="{% block active_genre %}{% endblock %}">
+								<a href="{{ path('admin_genre_browse') }}">Genres</a>
+							</li>
+							{% if is_granted('ROLE_SUPER_ADMIN') %}
+								<li class="{% block active_user %}{% endblock %}">
+									<a href="{{ path('admin_user_browse') }}">Utilisateurs</a>
+								</li>
+							{% endif %}
+							<li>
+								<a class="logout" href="{{ path('app_logout') }}">
+									<i class="fas fa-sign-out-alt"></i>
+									<span>Déconnexion</span>
+								</a>
+							</li>
+						</ul>
 					</li>
-					<li>
-						<a class="{% block active_place %}{% endblock %}" href="{{ path('admin_place_browse') }}">Lieux</a>
-					</li>
-					<li>
-						<a class="{% block active_artist %}{% endblock %}" href="{{ path('admin_artist_browse') }}">Artistes</a>
-					</li>
-					<li>
-						<a class="{% block active_genre %}{% endblock %}" href="{{ path('admin_genre_browse') }}">Genres</a>
-					</li>
-					{% if is_granted('ROLE_SUPER_ADMIN') %}
-						<li>
-							<a class="{% block active_user %}{% endblock %}" href="{{ path('admin_user_browse') }}">Utilisateurs</a>
-						</li>
-					{% endif %}
-				</ul>
-
-				<ul>
 					<li class="nav-item">
-                    	<span class="badge bg-success me-3">{{ app.user.email }}</span>
+						<span class="badge bg-success me-3">{{ app.user.email }}</span>
 					</li>
 					<li>
-					{% if is_granted('ROLE_SUPER_ADMIN') %}
-						<span class="badge bg-primary me-3">Super-Administrateur</span>
-					{% else %}
-						<span class="badge bg-primary me-3">Administrateur</span>
-					{% endif %}
-                	</li>
-					<li>
-						<a class="logout" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
+						{% if is_granted('ROLE_SUPER_ADMIN') %}
+							<span class="badge bg-primary me-3">Super-Administrateur</span>
+						{% else %}
+							<span class="badge bg-primary me-3">Administrateur</span>
+						{% endif %}
 					</li>
 				</ul>
 			</nav>
@@ -55,4 +63,4 @@
 
 		{% block body %}{% endblock %}
 	</body>
-</html>
+</html></body></html></body></html></body></html>
