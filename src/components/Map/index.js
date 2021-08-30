@@ -95,7 +95,13 @@ const Map = ({
 
               {selectedEvent.artists.map((artist) => (
                 <div key={artist.id}>
-                  <a href="#"><img src={artist.picture} className="philippe" alt="philippe" /></a>
+                  <Link
+                    key={artist.id}
+                    to={`/artiste/${artist.slug}`}
+                    className="artist"
+                  >
+                    <img src={artist.picture} className="philippe" alt="philippe" />
+                  </Link>
                   <h2>{selectedEvent.name}</h2>
 
                   <h3 key={artist.slug}>{artist.firstname} {artist.lastname}</h3>

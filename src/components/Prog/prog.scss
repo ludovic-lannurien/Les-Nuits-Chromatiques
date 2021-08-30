@@ -17,17 +17,13 @@
   .artist { 
     border: 1px solid rgba(206, 192, 192, 0.829);
     width: 30%;
-    height: 50%;
+    height: 20rem;
     border-radius: 15px;
-    background-color: white;
+    background-color: #f4fafc;
     margin: 2rem 1.3rem 0;
-    padding: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     color: rgb(32, 11, 32);
-
-    &:hover {
-      transform: scale(1.1);
-      transition: 0.5s;
-    }
+    overflow: hidden;
 
     h1 {
       text-align: center;
@@ -40,12 +36,26 @@
     .picture {
       width: 100%;
       margin: 1rem auto 0;
+      max-height: 14rem;
       border-radius: 10px;
+      overflow: hidden;
+      background: #6ec6d9;
 
-      img {
+      .artist-picture {
         width: 100%;
-        height: 100%;
+        height: auto;
         border-radius: 10px;
+        opacity: .7;
+        -webkit-transform: scale(1);
+	      transform: scale(1);
+	      -webkit-transition: .3s ease-in-out;
+	      transition: .3s ease-in-out;
+
+        &:hover{
+          -webkit-transform: scale(1.2);
+	        transform: scale(1.2);
+          opacity: 1;
+        }
       }
     }
     
@@ -80,6 +90,7 @@
     .artist { 
       width: 45%;
       height: 50%;
+      max-height: fit-content;
 
       h1 {
         font-weight: 600;

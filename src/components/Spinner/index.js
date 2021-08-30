@@ -7,8 +7,17 @@ import './spinner.scss';
 
 // == Composant
 const Spinner = () => (
-  <div className="spinner-container">
-    <img src={cible} alt="spinner" className="spinner" />
+  <div className="center">
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
+    <div className="wave" />
   </div>
 );
 
