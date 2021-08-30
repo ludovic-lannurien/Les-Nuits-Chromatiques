@@ -17,7 +17,7 @@
   .artist { 
     border: 1px solid rgba(206, 192, 192, 0.829);
     width: 30%;
-    height: 20rem;
+    max-height: 20rem;
     border-radius: 15px;
     background-color: #f4fafc;
     margin: 2rem 1.3rem 0;
@@ -79,6 +79,26 @@
   }
 }
 
+@media (max-width: 1600px) {
+  .prog {
+
+    .artist { 
+      max-height: 14rem;
+
+      .picture {
+        width: 100%;
+        margin: 1rem auto 0;
+        max-height: 9rem;
+  
+        .artist-picture {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .prog {
     top: 10rem;
@@ -88,13 +108,26 @@
     border-top-left-radius: 0;
 
     .artist { 
+      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+      margin: 1rem 1rem 0;
       width: 45%;
-      height: 50%;
+      height: 18rem;
       max-height: fit-content;
 
       h1 {
         font-weight: 600;
         font-size: 18px;
+      }
+
+      .picture {
+        width: 100%;
+        margin: 1rem auto 0;
+        max-height: 13rem;
+  
+        .artist-picture {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
@@ -109,12 +142,25 @@
     height: 90vh;
 
     .artist { 
-      width: 40%;
-      height: 40%;
+      width: 37%;
+      height: 9rem;
+      margin: 0.8rem 0.8rem 0;
+      width: 43%;
 
       h1 {
         font-weight: 600;
-        font-size: 15px;
+        font-size: 12px;
+      }
+
+      .picture {
+        width: 100%;
+        margin: 1rem auto 0;
+        max-height: 6rem;
+  
+        .artist-picture {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
