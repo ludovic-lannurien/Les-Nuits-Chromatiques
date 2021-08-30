@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
-import { getArtistBySlug } from 'src/utils';
-import philippe from './katerine.jpg';
+import { getArtistBySlug, getDateString } from 'src/utils';
 import cible from './cible.png';
 
 // == Import
@@ -13,9 +12,9 @@ import './artist.scss';
 
 // == Composant
 const Artist = ({ artists }) => {
+  console.log(artists);
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
-  console.log(artist);
 
   return (
     <div className="artist-page">
@@ -51,7 +50,7 @@ const Artist = ({ artists }) => {
           <div className="bloc-event" key={event.id}>
             <div className="event-date">
               <GrSchedule className="react-icons" />
-              <span>{event.startDatetime}</span>
+              <span>{getDateString(event.startDatetime)}</span>
             </div>
             <div className="event-name">
               <span>{event.name}</span>
@@ -80,6 +79,7 @@ Artist.propTypes = {
     PropTypes.shape({
       firstname: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
+      picture: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };

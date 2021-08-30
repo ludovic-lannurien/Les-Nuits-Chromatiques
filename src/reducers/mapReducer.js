@@ -60,7 +60,7 @@ function mapReducer(state = initialState, action = {}) {
     case SAVE_EVENTS:
       return {
         ...state,
-        loadingMap: false,
+        loadingMap: !state.loadingMap,
         eventsList: action.events,
       };
     default:

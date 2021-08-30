@@ -6,7 +6,6 @@ const placesMiddlewares = (store) => (next) => (action) => {
 
   switch (action.type) {
     case FETCH_PLACES:
-      console.log('on va envoyer une requête pour récupérer les recettes');
       axios.get('http://35.170.72.67/projet-les-nuits-chromatiques/public/api/places')
         .then((response) => {
           console.log(response);

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // == Import
 // import artistData from 'src/artistData';
 import Map from 'src/containers/Map';
-import Nav from 'src/components/Nav';
+import Nav from 'src/containers/Nav';
 import Prog from 'src/containers/Prog';
 import Festival from 'src/components/Festival';
 import NotFound from 'src/components/NotFound';
@@ -14,12 +14,16 @@ import Artist from 'src/containers/Artist';
 import './app.scss';
 
 // == Composant
-const App = ({ loadArtists, loadEvents, loadPlaces }) => {
+const App = ({
+  loadArtists,
+  loadEvents,
+  loadPlaces,
+}) => {
   useEffect(() => {
     loadArtists();
     loadEvents();
     loadPlaces();
-  }, []);
+  });
   return (
     <div className="app">
       <Nav />
@@ -48,6 +52,7 @@ const App = ({ loadArtists, loadEvents, loadPlaces }) => {
     </div>
   );
 };
+
 App.propTypes = {
   loadArtists: PropTypes.func.isRequired,
   loadEvents: PropTypes.func.isRequired,

@@ -55,51 +55,56 @@
  @media (max-width: 1400px) {
   .nav {
 
-    img {
-      position: fixed;
-      left: 2rem;
-      top: 1rem;
-      width: 15rem;
-      height: auto;
-    }
-
-    .navList{
-      font-size: 30px;
-      padding: 0.8em;
-      line-height: 1.6em;
-
-      &:hover{
-        font-size: 33px;
+    & .hide-nav {
+      img {
+        position: fixed;
+        left: 2rem;
+        top: 1rem;
+        width: 15rem;
+        height: auto;
       }
+  
+      .navList{
+        font-size: 30px;
+        padding: 0.8em;
+        line-height: 1.6em;
+  
+        &:hover{
+          font-size: 33px;
+        }
+    }
     }
   }
   } 
 
 @media (max-width: 1000px) {
   .nav {
-    width: 100%;
-    height: 2rem;
-    flex-direction: row;
 
-    .navList{
-      display: none;
-      font-size: 30px;
-      padding: 0.5em;
-      line-height: 1.5em;
-      color: white;
-      list-style: none;
-      text-transform: uppercase;
-
-      .navLink_element{
-        transition: 0.8s;
-    
-        &:hover{
-          font-size: 32px;
-          padding-left: 0.1em;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          transition: 0.5s;
+    &.hide-nav {
+      width: 100%;
+      height: 2rem;
+      flex-direction: column;
+  
+      .navList{
+        display: none;
+        font-size: 30px;
+        padding: 0.5em;
+        line-height: 1.5em;
+        color: white;
+        list-style: none;
+        text-transform: uppercase;
+  
+        .navLink_element{
+          transition: 0.8s;
+      
+          &:hover{
+            font-size: 32px;
+            padding-left: 0.1em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition: 0.5s;
+          }
         }
-      }
+    }
     }
 
     img {
@@ -115,14 +120,18 @@
       margin-top: 2rem;
 
       .burger-bar {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
         display: block;
         width: 60px;
-        height: 5px;
+        height: 7px;
         position: relative;
         border-radius: 3px;
         background: #FFF;
 
         &::before {
+          padding: 3.5px;
           display: block;
           width: 60px;
           height: 5px;
@@ -133,6 +142,7 @@
 
         &::after {
           display: block;
+          padding: 3.5px;
           width: 60px;
           height: 5px;
           position: relative;
@@ -156,7 +166,58 @@
         transform: translateY(12px);
       }
     }
+
+
     
+  }
+
+  .nav {
+    transition: 1s;
+
+    &.show-nav {
+      background-image: url('src/assets/fond.png');
+      z-index: 1;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      transition: 1s;
+    
+      .navList{
+        margin-top: 18rem;
+        font-size: 50px;
+        padding: 0.5em;
+        line-height: 1.5em;
+        color: white;
+        list-style: none;
+        text-transform: uppercase;
+  
+        .navLink_element{
+          transition: 0.8s;
+      
+          &:hover{
+            font-size: 55px;
+            padding-left: 0.1em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .burger-bar {
+        background: transparent;
+      }
+
+      .burger-bar::before {
+        transform: rotate(45deg);
+        transition: 1s;
+      }
+
+      .burger-bar::after {
+        transform: rotate(-45deg);
+        transition: 1s;
+      }
+
+    }
   }
 }
 

@@ -6,7 +6,7 @@ const eventsMiddlewares = (store) => (next) => (action) => {
 
   switch (action.type) {
     case FETCH_EVENTS:
-      console.log('on va envoyer une requête pour récupérer les recettes');
+
       axios.get('http://35.170.72.67/projet-les-nuits-chromatiques/public/api/events')
         .then((response) => {
           console.log(response);
@@ -21,7 +21,6 @@ const eventsMiddlewares = (store) => (next) => (action) => {
         });
 
       break;
-
     default:
   }
 

@@ -6,7 +6,7 @@ const artistsMiddlewares = (store) => (next) => (action) => {
 
   switch (action.type) {
     case FETCH_ARTISTS:
-      console.log('on va envoyer une requête pour récupérer les recettes');
+
       axios.get('http://35.170.72.67/projet-les-nuits-chromatiques/public/api/artists')
         .then((response) => {
           console.log(response);
@@ -17,7 +17,7 @@ const artistsMiddlewares = (store) => (next) => (action) => {
           store.dispatch(newAction);
         })
         .catch((error) => {
-          // console.log(error);
+          console.log(error);
         });
 
       break;
