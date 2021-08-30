@@ -45,17 +45,27 @@ nav ul {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 1.5em;
 }
 
 nav a {
+    display: block;
     color: #fff;
     font-weight: 500;
     text-decoration: none;
-    padding: 0.75em;
 }
 
-nav span {
+.menu {
+    padding: 1em;
+}
+
+li:hover .menu,
+.subnav,
+.subnav a {
+    background-color: #ecedee;
+    color: #212529;
+}
+
+.menu span {
     margin-left: 0.5em;
 }
 
@@ -65,35 +75,38 @@ nav > ul > li:hover > ul {
 
 .menu:hover {
     background-color: #444;
-    border-radius: 0.25em;
+    /* border-radius: 0.25em; */
     color: #fff;
 }
 
 .subnav {
     display: none;
     text-align: center;
-    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
+    position: absolute;
 }
 
 .subnav li {
-    border-bottom: 1px solid #212529;
+    border-bottom: 1px solid #fff;
 }
 
-.subnav li:hover {
-    background-color: #ecedee;
+.subnav li a:hover {
+    background-color: #ddd;
 }
 
 .subnav a {
-    color: #212529;
-    padding: 0.75em;
+    /* display: block; */
+    padding: 0.5em 0.75em;
 }
 
-.subnav .active,
-.subnav .active:hover {
-    background-color: #ccc;
-    color: #212529;
+.subnav .active a,
+.subnav .active a:hover {
+    background-color: #2c3034;
+}
+
+.subnav .active a {
+    color: #fff;
 }
 
 /* MAIN

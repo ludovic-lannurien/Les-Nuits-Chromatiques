@@ -39,14 +39,10 @@
 									<a href="{{ path('admin_user_browse') }}">Utilisateurs</a>
 								</li>
 							{% endif %}
-							<li>
-								<a class="logout" href="{{ path('app_logout') }}">
-									<i class="fas fa-sign-out-alt"></i>
-									<span>Déconnexion</span>
-								</a>
-							</li>
 						</ul>
 					</li>
+				</ul>
+				<ul>
 					<li class="nav-item">
 						<span class="badge bg-success me-3">{{ app.user.email }}</span>
 					</li>
@@ -56,6 +52,12 @@
 						{% else %}
 							<span class="badge bg-primary me-3">Administrateur</span>
 						{% endif %}
+					</li>
+					<li>
+						<a class="logout" href="{{ path('app_logout') }}">
+							<i class="fas fa-sign-out-alt"></i>
+							<span>Déconnexion</span>
+						</a>
 					</li>
 				</ul>
 			</nav>
