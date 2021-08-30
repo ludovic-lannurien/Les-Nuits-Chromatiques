@@ -130,6 +130,7 @@
         position: relative;
         border-radius: 3px;
         background: #FFF;
+       
 
         &::before {
           padding: 3.5px;
@@ -174,7 +175,9 @@
 
   .nav {
     transition: 1s;
-
+    &.hide-nav {
+      transition: 1s;
+    }
     &.show-nav {
       background-image: url('src/assets/fond.png');
       z-index: 1;
@@ -206,6 +209,7 @@
 
       .burger-bar {
         background: transparent;
+
       }
 
       .burger-bar::before {

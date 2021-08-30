@@ -7,6 +7,7 @@ import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug, getDateString, getIframe } from 'src/utils';
 import cible from './cible.png';
 
+
 // == Import
 import './artist.scss';
 
