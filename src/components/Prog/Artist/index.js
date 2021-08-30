@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
@@ -11,10 +11,7 @@ import cible from './cible.png';
 import './artist.scss';
 
 // == Composant
-const Artist = ({ artists, loadArtists }) => {
-  useEffect(() => {
-    loadArtists();
-  }, []);
+const Artist = ({ artists }) => {
   console.log(artists);
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
@@ -85,7 +82,6 @@ Artist.propTypes = {
       picture: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  loadArtists: PropTypes.func.isRequired,
 };
 
 // == Export

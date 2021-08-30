@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import mapReducer from './mapReducer';
 import placesReducer from './placesReducer';
 import artistsReducer from './artistsReducer';
+import navReducer from './navReducer';
 
 // le reducer principal, qui regroupe les autres
 // combineReducers prend en argument un objet qui indique un nom pour
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   map: mapReducer,
   places: placesReducer,
   artists: artistsReducer,
+  nav: navReducer,
 });
 
 export default rootReducer;

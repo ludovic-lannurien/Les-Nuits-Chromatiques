@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // == Import
 // import artistData from 'src/artistData';
 import Map from 'src/containers/Map';
-import Nav from 'src/components/Nav';
+import Nav from 'src/containers/Nav';
 import Prog from 'src/containers/Prog';
 import Festival from 'src/components/Festival';
 import NotFound from 'src/components/NotFound';
@@ -52,6 +52,7 @@ const App = ({
     </div>
   );
 };
+
 App.propTypes = {
   loadArtists: PropTypes.func.isRequired,
   loadEvents: PropTypes.func.isRequired,
