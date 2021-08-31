@@ -7,7 +7,7 @@ const eventsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_EVENTS:
 
-      axios.get('http://35.170.72.67/projet-les-nuits-chromatiques/public/api/events')
+      axios.get('http://3.89.81.120/api/events')
         .then((response) => {
           console.log(response);
 

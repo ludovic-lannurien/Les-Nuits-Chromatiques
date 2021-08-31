@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
 import { GrSchedule } from 'react-icons/gr';
-import { getArtistBySlug, getDateString, getIframe } from 'src/utils';
+import { getArtistBySlug, getDateString } from 'src/utils';
 import cible from './cible.png';
 
 
@@ -67,7 +67,7 @@ const Artist = ({ artists }) => {
         ))}
 
         <div className="video">
-          {getIframe(artist.videoLink)}
+          {artist.videoLink}
         </div>
 
       </div>

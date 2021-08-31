@@ -10,7 +10,8 @@
 
 /* Select style here */
 .progFilter {
-  margin-top: 100px;
+  width: 20rem;
+  margin-top: 40px;
   padding: 32px;
   position: fixed;
   right: 15%;
@@ -20,35 +21,56 @@
 }
 .selectDays {
   transition: 0.5s;
+  text-transform: uppercase;
+  outline: none;
     width: 100%;
     height: 50px;
     text-align: center;
-    font-size: 100%;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #e9b007;
+    background-color: #ffffff46;
     border: none;
-    border-bottom: 2px solid #962d22;
     color: white;
     padding: 10px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     padding: 10px;
-  &::-ms-expand {
-    display: none; 
-  }
-  &:hover{
-    color: #e9b007;
-    background-color: white;
-    border-bottom-color: #DCDCDC;
-    transition: 0.5s;
-  }
-  &:focus {
-    color: #e9b007;
-    background-color: white;
-    border-bottom-color: #DCDCDC;
-    transition: 0.5s;
-  }
+
+    &:hover {
+      background-color: #ffffffa9;
+
+
+    }
+
+    .box-option {
+      background-color: rgba(128, 128, 128, 0.932);
+      color: rgb(219, 219, 219);
+      font-weight: 400;
+    }
+
+/*     &::-ms-expand {
+      display: none; 
+    }
+    &:hover{
+      color: #e9b007;
+      background-color: rgba(255, 255, 255, 0.452);
+      border-bottom-color: #DCDCDC;
+      transition: 0.5s;
+    }
+    &:focus {
+      color: #e9b007;
+      background-color: white;
+      border-bottom-color: #DCDCDC;
+      transition: 0.5s;
+    } */
+
 }
+
+@media (max-width: 1400px) {
+  .progFilter {
+    margin-top: 100px;
+  }
+  } 
