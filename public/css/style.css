@@ -89,6 +89,10 @@ li:hover .logout-btn {
     position: absolute;
 }
 
+.subnav li:first-child {
+    border-top: 1px solid #fff;
+}
+
 .subnav li {
     border-bottom: 1px solid #fff;
 }
@@ -98,7 +102,7 @@ li:hover .logout-btn {
 }
 
 .subnav a {
-    padding: 0.5em 0.75em;
+    padding: 0.5em 3em;
 }
 
 .subnav .active a,
