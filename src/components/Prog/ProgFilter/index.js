@@ -7,8 +7,9 @@ import PropTypes from 'prop-types';
 import './progfilter.scss';
 
 // == Composant
-const ProgFilter = ({ daySelected, setDaySelected }) => {
-  console.log(daySelected);
+const ProgFilter = ({ daySelected, setDaySelected, dates }) => {
+  console.log('pamplemousse');
+  console.log(dates);
   return (
     <div className="progFilter">
       <select
@@ -18,21 +19,21 @@ const ProgFilter = ({ daySelected, setDaySelected }) => {
         }}
       >
         <option value="0" className="box-option">Choisir votre date</option>
-        <option value="Lundi 7 Mars" className="box-option">Lundi 7 Mars</option>
-        <option value="Mardi 8 Mars" className="box-option">Mardi 8 Mars</option>
-        <option value="Mercredi 9 Mars" className="box-option">Mercredi 9 Mars</option>
-        <option value="Jeudi 10 Mars" className="box-option">Jeudi 10 Mars</option>
-        <option value="Vendredi 11 Mars" className="box-option">Vendredi 11 Mars</option>
-        <option value="Samedi 12 Mars" className="box-option">Samedi 12 Mars</option>
-        <option value="Dimanche 13 Mars" className="box-option">Dimanche 13 Mars</option>
-        <option value="Lundi 14 Mars" className="box-option">Lundi 14 Mars</option>
+        <option
+          value={dates}
+          className="box-option"
+        >
+          {dates}
+        </option>
       </select>
     </div>
   );
 };
+
 ProgFilter.propTypes = {
   daySelected: PropTypes.string,
   setDaySelected: PropTypes.func.isRequired,
+  dates: PropTypes.shape({}).isRequired,
 };
 ProgFilter.defaultProps = {
   daySelected: null,

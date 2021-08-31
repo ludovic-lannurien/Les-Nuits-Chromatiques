@@ -3,6 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducer from 'src/reducers';
 import artistsMiddlewares from '../middlewares/artistsMiddlewares';
+import datesMiddlewares from '../middlewares/datesMiddlewares';
 import eventsMiddlewares from '../middlewares/eventsMiddlewares';
 import placesMiddlewares from '../middlewares/placesMiddlewares';
 
@@ -12,6 +13,7 @@ const enhancers = composeWithDevTools(
     artistsMiddlewares,
     eventsMiddlewares,
     placesMiddlewares,
+    datesMiddlewares,
     // ... d'autres middlewares
   ),
 );
