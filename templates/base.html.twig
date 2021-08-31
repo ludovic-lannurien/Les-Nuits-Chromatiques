@@ -43,18 +43,18 @@
 					</li>
 				</ul>
 				<ul class="logout">
-					<li class="nav-item">
-						<span class="email badge bg-success me-3">{{ app.user.email }}</span>
+					<li class="badge-item">
+						<span class="badge-email">{{ app.user.email }}</span>
 					</li>
-					<li>
+					<li class="badge-item">
 						{% if is_granted('ROLE_SUPER_ADMIN') %}
-							<span class="role badge bg-primary me-3">Super-Administrateur</span>
+							<span class="badge-role">Super-Administrateur</span>
 						{% else %}
-							<span class="role badge bg-primary me-3">Administrateur</span>
+							<span class="badge-role">Administrateur</span>
 						{% endif %}
 					</li>
-					<li>
-						<a class="logout" href="{{ path('app_logout') }}">
+					<li class="logout-item">
+						<a class="logout-btn" href="{{ path('app_logout') }}">
 							<i class="fas fa-sign-out-alt"></i>
 							<span>Déconnexion</span>
 						</a>

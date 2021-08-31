@@ -45,6 +45,11 @@ nav ul {
     display: flex;
     list-style: none;
     margin: 0;
+    padding: 0;
+}
+
+nav > ul > li:hover > ul {
+    display: block;
 }
 
 nav a {
@@ -54,29 +59,26 @@ nav a {
     text-decoration: none;
 }
 
-.menu {
+.menu,
+.logout-btn {
     padding: 1em;
 }
 
-li:hover .menu,
-.subnav,
-.subnav a {
-    background-color: #ecedee;
-    color: #212529;
+.menu:hover {
+    background-color: #444;
+    color: #fff;
 }
 
 .menu span {
     margin-left: 0.5em;
 }
 
-nav > ul > li:hover > ul {
-    display: block;
-}
-
-.menu:hover {
-    background-color: #444;
-    /* border-radius: 0.25em; */
-    color: #fff;
+li:hover .menu,
+.subnav,
+.subnav a,
+li:hover .logout-btn {
+    background-color: #ecedee;
+    color: #212529;
 }
 
 .subnav {
@@ -96,7 +98,6 @@ nav > ul > li:hover > ul {
 }
 
 .subnav a {
-    /* display: block; */
     padding: 0.5em 0.75em;
 }
 
@@ -105,28 +106,28 @@ nav > ul > li:hover > ul {
     background-color: #2c3034;
 }
 
-.subnav .active a {
+.subnav .active a,
+.badge-item {
     color: #fff;
 }
 
-.logout li {
-    padding: 1em 0;
+.badge-item  {
+    padding: 1em 0.5em;
 }
 
-/* .logout li .badge {
-    display: block;
-} */
+.badge-item span {
+    font-weight: 500;
+    border-radius: 0.25em;
+    padding: 0.15em 0.5em;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 2px 2px 0 rgba(255, 255, 255, 0.5) inset;
+}
 
-.badge {
-    display: block;
-    padding: 0.35em 0.65em;
-    font-size: .75em;
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    border-radius: 0.25rem;
+.badge-email {
+    background-color: #28a745;
+}
+
+.badge-role {
+    background-color: #007bff;
 }
 
 /* MAIN
