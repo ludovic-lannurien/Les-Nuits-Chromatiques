@@ -109,15 +109,17 @@ const Map = ({
               ))}
               <p>{selectedEvent.description}</p>
               {selectedEvent.artists.map((artist) => (
-                <div key={artist.id}>
-                  {artist.genres.map((item) => (
-                    <span
-                      key={item.id}
-                      className="genre"
-                    >
-                      {item.name}
-                    </span>
-                  ))}
+                <div key={artist.id} className="popup-bottom">
+                  <div className="genre">
+                    {artist.genres.map((item) => (
+                      <span
+                        key={item.id}
+                        className="genre-item"
+                      >
+                        {item.name}
+                      </span>
+                    ))}
+                  </div>
                   <Link
                     key={artist.id}
                     to={`/artiste/${artist.slug}`}
