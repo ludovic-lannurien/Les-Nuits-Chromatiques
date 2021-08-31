@@ -20,20 +20,20 @@ class Genre
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"genres_get", "artists_get", "events_get", "places_get"})
+     * @Groups({"genres_get", "artists_get", "events_get", "places_get", "events_dates_get"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"genres_get", "artists_get", "events_get", "places_get"})
+     * @Groups({"genres_get", "artists_get", "events_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"genres_get", "artists_get", "events_get", "places_get"})
+     * @Groups({"genres_get", "artists_get", "events_get", "places_get", "events_dates_get"})
      */
     private $slug;
 

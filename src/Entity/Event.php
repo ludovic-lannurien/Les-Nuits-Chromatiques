@@ -20,49 +20,48 @@ class Event
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"events_get", "artists_get", "genres_get", "places_get"})
+     * @Groups({"events_get", "artists_get", "genres_get", "places_get", "events_dates_get"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"events_get", "artists_get", "genres_get", "places_get"})
+     * @Groups({"events_get", "artists_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"events_get", "artists_get", "genres_get", "places_get"})
+     * @Groups({"events_get", "artists_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"events_get", "artists_get", "genres_get", "places_get"})
-     * @Groups("dates_get")
+     * @Groups({"events_get", "artists_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $startDatetime;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"events_get", "artists_get", "genres_get", "places_get"})
+     * @Groups({"events_get", "artists_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $endDatetime;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Groups({"events_get", "artists_get", "genres_get", "places_get"})
+     * @Groups({"events_get", "artists_get", "genres_get", "places_get", "events_dates_get"})
      */
     private $slug;
 
     /**
      * @ORM\ManyToOne(targetEntity=Place::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=true)
-     * @Groups({"events_get", "genres_get", "artists_get"})
+     * @Groups({"events_get", "genres_get", "artists_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $place;
@@ -70,7 +69,7 @@ class Event
     /**
      * @ORM\ManyToMany(targetEntity=Artist::class, inversedBy="events")
      * @ORM\GeneratedValue
-     * @Groups({"events_get", "places_get"})
+     * @Groups({"events_get", "places_get", "events_dates_get"})
      * @Assert\Count(min=1)
      */
     private $artists;

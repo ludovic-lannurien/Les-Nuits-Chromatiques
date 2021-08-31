@@ -18,47 +18,47 @@ class Artist
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"artists_get", "events_get", "genres_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"artists_get", "events_get", "genres_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"artists_get", "events_get", "genres_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Groups({"artists_get", "events_get", "genres_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $picture;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"artists_get", "events_get", "genres_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $description;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"artists_get", "events_get", "genres_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $videoLink;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Groups({"artists_get", "events_get", "genres_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      */
     private $slug;
 
@@ -71,7 +71,7 @@ class Artist
 
     /**
      * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="artists")
-     * @Groups({"artists_get", "events_get", "places_get"})
+     * @Groups({"artists_get", "events_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      * @Assert\Count(min=1)
      */
