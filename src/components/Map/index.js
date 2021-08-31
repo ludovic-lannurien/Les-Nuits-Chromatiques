@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // == Import
 
 import Spinner from 'src/components/Spinner';
+import findGenreById from 'src/utils';
 import DayFilter from './DayFilter';
 import cible from './cible.png';
 import './map.scss';
@@ -39,7 +40,7 @@ const Map = ({
           {...viewport}
           mapboxApiAccessToken="pk.eyJ1IjoiY291Y291dG9pIiwiYSI6ImNrc2hsanYwZzF2ajIycW9kOGRsdnJqbTAifQ.hAOB8WH3YU4QmpPiEVDaEg"
           mapStyle="mapbox://styles/coucoutoi/cksiodflj6mbm17nxvvo3qyf7"
-          onViewportChange={(viewport) => {
+          onViewportChange={() => {
             setViewport(viewport);
           }}
           onClick={(event) => {
@@ -114,14 +115,14 @@ const Map = ({
                     {artist.genres.map((item) => (
                       <span
                         key={item.id}
-                        className="genre-item"
+                        className={`genre ${findGenreById(item.name) ? 'genre-musique' : 'genre-lumiere'} `}
                       >
+                        {console.log(item.name)}
                         {item.name}
                       </span>
                     ))}
                   </div>
                   <Link
-                    key={artist.id}
                     to={`/artiste/${artist.slug}`}
                     className="artist"
                   >
@@ -136,6 +137,7 @@ const Map = ({
       )}
     </div>
   );
+  
 Map.propTypes = {
   viewport: PropTypes.shape({
   }).isRequired,

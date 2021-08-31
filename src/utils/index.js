@@ -49,3 +49,10 @@ export const displayUniqueDate = (datesArray) => {
   const uniqueDate = [...new Set(dayOfficial)];
   return uniqueDate;
 };
+
+export const findGenreById = (genre) => {
+  if (genre === 'Musique') {
+    return true;
+  }
+  return false;
+};
