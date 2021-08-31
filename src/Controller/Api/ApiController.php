@@ -126,14 +126,54 @@ class ApiController extends AbstractController
      */
     public function getDates(EventRepository $eventRepository): Response
     {
-        $events = $eventRepository->findBy(
+        $firstEvent = $eventRepository->findOneBy(
             [],
             ['startDatetime' => 'ASC']
         );
 
-        // https://kourou.oclock.io/ressources/recap-quotidien/trinity-symfony-e18-api-suite-post-deserializer/
-        // https://symfony.com/doc/current/components/serializer.html#deserializing-in-an-existing-object
+        $lastEvent = $eventRepository->findOneBy(
+            [],
+            ['endDatetime' => 'DESC']
+        );
 
-        return $this->json($events, Response::HTTP_OK, [], ['groups' => 'dates_get']);
+        // 404
+        if (null === $firstEvent || null === $lastEvent || null === $firstEvent->getStartDatetime() || null === $lastEvent->getEndDatetime()) {
+            return new JsonResponse(
+                ["message" => "Évènement non trouvé"],
+                Response::HTTP_NOT_FOUND
+            );
+        }
+
+        /**
+         * @var \DateTime
+         */
+        $startDate = clone $firstEvent->getStartDatetime();
+
+        /**
+         * @var \DateTime
+         */
+        $endDate = $lastEvent->getEndDatetime();
+
+        $responseArray = [];
+
+        // 404
+        if (null === $startDate) {
+            return new JsonResponse(
+                ["message" => "Date non trouvée"],
+                Response::HTTP_NOT_FOUND
+            );
+        }
+        
+        while ($startDate < $endDate) {
+            $eventDates = $eventRepository->findByEventsDate($startDate);
+
+            if (count($eventDates) > 0) {
+                $responseArray[$startDate->format('Y-m-d')] = $eventDates;
+            }
+
+            $startDate->modify('+1 day');
+        }
+
+        return $this->json($responseArray, Response::HTTP_OK, [], ['groups' => 'events_dates_get']);
     }
 }

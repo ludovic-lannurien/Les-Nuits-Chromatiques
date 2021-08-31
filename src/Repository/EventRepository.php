@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use DateTime;
 use App\Entity\Event;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -20,18 +19,25 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-    public function getDatesCustom(DateTime $date)
+    public function findByEventsDate(\DateTime $date)
     {
-        $em = $this->getEntityManager();
+        $start = clone($date);
+        $start->setTime(0, 0, 0);
 
-        $query = $em->createQuery(
-            'SELECT e
-            FROM App\Entity\Event AS e
-            WHERE e.startDatetime = :date
-            AND e.endDatetime = :date'
-        )->setParameter('date', $date);
+        $end = clone($start);
+        $end->modify('+1 day');
 
-        return $query->getResult();
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.startDatetime < :end')
+            ->andWhere('e.endDatetime >= :start')
+            ->setParameters([
+                'start' => $start,
+                'end' => $end
+            ])
+            ->orderBy('e.startDatetime', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
     }
 
     // /**

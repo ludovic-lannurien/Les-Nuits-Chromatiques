@@ -20,27 +20,27 @@ class Place
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $address;
 
     /**
      * @ORM\Column(type="integer", length=5)
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      * @Assert\Positive
      * @Assert\Length(min=5, max=5)
@@ -49,14 +49,14 @@ class Place
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $city;
 
     /**
      * @ORM\Column(type="float")
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      * @Assert\Positive
      */
@@ -64,7 +64,7 @@ class Place
 
     /**
      * @ORM\Column(type="float")
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      * @Assert\Positive
      */
@@ -72,21 +72,21 @@ class Place
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      */
     private $picture;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Groups({"places_get", "artists_get", "events_get", "genres_get"})
+     * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      */
     private $slug;
 
