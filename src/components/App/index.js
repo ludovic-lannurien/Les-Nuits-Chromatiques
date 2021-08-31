@@ -19,12 +19,14 @@ const App = ({
   loadArtists,
   loadEvents,
   loadPlaces,
+  loadDates,
   artistsLoaded,
 }) => {
   useEffect(() => {
     loadArtists();
     loadEvents();
     loadPlaces();
+    loadDates();
   });
   return (
     <div className="app">
@@ -62,6 +64,7 @@ App.propTypes = {
   loadArtists: PropTypes.func.isRequired,
   loadEvents: PropTypes.func.isRequired,
   loadPlaces: PropTypes.func.isRequired,
+  loadDates: PropTypes.func.isRequired,
   artistsLoaded: PropTypes.bool.isRequired,
 };
 // == Export

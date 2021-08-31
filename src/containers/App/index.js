@@ -5,6 +5,7 @@ import App from 'src/components/App';
 import { fetchEvents } from '../../actions/map';
 import { fetchPlaces } from '../../actions/places';
 import { fetchArtists } from '../../actions/artists';
+import { fetchDates } from '../../actions/dates';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -25,6 +26,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadArtists: () => {
     dispatch(fetchArtists());
+  },
+  loadDates: () => {
+    dispatch(fetchDates());
   },
 });
 

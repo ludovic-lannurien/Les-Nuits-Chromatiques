@@ -49,3 +49,15 @@ export const displayUniqueDate = (datesArray) => {
   const uniqueDate = [...new Set(dayOfficial)];
   return uniqueDate;
 };
+
+export const getOnlyDate = (onlyDate) => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const dayTime = new Date(onlyDate);
+  const dayTimeString = dayTime.toLocaleDateString('fr-FR', options);
+  return dayTimeString;
+};
