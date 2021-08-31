@@ -1,8 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import ProgFilter from './ProgFilter';
+import ProgFilter from 'src/containers/ProgFilter';
 import ArtistCard from './ArtistCard';
 
 // == Import
