@@ -9,8 +9,8 @@ import './progfilter.scss';
 
 // == Composant
 const ProgFilter = ({ daySelected, setDaySelected, dates }) => {
-  console.log('pamplemousse');
   console.log(dates);
+  console.log(daySelected);
   return (
     <div className="progFilter">
       <select
@@ -24,7 +24,7 @@ const ProgFilter = ({ daySelected, setDaySelected, dates }) => {
           <option
             value={date}
             className="box-option"
-            key={date.id}
+            key={date}
           >
             {getOnlyDate(date)}
           </option>

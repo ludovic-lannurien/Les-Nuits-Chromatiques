@@ -11,7 +11,6 @@ const datesMiddlewares = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response.data);
           console.log('salut ça va');
-
           // aller placer response.data dans le state
           // => on dispatch une action qui sera traitée par le reducer
           const newAction = saveDates(response.data);
