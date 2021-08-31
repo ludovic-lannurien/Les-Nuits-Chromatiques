@@ -3,6 +3,7 @@
 import React from 'react';
 // import { getDateString, displayUniqueDate } from 'src/utils';
 import PropTypes from 'prop-types';
+import { getOnlyDate } from 'src/utils';
 // == Import
 import './progfilter.scss';
 
@@ -19,17 +20,19 @@ const ProgFilter = ({ daySelected, setDaySelected, dates }) => {
         }}
       >
         <option value="0" className="box-option">Choisir votre date</option>
-        <option
-          value={dates}
-          className="box-option"
-        >
-          {dates}
-        </option>
+        {Object.keys(dates).map((date) => (
+          <option
+            value={date}
+            className="box-option"
+            key={date.id}
+          >
+            {getOnlyDate(date)}
+          </option>
+        ))}
       </select>
     </div>
   );
 };
-
 ProgFilter.propTypes = {
   daySelected: PropTypes.string,
   setDaySelected: PropTypes.func.isRequired,
