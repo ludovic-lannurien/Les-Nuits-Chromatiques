@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use DateTime;
+use Faker\Factory;
 use App\Entity\User;
 use App\Entity\Event;
 use App\Entity\Genre;
@@ -44,6 +45,9 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
+        $faker = Factory::create();
+        $faker->seed('LNC');
+
         $this->truncate();
 
         foreach (PlaceData::$placeData as $data) {
@@ -68,7 +72,6 @@ class AppFixtures extends Fixture
 
         foreach (EventData::$eventData as $data) {
             $event = new Event();
-
 
             $event->setName($data['name']);
             $event->setStartDatetime(new DateTime($data['start_datetime']));
@@ -103,7 +106,7 @@ class AppFixtures extends Fixture
 
             $artist->setFirstname($data['firstname']);
             $artist->setLastname($data['lastname']);
-            $artist->setPicture($data['picture']);
+            $artist->setPicture($faker->imageUrl(400, 500));
             $artist->setDescription($data['description']);
             $artist->setVideoLink($data['videolink']);
 
