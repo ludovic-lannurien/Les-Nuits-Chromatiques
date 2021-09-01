@@ -20,7 +20,7 @@ const Prog = ({ artists, daySelected }) => {
       <ProgFilter />
       <div className="row">
 
-        {daySelected === null
+        {(daySelected === null)
         ? artists.map((artist) => (
         <ArtistCard
           daySelected={daySelected}
