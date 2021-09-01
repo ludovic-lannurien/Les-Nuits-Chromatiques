@@ -3,7 +3,7 @@
 namespace App\DataFixtures;
 
 use DateTime;
-use Faker\Factory;
+use Faker;
 use App\Entity\User;
 use App\Entity\Event;
 use App\Entity\Genre;
@@ -45,7 +45,7 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $faker = Factory::create();
+        $faker = Faker\Factory::create();
         $faker->seed('LNC');
 
         $this->truncate();
