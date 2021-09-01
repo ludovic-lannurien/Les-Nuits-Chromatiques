@@ -46,7 +46,7 @@ class PlaceController extends AbstractController
     /**
      * @Route("/admin/place/edit/{slug}", name="admin_place_edit", methods={"GET", "POST"})
      */
-    public function edit(Place $place = null, Request $request, MySlugger $slugger, FileUploader $fileUploader): Response
+    public function edit(Place $place = null, Request $request, MySlugger $slugger): Response
     {
         // 404
         if (null === $place) {
@@ -60,14 +60,6 @@ class PlaceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $place->setSlug($slugger->slugify($place->getName()));
-
-            $picture = $form->get('picture')->getData();
-
-            if ($picture) {
-
-                $pictureFilename = $fileUploader->upload($picture);
-                $place->setPicture($pictureFilename);
-            }
 
             $em = $this->getDoctrine()->getManager();
             $em->flush();
@@ -86,7 +78,7 @@ class PlaceController extends AbstractController
     /**
      * @Route("/admin/place/add", name="admin_place_add", methods={"GET", "POST"})
      */
-    public function add(Request $request, MySlugger $slugger, FileUploader $fileUploader): Response
+    public function add(Request $request, MySlugger $slugger): Response
     {
         $place = new Place();
 
@@ -97,14 +89,6 @@ class PlaceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             
             $place->setSlug($slugger->slugify($place->getName()));
-
-            $picture = $form->get('picture')->getData();
-
-            if ($picture) {
-
-                $pictureFilename = $fileUploader->upload($picture);
-                $place->setPicture($pictureFilename);
-            }
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($place);

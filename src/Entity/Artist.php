@@ -36,7 +36,7 @@ class Artist
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="text")
      * @Groups({"artists_get", "events_get", "genres_get", "places_get", "events_dates_get"})
      * @Assert\NotBlank
      */

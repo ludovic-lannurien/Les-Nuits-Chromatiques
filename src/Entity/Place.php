@@ -78,7 +78,7 @@ class Place
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="text")
      * @Groups({"places_get", "artists_get", "events_get", "genres_get", "events_dates_get"})
      * @Assert\NotBlank
      */

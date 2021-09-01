@@ -5,9 +5,8 @@ namespace App\Form;
 use App\Entity\Place;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
@@ -23,23 +22,10 @@ class PlaceType extends AbstractType
             ->add('longitude')
             ->add('latitude')
             ->add('description')
-            ->add('picture', FileType::class, [
+            ->add('picture', UrlType::class, [
                 'label' => 'Image',
-                'data_class' => NULL,
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/webp'
-                        ],
-                        'mimeTypesMessage' => 'Veuillez télécharger une image avec un format valide : jpg/jpeg, png ou webp.'
-                    ])
-                ]
-            ])
-        ;
+                'help' => 'Lien url de l\'image'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
