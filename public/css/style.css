@@ -19,7 +19,8 @@ td {
 }
 
 h1,
-nav a {
+nav a,
+.artists {
     text-transform: uppercase;
 }
 
