@@ -36,7 +36,6 @@ const ProgFilter = ({
             {getOnlyDate(date)}
           </option>
         ))}
-        <option value="0" className="box-option">Toutes les dates</option>
       </select>
       <button
         type="button"
