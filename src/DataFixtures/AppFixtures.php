@@ -96,7 +96,7 @@ class AppFixtures extends Fixture
             $genre->setName($data['name']);
             $genre->setSlug($this->mySlugger->slugify($genre->getName()));
 
-            $genresList[] = $genre;
+            $genresList[$data['name']] = $genre;
 
             $manager->persist($genre);
         }
@@ -104,18 +104,22 @@ class AppFixtures extends Fixture
         foreach (ArtistData::$artistData as $data) {
             $artist = new Artist();
 
+            $genre = $genresList[$data['genre']];
+
             $artist->setFirstname($data['firstname']);
             $artist->setLastname($data['lastname']);
-            $artist->setPicture($faker->imageUrl(400, 500));
             $artist->setDescription($data['description']);
             $artist->setVideoLink($data['videolink']);
-
-            for ($i = 1; $i <= mt_rand(1, 2); $i++) {
-                $artist->addGenre($genresList[array_rand($genresList)]);
-            }
+            $artist->addGenre($genre);
 
             for ($i = 1; $i <= mt_rand(1, 2); $i++) {
                 $artist->addEvent($eventsList[array_rand($eventsList)]);
+            }
+
+            if (null === $data['picture']) {
+                $artist->setPicture($faker->imageUrl(400, 500));
+            } else {
+                $artist->setPicture($data['picture']);
             }
 
             if (null === $artist->getLastname()) {
