@@ -9,33 +9,18 @@ import ArtistCard from './ArtistCard';
 import './prog.scss';
 
 // == Composant
-const Prog = ({ artists, daySelected }) => {
-  if (daySelected === !null) {
-    const artistByDay = 'la condition est passe';
-    return artistByDay;
-  }
-  console.log(`depuis Prog ${daySelected}`);
+const Prog = ({ artists, daySelected, clickOnSelectArtist }) => {
+  console.log(clickOnSelectArtist);
   return (
     <div className="prog">
       <ProgFilter />
       <div className="row">
-
-        {(daySelected === null)
-        ? artists.map((artist) => (
-        <ArtistCard
-          daySelected={daySelected}
-          {...artist}
-          key={artist.id}
-        />
-        ))
-        : artists.filter(artistByDate => artistByDate.events.startDatetime.includes(daySelected)).map(artist) => (
-        <ArtistCard
-          daySelected={daySelected}
-          {...artist}
-          key={artist.id}
-        />
-        ))
-        },
+        {artists.map((artist) => (
+          <ArtistCard
+            {...artist}
+            key={artist.id}
+          />
+        ))}
       </div>
     </div>
   );
@@ -43,6 +28,7 @@ const Prog = ({ artists, daySelected }) => {
 
 Prog.propTypes = {
   daySelected: PropTypes.string,
+  clickOnSelectArtist: PropTypes.bool.isRequired,
   artists: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

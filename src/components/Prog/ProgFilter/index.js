@@ -8,7 +8,13 @@ import { getOnlyDate } from 'src/utils';
 import './progfilter.scss';
 
 // == Composant
-const ProgFilter = ({ daySelected, setDaySelected, dates }) => {
+const ProgFilter = ({
+  daySelected,
+  setDaySelected,
+  dates,
+  setClickOnSelectArtist,
+  unselectFilter,
+}) => {
   console.log(dates);
   console.log(daySelected);
   return (
@@ -16,6 +22,7 @@ const ProgFilter = ({ daySelected, setDaySelected, dates }) => {
       <select
         className="selectDays"
         onChange={(event) => {
+          setClickOnSelectArtist();
           setDaySelected(event.currentTarget.value);
         }}
       >
@@ -29,7 +36,16 @@ const ProgFilter = ({ daySelected, setDaySelected, dates }) => {
             {getOnlyDate(date)}
           </option>
         ))}
+        <option value="0" className="box-option">Toutes les dates</option>
       </select>
+      <button
+        type="button"
+        onClick={(event) => {
+          event.preventDefault();
+          unselectFilter();
+        }}
+      >Réinitialiser vos choix
+      </button>
     </div>
   );
 };
@@ -37,6 +53,8 @@ ProgFilter.propTypes = {
   daySelected: PropTypes.string,
   setDaySelected: PropTypes.func.isRequired,
   dates: PropTypes.shape({}).isRequired,
+  setClickOnSelectArtist: PropTypes.func.isRequired,
+  unselectFilter: PropTypes.func.isRequired,
 };
 ProgFilter.defaultProps = {
   daySelected: null,
