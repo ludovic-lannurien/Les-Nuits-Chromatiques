@@ -6,6 +6,7 @@ import placesReducer from './placesReducer';
 import artistsReducer from './artistsReducer';
 import navReducer from './navReducer';
 import progFilterReducer from './progFilterReducer';
+import dayFilterReducer from './dayFilterReducer';
 
 // le reducer principal, qui regroupe les autres
 // combineReducers prend en argument un objet qui indique un nom pour
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   artists: artistsReducer,
   nav: navReducer,
   progFilter: progFilterReducer,
+  dayFilter: dayFilterReducer,
 });
 
 export default rootReducer;

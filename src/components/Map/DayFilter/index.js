@@ -1,20 +1,44 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // == Import npm
 import React from 'react';
+// import { getDateString, displayUniqueDate } from 'src/utils';
+import PropTypes from 'prop-types';
+import { getOnlyDate } from 'src/utils';
 
 // == Import
 import './dayfilter.scss';
 
 // == Composant
-const DayFilter = () => (
-  <ul className="dayfilter">
-    <li><a href="#">mardi</a></li>
-    <li><a href="#">mercredi</a></li>
-    <li><a href="#">jeudi</a></li>
-    <li><a href="#">vendredi</a></li>
-    <li><a href="#">samedi</a></li>
-    <li><a href="#">dimanche</a></li>
-  </ul>
-);
+const DayFilter = ({
+  setMapSelection,
+  dates,
+}) => {
+  console.log('hello depuis dayFilter');
+  return (
+    <div className="dayFilter">
+      <select
+        className="selectDays"
+        onChange={(event) => {
+          setMapSelection(event.currentTarget.value);
+        }}
+      >
+        {Object.keys(dates).map((date) => (
+          <option
+            value={date}
+            className="box-option"
+            key={date}
+          >
+            {getOnlyDate(date)}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+DayFilter.propTypes = {
+  setMapSelection: PropTypes.func.isRequired,
+  dates: PropTypes.shape({}).isRequired,
+};
 
 // == Export
 export default DayFilter;

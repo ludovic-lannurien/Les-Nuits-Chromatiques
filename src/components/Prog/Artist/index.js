@@ -13,7 +13,7 @@ import './artist.scss';
 
 // == Composant
 const Artist = ({ artists }) => {
-  console.log(artists);
+  
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
 
