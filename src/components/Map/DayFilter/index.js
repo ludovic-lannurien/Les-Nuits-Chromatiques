@@ -10,18 +10,16 @@ import './dayfilter.scss';
 
 // == Composant
 const DayFilter = ({
-  mapSelection,
-  setmapSelection,
+  setMapSelection,
   dates,
 }) => {
-  console.log(dates);
-  console.log(mapSelection);
+  console.log('hello depuis dayFilter');
   return (
     <div className="dayFilter">
       <select
         className="selectDays"
         onChange={(event) => {
-          setmapSelection(event.currentTarget.value);
+          setMapSelection(event.currentTarget.value);
         }}
       >
         {Object.keys(dates).map((date) => (
@@ -38,12 +36,8 @@ const DayFilter = ({
   );
 };
 DayFilter.propTypes = {
-  mapSelection: PropTypes.string,
-  setmapSelection: PropTypes.func.isRequired,
+  setMapSelection: PropTypes.func.isRequired,
   dates: PropTypes.shape({}).isRequired,
-};
-DayFilter.defaultProps = {
-  mapSelection: null,
 };
 
 // == Export

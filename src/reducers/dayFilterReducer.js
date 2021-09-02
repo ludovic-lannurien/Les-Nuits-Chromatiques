@@ -2,7 +2,7 @@ import { SET_MAP_SELECTION } from 'src/actions/dayFilter';
 import { SAVE_DATES } from 'src/actions/dates';
 
 const initialState = {
-  mapSelection: 'lundi',
+  mapSelection: '2022-03-07',
   datesList: [],
 };
 

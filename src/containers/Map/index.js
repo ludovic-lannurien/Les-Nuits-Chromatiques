@@ -21,6 +21,8 @@ const mapStateToProps = (state) => ({
   isShown: state.map.isShown,
   events: state.map.eventsList,
   loadingMap: state.map.loadingMap,
+  dates: state.progFilter.datesList,
+  mapSelection: state.dayFilter.mapSelection,
 });
 
 // === mapDispatchToProps
