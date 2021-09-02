@@ -12,9 +12,16 @@ import './prog.scss';
 const Prog = ({
   artists, daySelected, clickOnSelectArtist, dates,
 }) => {
-  console.log(dates);
-  const artistByDates = Object.keys(dates).filter((date) => date.includes(daySelected));
-  console.log(artistByDates);
+  console.log(daySelected);
+  // const artistByDates = Object.keys(dates).filter((date) => date.includes(daySelected));
+  const eventByDate = dates[daySelected];
+  let artistsList = [];
+  if (daySelected !== null) {
+    artistsList = eventByDate.map((event) => event.artists.map((artist) => artist));
+  }
+
+  console.log(artists);
+  console.log(artistsList);
 
   return (
     <div className="prog">
@@ -29,7 +36,7 @@ const Prog = ({
           ))
         )}
         {clickOnSelectArtist && (
-          artists.map((artist) => (
+          artistsList[0].map((artist) => (
             <ArtistCard
               {...artist}
               key={artist.id}
