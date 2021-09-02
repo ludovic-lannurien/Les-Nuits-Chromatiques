@@ -6,7 +6,7 @@ const placesMiddlewares = (store) => (next) => (action) => {
 
   switch (action.type) {
     case FETCH_PLACES:
-      axios.get('http://3.89.81.120/api/places')
+      axios.get('http://3.235.53.134/back/api/places')
         .then((response) => {
           console.log(response);
 

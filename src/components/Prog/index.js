@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -8,30 +9,60 @@ import ArtistCard from './ArtistCard';
 import './prog.scss';
 
 // == Composant
-const Prog = ({ artists }) => {
+const Prog = ({
+  artists, daySelected, clickOnSelectArtist, dates,
+}) => {
+  console.log(daySelected);
+  // const artistByDates = Object.keys(dates).filter((date) => date.includes(daySelected));
+  const eventByDate = dates[daySelected];
+  let artistsList = [];
+  if (daySelected !== null && daySelected !== 0) {
+    artistsList = eventByDate.map((event) => event.artists.map((artist) => artist));
+  }
+  else {
+    artistsList = [artists];
+  }
+
   console.log(artists);
+  console.log(artistsList);
+
   return (
     <div className="prog">
       <ProgFilter />
       <div className="row">
-        {artists.map((artist) => (
-          <ArtistCard
-            {...artist}
-            key={artist.id}
-          />
-        ))}
+        {!clickOnSelectArtist && (
+          artists.map((artist) => (
+            <ArtistCard
+              {...artist}
+              key={artist.id}
+            />
+          ))
+        )}
+        {clickOnSelectArtist && (
+          artistsList[0].map((artist) => (
+            <ArtistCard
+              {...artist}
+              key={artist.id}
+            />
+          ))
+        )}
       </div>
     </div>
   );
 };
 
 Prog.propTypes = {
+  daySelected: PropTypes.string,
+  clickOnSelectArtist: PropTypes.bool.isRequired,
+  dates: PropTypes.shape({}).isRequired,
   artists: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
     }),
   ).isRequired,
 };
-
+Prog.defaultProps = {
+  daySelected: null,
+};
 // == Export
 export default Prog;
