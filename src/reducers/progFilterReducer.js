@@ -5,6 +5,7 @@ const initialState = {
   daySelected: null,
   datesList: [],
   clickOnSelectArtist: false,
+  optionNull: null,
 };
 
 function progFilterReducer(state = initialState, action = {}) {
@@ -28,6 +29,7 @@ function progFilterReducer(state = initialState, action = {}) {
       return {
         ...state,
         clickOnSelectArtist: false,
+        daySelected: null,
       };
     default:
       return state;

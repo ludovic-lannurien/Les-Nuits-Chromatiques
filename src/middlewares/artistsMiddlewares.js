@@ -7,7 +7,7 @@ const artistsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_ARTISTS:
 
-      axios.get('http://3.235.53.134/api/artists')
+      axios.get('http://3.235.53.134/back/api/artists')
         .then((response) => {
           console.log(response);
 

@@ -7,7 +7,7 @@ const eventsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_EVENTS:
 
-      axios.get('http://3.235.53.134/api/events')
+      axios.get('http://3.235.53.134/api/back/events')
         .then((response) => {
           console.log(response);
 

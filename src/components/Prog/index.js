@@ -16,8 +16,11 @@ const Prog = ({
   // const artistByDates = Object.keys(dates).filter((date) => date.includes(daySelected));
   const eventByDate = dates[daySelected];
   let artistsList = [];
-  if (daySelected !== null) {
+  if (daySelected !== null && daySelected !== 0) {
     artistsList = eventByDate.map((event) => event.artists.map((artist) => artist));
+  }
+  else {
+    artistsList = [artists];
   }
 
   console.log(artists);

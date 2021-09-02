@@ -14,6 +14,7 @@ const ProgFilter = ({
   dates,
   setClickOnSelectArtist,
   unselectFilter,
+  optionNull,
 }) => {
   console.log(dates);
   console.log(daySelected);
@@ -26,7 +27,9 @@ const ProgFilter = ({
           setDaySelected(event.currentTarget.value);
         }}
       >
-        <option value="0" className="box-option">Choisir votre date</option>
+        <option className="box-option" disabled selected value>
+          Choisir votre date
+        </option>
         {Object.keys(dates).map((date) => (
           <option
             value={date}
@@ -54,9 +57,11 @@ ProgFilter.propTypes = {
   dates: PropTypes.shape({}).isRequired,
   setClickOnSelectArtist: PropTypes.func.isRequired,
   unselectFilter: PropTypes.func.isRequired,
+  optionNull: PropTypes.string,
 };
 ProgFilter.defaultProps = {
   daySelected: null,
+  optionNull: null,
 };
 // == Export
 export default ProgFilter;
