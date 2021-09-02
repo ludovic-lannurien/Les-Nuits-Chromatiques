@@ -13,10 +13,9 @@ const Prog = ({
   artists, daySelected, clickOnSelectArtist, dates,
 }) => {
   console.log(daySelected);
-  // const artistByDates = Object.keys(dates).filter((date) => date.includes(daySelected));
   const eventByDate = dates[daySelected];
   let artistsList = [];
-  if (daySelected !== null && daySelected !== 0) {
+  if (daySelected !== null) {
     artistsList = eventByDate.map((event) => event.artists.map((artist) => artist));
   }
   else {

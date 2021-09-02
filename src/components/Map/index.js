@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // == Import
 
 import Spinner from 'src/components/Spinner';
-import DayFilter from './DayFilter';
+import DayFilter from 'src/containers/DayFilter';
 import cible from './cible.png';
 import './map.scss';
 

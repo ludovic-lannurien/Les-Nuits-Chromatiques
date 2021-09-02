@@ -14,7 +14,6 @@ const ProgFilter = ({
   dates,
   setClickOnSelectArtist,
   unselectFilter,
-  optionNull,
 }) => {
   console.log(dates);
   console.log(daySelected);
