@@ -1,0 +1,129 @@
+.mapbox {
+  border-radius: 80px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 70vw;
+}
+@media (max-width: 1000px) {
+  .mapbox {
+    margin-left: 0;
+    width: 100vw;
+    height: 80vh;
+    border-top-left-radius: 0;
+  }
+}
+@media (max-width: 700px) {
+  .mapbox {
+    width: 100vw;
+    height: 80vh;
+  }
+}
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cible{
+  width: 40px;
+  height: 40px;
+  transition: 0.5s;
+
+  &:hover{
+    transform: scale(1.5);
+    transition: 0.5s;
+  }
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+
+.mapboxgl-popup-content {
+  max-width: 15rem;
+}
+
+.popup-content {
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: rgba(236, 234, 234, 0.658);
+
+  img {
+    border-radius: 5px;
+    width: 190px;
+    height: auto;
+    margin: auto;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 0;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  .popup-bottom {
+    height: rem;
+    display: flex;
+    display: row;
+
+    .genre {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      .genre-item {
+        width: 4rem;
+        height: 1.5rem;
+        margin: 1px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 6px;
+        border: 1px solid whitesmoke;
+        color: whitesmoke;
+        border-radius: 10px;
+        background-color: rgb(245, 78, 0);
+      }
+
+    }
+
+    .artist {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: right;
+
+
+      .voir-plus {
+        font-style: italic;
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+
+}
+
+.popup-title {
+  padding: 2rem;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 0;
+}
