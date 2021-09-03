@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LNC | Ajouter un artiste{% endblock %}
+
+{% block active_artist %}active{% endblock %}
+
+{% block body %}
+
+	<main>
+		<section class="container">
+			<h1>Ajouter un artiste</h1>
+
+			<a class="btn btn-item btn-primary" href="{{ path('admin_artist_browse') }}">Liste des artistes</a>
+
+			{% include "_form.html.twig" %}
+		</section>
+	</main>
+
+{% endblock %}

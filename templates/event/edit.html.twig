@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LNC | {{ event.name }}{% endblock %}
+
+{% block active_event %}active{% endblock %}
+
+{% block body %}
+
+	<main>
+		<section class="container">
+			<h1>Modifier un évènement</h1>
+
+			<a class="btn btn-item btn-primary" href="{{ path('admin_event_browse') }}">Liste des évènements</a>
+
+			{% include "_form.html.twig" %}
+		</section>
+	</main>
+
+{% endblock %}

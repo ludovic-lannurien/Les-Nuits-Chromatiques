@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LNC | {{ event.name }}{% endblock %}
+
+{% block active_event %}active{% endblock %}
+
+{% block body %}
+	<main>
+		<section class="container">
+			<h1>{{ event.name }}</h1>
+
+			{{ include('_flash_messages.html.twig') }}
+
+            <a class="btn btn-item btn-secondary" href="{{ path('admin_event_browse') }}">Liste des évènements</a>
+
+			<div class="event">
+				<table class="table table-striped table-dark">
+					<thead>
+						<tr>
+							<th scope="col">Lieu</th>
+							<th scope="col">Date de début</th>
+							<th scope="col">Date de fin</th>
+							<th scope="col">Artiste(s)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="{{ path('admin_place_read', { slug : event.place.slug }) }}">{{ event.place.name }}</a></td>
+							<td>{{ event.startDatetime|date('d/m/Y à H:i') }}</td>
+							<td>{{ event.endDatetime|date('d/m/Y à H:i') }}</td>
+							<td>
+								{% for artist in event.artists %}
+									{% if artist.lastname is not empty %}
+										<a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }} {{ artist.lastname }}</a>{{ loop.last ? '' : ', ' }}
+									{% else %}
+										<a href="{{ path('admin_artist_read', { slug : artist.slug }) }}">{{ artist.firstname }}</a>{{ loop.last ? '' : ', ' }}
+									{% endif %}
+								{% endfor %}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="table table-striped table-dark description">
+					<thead>
+						<tr>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{ event.description }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+{% endblock %}
