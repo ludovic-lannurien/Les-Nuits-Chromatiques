@@ -66,6 +66,7 @@
       }
   
       .navList{
+        background-color: red;
         font-size: 30px;
         padding: 0.8em;
         line-height: 1.6em;
@@ -189,7 +190,7 @@
     
       .navList{
         margin-top: 18rem;
-        font-size: 50px;
+        font-size: 40px;
         padding: 0.5em;
         line-height: 1.5em;
         color: white;
@@ -200,7 +201,7 @@
           transition: 0.8s;
       
           &:hover{
-            font-size: 55px;
+            font-size: 45px;
             padding-left: 0.1em;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             transition: 0.5s;

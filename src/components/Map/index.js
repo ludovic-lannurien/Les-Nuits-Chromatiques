@@ -112,7 +112,7 @@ const Map = ({
             ))}
             <p>{selectedEvent.description}</p>
             {selectedEvent.artists.map((artist) => (
-              <div key={artist.id}>
+              <div className="popup-bottom" key={artist.id}>
                 <div className="genre">
                   {artist.genres.map((item) => (
                     <span

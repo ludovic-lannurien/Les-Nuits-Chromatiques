@@ -7,13 +7,11 @@ import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug, getDateString } from 'src/utils';
 import cible from './cible.png';
 
-
 // == Import
 import './artist.scss';
 
 // == Composant
 const Artist = ({ artists }) => {
-  
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
 
@@ -66,9 +64,10 @@ const Artist = ({ artists }) => {
           </div>
         ))}
 
-        <div className="video">
-          {artist.videoLink}
-        </div>
+        <div
+          className="video"
+          dangerouslySetInnerHTML={{ __html: artist.videoLink }}
+        />
 
       </div>
     </div>
