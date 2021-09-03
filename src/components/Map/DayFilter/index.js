@@ -17,7 +17,7 @@ const DayFilter = ({
   return (
     <div className="dayFilter">
       <select
-        className="selectDays"
+        className="selectMapDays"
         onChange={(event) => {
           setMapSelection(event.currentTarget.value);
         }}
@@ -25,7 +25,7 @@ const DayFilter = ({
         {Object.keys(dates).map((date) => (
           <option
             value={date}
-            className="box-option"
+            className="box-option-map"
             key={date}
           >
             {getOnlyDate(date)}
