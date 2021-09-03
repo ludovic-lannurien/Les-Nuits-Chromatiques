@@ -22,7 +22,6 @@ const Prog = ({
     artistsList = [artists];
   }
 
-  console.log(artists);
   console.log(artistsList);
 
   return (
