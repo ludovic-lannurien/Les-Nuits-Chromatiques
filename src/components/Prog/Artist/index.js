@@ -47,12 +47,18 @@ const Artist = ({ artists }) => {
         <span className="prog-span">Programmation :</span>
         {artist.events.map((event) => (
           <div className="bloc-event" key={event.id}>
+            <div className="event-name">
+              <span>{event.name}</span>
+            </div>
+            <p>A retrouver du</p>
             <div className="event-date">
               <GrSchedule className="react-icons" />
               <span>{getDateString(event.startDatetime)}</span>
             </div>
-            <div className="event-name">
-              <span>{event.name}</span>
+            <p>Au</p>
+            <div className="event-date">
+              <GrSchedule className="react-icons" />
+              <span>{getDateString(event.endDatetime)}</span>
             </div>
             <div className="event-place">
               <GoLocation className="react-icons" />
