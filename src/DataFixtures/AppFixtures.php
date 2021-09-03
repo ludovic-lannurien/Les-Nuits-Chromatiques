@@ -63,7 +63,7 @@ class AppFixtures extends Fixture
             $place->setPicture($data['picture']);
             $place->setSlug($this->mySlugger->slugify($place->getName()));
 
-            $placesList[] = $place;
+            $placesList[$data['name']] = $place;
 
             $manager->persist($place);
         };
@@ -73,17 +73,20 @@ class AppFixtures extends Fixture
         foreach (EventData::$eventData as $data) {
             $event = new Event();
 
+            $place = $placesList[$data['place']];
+
             $event->setName($data['name']);
             $event->setStartDatetime(new DateTime($data['start_datetime']));
             $event->setEndDatetime(new DateTime($data['end_datetime']));
             $event->setDescription($data['description']);
             $event->setSlug($this->mySlugger->slugify($event->getName()));
+            $event->setPlace($place);
 
-            for ($i = 1; $i <= mt_rand(1, 7); $i++) {
-                $event->setPlace($placesList[array_rand($placesList)]);
-            }
+            // for ($i = 1; $i <= mt_rand(1, 7); $i++) {
+            //     $event->setPlace($placesList[array_rand($placesList)]);
+            // }
 
-            $eventsList[] = $event;
+            $eventsList[$data['name']] = $event;
 
             $manager->persist($event);
         };
@@ -104,17 +107,16 @@ class AppFixtures extends Fixture
         foreach (ArtistData::$artistData as $data) {
             $artist = new Artist();
 
+            $event = $eventsList[$data['event']];
+
             $genre = $genresList[$data['genre']];
 
             $artist->setFirstname($data['firstname']);
             $artist->setLastname($data['lastname']);
             $artist->setDescription($data['description']);
             $artist->setVideoLink($data['videolink']);
+            $artist->addEvent($event);
             $artist->addGenre($genre);
-
-            for ($i = 1; $i <= mt_rand(1, 2); $i++) {
-                $artist->addEvent($eventsList[array_rand($eventsList)]);
-            }
 
             if (null === $data['picture']) {
                 $artist->setPicture($faker->imageUrl(400, 500));
