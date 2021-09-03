@@ -68,9 +68,10 @@ const Artist = ({ artists }) => {
           </div>
         ))}
 
-        <div className="video">
-          {artist.videoLink}
-        </div>
+        <div
+          className="video"
+          dangerouslySetInnerHTML={{ __html: artist.videoLink }}
+        />
 
       </div>
     </div>
