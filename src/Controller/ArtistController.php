@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Artist;
 use App\Form\ArtistType;
 use App\Repository\ArtistRepository;
-use App\Service\FileUploader;
 use App\Service\MySlugger;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,8 +20,13 @@ class ArtistController extends AbstractController
      */
     public function browse(ArtistRepository $artistRepository): Response
     {
+        $artists = $artistRepository->findBy(
+            [],
+            ['firstname' => 'ASC']
+        );
+
         return $this->render('artist/browse.html.twig', [
-            'artists' => $artistRepository->findAll(),
+            'artists' => $artists
         ]);
     }
 

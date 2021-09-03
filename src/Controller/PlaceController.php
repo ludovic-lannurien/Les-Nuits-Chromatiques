@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Place;
 use App\Form\PlaceType;
 use App\Repository\PlaceRepository;
-use App\Service\FileUploader;
 use App\Service\MySlugger;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
