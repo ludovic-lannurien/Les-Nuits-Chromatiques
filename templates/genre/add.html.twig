@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LNC | Ajouter un genre{% endblock %}
+
+{% block active_genre %}active{% endblock %}
+
+{% block body %}
+
+	<main>
+		<section class="container">
+			<h1>Ajouter un genre</h1>
+
+			<a class="btn btn-item btn-primary" href="{{ path('admin_genre_browse') }}">Liste des genres</a>
+
+			{% include "_form.html.twig" %}
+		</section>
+	</main>
+
+{% endblock %}

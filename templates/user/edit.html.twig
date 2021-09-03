@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LNC | Utilisateur n°{{ user.id }}{% endblock %}
+
+{% block active_user %}active{% endblock %}
+
+{% block body %}
+
+	<main>
+		<section class="container">
+			<h1>Modifier un utilisateur</h1>
+
+			<a class="btn btn-item btn-primary" href="{{ path('admin_user_browse') }}">Liste des utilisateurs</a>
+
+			{% include "_form.html.twig" %}
+		</section>
+	</main>
+
+{% endblock %}
