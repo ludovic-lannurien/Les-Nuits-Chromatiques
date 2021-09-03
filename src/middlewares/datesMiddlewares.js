@@ -7,7 +7,7 @@ const datesMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_DATES:
 
-      axios.get('http://3.235.53.134/back/api/dates')
+      axios.get('http://3.89.81.120/api/dates')
         .then((response) => {
           console.log(response.data);
           console.log('salut ça va');

@@ -232,3 +232,26 @@
 
 
 
+@media (max-width: 1200px) {
+  .nav {
+    .logo {
+      width: 12rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    .logo {
+      width: 7rem;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .nav {
+    .logo {
+      width: 5rem;
+    }
+  }
+}

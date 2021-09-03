@@ -41,11 +41,12 @@ const ProgFilter = ({
       </select>
       <button
         type="button"
+        className="reinitDays"
         onClick={(event) => {
           event.preventDefault();
           unselectFilter();
         }}
-      >Réinitialiser vos choix
+      >Réinitialiser
       </button>
     </div>
   );
