@@ -30,11 +30,6 @@ const Places = ({
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
-/*   const [placeName, setPlaceName] = useState(null);
-  const [placeAdress, setPlaceAdress] = useState(null);
-  const [placeZip, setPlaceZip] = useState(null);
-  const [placeCity, setPlaceCity] = useState(null);
-  const [onMouse, setOnMouse] = useState(false); */
   let textCssClass = 'text-picture';
   if (onMouse) {
     textCssClass += '-active';

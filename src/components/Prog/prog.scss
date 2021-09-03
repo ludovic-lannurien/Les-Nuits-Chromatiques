@@ -1,34 +1,52 @@
 .prog {
   position: fixed;
   overflow-y: scroll;
+  top: 10rem;
   bottom: 0;
   right: 0;
-  height: 100vh;
+  height: 80vh;
   width: 70vw;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(transparent, #e9b007);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(transparent, #6ec6d9);
 }
 
 .row {
-  margin-top: 10rem;
   border-top-left-radius: 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  
   .artist { 
-    border: 1px solid rgba(206, 192, 192, 0.829);
+    // border: 1px solid rgba(206, 192, 192, 0.829);
     width: 30%;
     max-height: 20rem;
     border-radius: 15px;
-    background-color: #f4fafc;
+    // background-color: #f4fafc;
+    // background-color: rgba(101, 238, 248, 0.18);
+    background-color: rgba(255, 255, 255, 0.18);
     margin: 2rem 1.3rem 0;
     padding: 1rem 1rem 2rem 1rem;
     color: rgb(32, 11, 32);
     overflow: hidden;
+    // border-top: 1px solid rgba(247, 248, 152, 0.5);
+    // border-left: 1px solid rgba(247, 248, 152, 0.5);
+    // border-top: 1px solid rgba(255, 255, 255, 0.5);
+    // border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
 
     h1 {
       text-align: center;
       text-decoration: none;
-      color: rgb(32, 11, 32);
+      // color: rgb(32, 11, 32);
+      color: white;
       font-weight: 600;
       font-size: 22px;
     }
@@ -52,8 +70,8 @@
 	      transition: .3s ease-in-out;
 
         &:hover{
-          -webkit-transform: scale(1.2);
-	        transform: scale(1.2);
+          -webkit-transform: scale(1.1);
+	        transform: scale(1.1);
           opacity: 1;
         }
       }
@@ -81,6 +99,10 @@
 
 @media (max-width: 1600px) {
   .prog {
+    position: fixed;
+    overflow-y: scroll;
+    right: 0;
+    width: 70vw;
 
     .artist { 
       max-height: 14rem;
@@ -101,10 +123,9 @@
 
 @media (max-width: 1000px) {
   .prog {
-    top: 10rem;
+    top: 14rem;
     margin-left: 0;
     width: 100vw;
-    height: 90vh;
     border-top-left-radius: 0;
 
     .artist { 
@@ -137,9 +158,8 @@
 
 @media (max-width: 700px) {
   .prog {
-    top: 10rem;
+    top: 14rem;
     width: 100vw;
-    height: 90vh;
 
     .artist { 
       width: 37%;
@@ -162,6 +182,22 @@
           height: auto;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .prog {
+    top: 14rem;
+    width: 100vw;
+    height: 70vh;
+
+    .artist { 
+      width: 50%;
+      height: 9rem;
+      margin: 0.5rem 0.5rem 0;
+      width: 43%;
+
     }
   }
 }

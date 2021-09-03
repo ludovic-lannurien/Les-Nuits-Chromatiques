@@ -7,13 +7,11 @@ import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug, getDateString } from 'src/utils';
 import cible from './cible.png';
 
-
 // == Import
 import './artist.scss';
 
 // == Composant
 const Artist = ({ artists }) => {
-  
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
 
@@ -49,16 +47,26 @@ const Artist = ({ artists }) => {
         <span className="prog-span">Programmation :</span>
         {artist.events.map((event) => (
           <div className="bloc-event" key={event.id}>
+            <div className="event-name">
+              <span>{event.name}</span>
+            </div>
+            <p>A retrouver du</p>
             <div className="event-date">
               <GrSchedule className="react-icons" />
               <span>{getDateString(event.startDatetime)}</span>
             </div>
-            <div className="event-name">
-              <span>{event.name}</span>
+            <p>Au</p>
+            <div className="event-date">
+              <GrSchedule className="react-icons" />
+              <span>{getDateString(event.endDatetime)}</span>
             </div>
             <div className="event-place">
               <GoLocation className="react-icons" />
-              <a href="#" className="place-link">{event.place.name}</a>
+              <Link
+                to="/lieux"
+              >
+                <a className="place-link">{event.place.name}</a>
+              </Link>
             </div>
             <div className="event-description">
               {event.description}
@@ -66,9 +74,10 @@ const Artist = ({ artists }) => {
           </div>
         ))}
 
-        <div className="video">
-          {artist.videoLink}
-        </div>
+        <div
+          className="video"
+          dangerouslySetInnerHTML={{ __html: artist.videoLink }}
+        />
 
       </div>
     </div>

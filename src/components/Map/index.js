@@ -29,10 +29,6 @@ const Map = ({
   mapSelection,
 }) => {
   const eventByDate = dates[mapSelection];
-
-  // const placesList = eventByDate.map((event) => event.place);
-  console.log(events);
-  console.log(eventByDate);
   return (
     <div className="mapbox">
       <DayFilter />
@@ -112,7 +108,7 @@ const Map = ({
             ))}
             <p>{selectedEvent.description}</p>
             {selectedEvent.artists.map((artist) => (
-              <div key={artist.id}>
+              <div className="popup-bottom" key={artist.id}>
                 <div className="genre">
                   {artist.genres.map((item) => (
                     <span
