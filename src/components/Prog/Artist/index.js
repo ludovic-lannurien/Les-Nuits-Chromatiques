@@ -7,13 +7,11 @@ import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug, getDateString } from 'src/utils';
 import cible from './cible.png';
 
-
 // == Import
 import './artist.scss';
 
 // == Composant
 const Artist = ({ artists }) => {
-  
   const { slug } = useParams();
   const artist = getArtistBySlug(slug, artists);
 
@@ -58,7 +56,11 @@ const Artist = ({ artists }) => {
             </div>
             <div className="event-place">
               <GoLocation className="react-icons" />
-              <a href="#" className="place-link">{event.place.name}</a>
+              <Link
+                to="/lieux"
+              >
+                <a className="place-link">{event.place.name}</a>
+              </Link>
             </div>
             <div className="event-description">
               {event.description}
