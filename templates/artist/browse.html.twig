@@ -27,7 +27,7 @@
 					{% for artist in artists %}
 						<tr>
                             <td><img src="{{ artist.picture }}" alt="Image de l'artiste"></td>
-							<td>{{ artist.firstname }} {{ artist.lastname }}</td>
+							<td class="artists">{{ artist.firstname }} {{ artist.lastname }}</td>
                             <td><a class="btn btn-primary" href="{{ path('admin_artist_read', { slug: artist.slug }) }}"><i class="fas fa-eye"></i></a></td>
                             <td><a class="btn btn-success" href="{{ path('admin_artist_edit', { slug: artist.slug }) }}"><i class="fas fa-edit"></i></a></td>
                             <td><a class="btn btn-danger" href="{{ path('admin_artist_delete', { slug: artist.slug }) }}" onclick="return confirm('Etes-vous sûr de vouloir supprimer {{ artist.firstname }} {{ artist.lastname }} ?')"><i class="fas fa-trash-alt"></i></a></td>
