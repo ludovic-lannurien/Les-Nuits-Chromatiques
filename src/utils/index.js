@@ -1,3 +1,4 @@
+export const BASE_URL = 'http://3.89.81.120/back';
 export const getArtistBySlug = (slug, artists) => {
   const artistFound = artists.find((artist) => slug === artist.slug);
 

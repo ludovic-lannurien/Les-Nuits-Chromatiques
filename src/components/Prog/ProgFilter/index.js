@@ -14,43 +14,39 @@ const ProgFilter = ({
   dates,
   setClickOnSelectArtist,
   unselectFilter,
-}) => {
-  console.log(dates);
-  console.log(daySelected);
-  return (
-    <div className="progFilter">
-      <select
-        className="selectDays"
-        onChange={(event) => {
-          setClickOnSelectArtist();
-          setDaySelected(event.currentTarget.value);
-        }}
-      >
-        <option className="box-option" disabled selected value>
-          Choisir votre date
+}) => (
+  <div className="progFilter">
+    <select
+      className="selectDays"
+      onChange={(event) => {
+        setClickOnSelectArtist();
+        setDaySelected(event.currentTarget.value);
+      }}
+    >
+      <option className="box-option" disabled selected value>
+        Choisir votre date
+      </option>
+      {Object.keys(dates).map((date) => (
+        <option
+          value={date}
+          className="box-option"
+          key={date}
+        >
+          {getOnlyDate(date)}
         </option>
-        {Object.keys(dates).map((date) => (
-          <option
-            value={date}
-            className="box-option"
-            key={date}
-          >
-            {getOnlyDate(date)}
-          </option>
-        ))}
-      </select>
-      <button
-        type="button"
-        className="reinitDays"
-        onClick={(event) => {
-          event.preventDefault();
-          unselectFilter();
-        }}
-      >Réinitialiser
-      </button>
-    </div>
-  );
-};
+      ))}
+    </select>
+    <button
+      type="button"
+      className="reinitDays"
+      onClick={(event) => {
+        event.preventDefault();
+        unselectFilter();
+      }}
+    >Réinitialiser
+    </button>
+  </div>
+);
 ProgFilter.propTypes = {
   daySelected: PropTypes.string,
   setDaySelected: PropTypes.func.isRequired,

@@ -29,10 +29,6 @@ const Map = ({
   mapSelection,
 }) => {
   const eventByDate = dates[mapSelection];
-
-  // const placesList = eventByDate.map((event) => event.place);
-  console.log(events);
-  console.log(eventByDate);
   return (
     <div className="mapbox">
       <DayFilter />

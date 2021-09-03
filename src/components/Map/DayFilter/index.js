@@ -12,29 +12,26 @@ import './dayfilter.scss';
 const DayFilter = ({
   setMapSelection,
   dates,
-}) => {
-  console.log('hello depuis dayFilter');
-  return (
-    <div className="dayFilter">
-      <select
-        className="selectMapDays"
-        onChange={(event) => {
-          setMapSelection(event.currentTarget.value);
-        }}
-      >
-        {Object.keys(dates).map((date) => (
-          <option
-            value={date}
-            className="box-option-map"
-            key={date}
-          >
-            {getOnlyDate(date)}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-};
+}) => (
+  <div className="dayFilter">
+    <select
+      className="selectMapDays"
+      onChange={(event) => {
+        setMapSelection(event.currentTarget.value);
+      }}
+    >
+      {Object.keys(dates).map((date) => (
+        <option
+          value={date}
+          className="box-option-map"
+          key={date}
+        >
+          {getOnlyDate(date)}
+        </option>
+      ))}
+    </select>
+  </div>
+);
 DayFilter.propTypes = {
   setMapSelection: PropTypes.func.isRequired,
   dates: PropTypes.shape({}).isRequired,

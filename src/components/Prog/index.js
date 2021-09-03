@@ -12,7 +12,6 @@ import './prog.scss';
 const Prog = ({
   artists, daySelected, clickOnSelectArtist, dates,
 }) => {
-  console.log(daySelected);
   const eventByDate = dates[daySelected];
   let artistsList = [];
   if (daySelected !== null) {
@@ -21,8 +20,6 @@ const Prog = ({
   else {
     artistsList = [artists];
   }
-
-  console.log(artistsList);
 
   return (
     <div className="prog">
