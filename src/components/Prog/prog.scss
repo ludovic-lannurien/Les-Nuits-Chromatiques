@@ -4,7 +4,7 @@
   top: 10rem;
   bottom: 0;
   right: 0;
-  height: 100vh;
+  height: 80vh;
   width: 70vw;
 }
 
@@ -91,7 +91,6 @@
     position: fixed;
     overflow-y: scroll;
     right: 0;
-    height: 100vh;
     width: 70vw;
 
     .artist { 
@@ -116,7 +115,6 @@
     top: 14rem;
     margin-left: 0;
     width: 100vw;
-    height: 90vh;
     border-top-left-radius: 0;
 
     .artist { 
@@ -151,7 +149,6 @@
   .prog {
     top: 14rem;
     width: 100vw;
-    height: 90vh;
 
     .artist { 
       width: 37%;
@@ -174,6 +171,22 @@
           height: auto;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .prog {
+    top: 14rem;
+    width: 100vw;
+    height: 70vh;
+
+    .artist { 
+      width: 50%;
+      height: 9rem;
+      margin: 0.5rem 0.5rem 0;
+      width: 43%;
+
     }
   }
 }
