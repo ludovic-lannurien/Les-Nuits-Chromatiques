@@ -1,3 +1,5 @@
+###> back ###
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -17,3 +19,19 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+###< back ###
+
+###> front ###
+
+node_modules/
+dist/
+
+.DS_Store
+Thumbs.db
+
+yarn-error.log
+.env
+.env.local
+
+###< front ###
