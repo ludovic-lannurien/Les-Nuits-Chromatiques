@@ -38,8 +38,6 @@ return array(
     'App\\Security\\LoginFormAuthenticator' => $baseDir . '/src/Security/LoginFormAuthenticator.php',
     'App\\Security\\Voter\\UserVoter' => $baseDir . '/src/Security/Voter/UserVoter.php',
     'App\\Service\\MySlugger' => $baseDir . '/src/Service/MySlugger.php',
-    'App\\Tests\\Unit\\RoleAdminTest' => $baseDir . '/tests/Unit/RoleAdminTest.php',
-    'App\\Tests\\Unit\\RoleSuperAdminTest' => $baseDir . '/tests/Unit/RoleSuperAdminTest.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Collator' => $vendorDir . '/symfony/polyfill-intl-icu/Resources/stubs/Collator.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

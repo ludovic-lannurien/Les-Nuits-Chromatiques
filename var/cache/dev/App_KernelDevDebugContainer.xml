@@ -909,7 +909,7 @@
     <service id="console.command.event_dispatcher_debug" class="Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand">
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.HtipwlH"/>
+      <argument type="service" id=".service_locator.jlyTfzM"/>
       <call method="setName">
         <argument>debug:event-dispatcher</argument>
       </call>
@@ -1963,6 +1963,7 @@
           <argument key="et" type="collection">
             <argument>/Applications/MAMP/htdocs/projet-les-nuits-chromatiques/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
             <argument>/Applications/MAMP/htdocs/projet-les-nuits-chromatiques/vendor/symfony/form/Resources/translations/validators.et.xlf</argument>
+            <argument>/Applications/MAMP/htdocs/projet-les-nuits-chromatiques/vendor/symfony/security-core/Resources/translations/security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
             <argument>/Applications/MAMP/htdocs/projet-les-nuits-chromatiques/vendor/symfony/validator/Resources/translations/validators.eu.xlf</argument>
@@ -5493,7 +5494,7 @@
       <tag name="container.no_preload"/>
       <argument>%security.firewalls%</argument>
       <argument type="service" id=".service_locator.zJyh7qS"/>
-      <argument type="service" id=".service_locator.HtipwlH"/>
+      <argument type="service" id=".service_locator.jlyTfzM"/>
       <argument type="collection">
         <argument key="main" type="collection">
           <argument type="service" id="App\Security\LoginFormAuthenticator"/>
@@ -6814,6 +6815,64 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.aq4MYft" method="withContext"/>
     </service>
+    <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
+    <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".service_locator.XXv1IfR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jlyTfzM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="event_dispatcher" type="service_closure" id="debug.event_dispatcher"/>
+        <argument key="security.event_dispatcher.main" type="service_closure" id="security.event_dispatcher.main"/>
+      </argument>
+    </service>
+    <service id=".service_locator.qStIMoR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="initialized_session" type="service_closure" id=".session.do-not-use" on-invalid="ignore_uninitialized"/>
+        <argument key="logger" type="service_closure" id="monolog.logger" on-invalid="ignore"/>
+        <argument key="session" type="service_closure" id=".session.do-not-use" on-invalid="ignore"/>
+        <argument key="session_collector" type="service_closure" id="data_collector.request.session_collector" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id=".service_locator.clUEvlF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="browser" type="service_closure" id="notifier.channel.browser"/>
+        <argument key="chat" type="service_closure" id="notifier.channel.chat"/>
+        <argument key="email" type="service_closure" id="notifier.channel.email"/>
+        <argument key="sms" type="service_closure" id="notifier.channel.sms"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kODoftA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="kernel" type="service_closure" id="kernel"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1ZPWTRB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="env" type="service_closure" id="container.getenv"/>
+      </argument>
+    </service>
+    <service id=".service_locator.LcVn9Hr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="request_stack" type="service_closure" id="request_stack"/>
+      </argument>
+    </service>
+    <service id=".service_locator.aa1PbBb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="security.authorization_checker" type="service_closure" id="security.authorization_checker"/>
+        <argument key="security.token_storage" type="service_closure" id="security.token_storage"/>
+      </argument>
+    </service>
     <service id="debug.validator.inner" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
     </service>
@@ -6886,64 +6945,6 @@
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>App\Entity</argument>
       </call>
-    </service>
-    <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
-    <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
-    <service id=".service_locator.XXv1IfR" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
-      </argument>
-    </service>
-    <service id=".service_locator.HtipwlH" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="event_dispatcher" type="service_closure" id="debug.event_dispatcher"/>
-        <argument key="security.event_dispatcher.main" type="service_closure" id="security.event_dispatcher.main"/>
-      </argument>
-    </service>
-    <service id=".service_locator.qStIMoR" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="initialized_session" type="service_closure" id=".session.do-not-use" on-invalid="ignore_uninitialized"/>
-        <argument key="logger" type="service_closure" id="monolog.logger" on-invalid="ignore"/>
-        <argument key="session" type="service_closure" id=".session.do-not-use" on-invalid="ignore"/>
-        <argument key="session_collector" type="service_closure" id="data_collector.request.session_collector" on-invalid="ignore"/>
-      </argument>
-    </service>
-    <service id=".service_locator.clUEvlF" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="browser" type="service_closure" id="notifier.channel.browser"/>
-        <argument key="chat" type="service_closure" id="notifier.channel.chat"/>
-        <argument key="email" type="service_closure" id="notifier.channel.email"/>
-        <argument key="sms" type="service_closure" id="notifier.channel.sms"/>
-      </argument>
-    </service>
-    <service id=".service_locator.kODoftA" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="kernel" type="service_closure" id="kernel"/>
-      </argument>
-    </service>
-    <service id=".service_locator.1ZPWTRB" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="env" type="service_closure" id="container.getenv"/>
-      </argument>
-    </service>
-    <service id=".service_locator.LcVn9Hr" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="request_stack" type="service_closure" id="request_stack"/>
-      </argument>
-    </service>
-    <service id=".service_locator.aa1PbBb" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="security.authorization_checker" type="service_closure" id="security.authorization_checker"/>
-        <argument key="security.token_storage" type="service_closure" id="security.token_storage"/>
-      </argument>
     </service>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -7803,25 +7804,6 @@
     <service id="Psr\Log\LoggerInterface $doctrineLogger" alias="monolog.logger.doctrine"/>
     <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
-    <service id="validator" alias="debug.validator" public="true"/>
-    <service id="translator.data_collector.inner" alias="translator.default"/>
-    <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
-    <service id="controller_resolver" alias="debug.controller_resolver"/>
-    <service id="argument_resolver" alias="debug.argument_resolver"/>
-    <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
-    <service id="var_dumper.cli_dumper" alias="var_dumper.contextualized_cli_dumper"/>
-    <service id="doctrine.migrations.migrations_factory" alias="doctrine.migrations.container_aware_migrations_factory"/>
-    <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>
-    <service id="argument_resolver.request_attribute" alias="debug.argument_resolver.request_attribute"/>
-    <service id="argument_resolver.request" alias="debug.argument_resolver.request"/>
-    <service id="argument_resolver.session" alias="debug.argument_resolver.session"/>
-    <service id="security.user_value_resolver" alias="debug.security.user_value_resolver"/>
-    <service id="argument_resolver.service" alias="debug.argument_resolver.service"/>
-    <service id="argument_resolver.default" alias="debug.argument_resolver.default"/>
-    <service id="argument_resolver.variadic" alias="debug.argument_resolver.variadic"/>
-    <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller"/>
-    <service id="http_client" alias=".debug.http_client"/>
-    <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
     <service id=".service_locator.VlzuqH1" alias=".service_locator.37hY7K."/>
@@ -7844,5 +7826,24 @@
     <service id=".service_locator.6ExvIuR" alias=".service_locator.njTFPn9"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
     <service id=".service_locator.NK827YO" alias=".service_locator.W9y3dzm"/>
+    <service id="validator" alias="debug.validator" public="true"/>
+    <service id="translator.data_collector.inner" alias="translator.default"/>
+    <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
+    <service id="controller_resolver" alias="debug.controller_resolver"/>
+    <service id="argument_resolver" alias="debug.argument_resolver"/>
+    <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
+    <service id="var_dumper.cli_dumper" alias="var_dumper.contextualized_cli_dumper"/>
+    <service id="doctrine.migrations.migrations_factory" alias="doctrine.migrations.container_aware_migrations_factory"/>
+    <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>
+    <service id="argument_resolver.request_attribute" alias="debug.argument_resolver.request_attribute"/>
+    <service id="argument_resolver.request" alias="debug.argument_resolver.request"/>
+    <service id="argument_resolver.session" alias="debug.argument_resolver.session"/>
+    <service id="security.user_value_resolver" alias="debug.security.user_value_resolver"/>
+    <service id="argument_resolver.service" alias="debug.argument_resolver.service"/>
+    <service id="argument_resolver.default" alias="debug.argument_resolver.default"/>
+    <service id="argument_resolver.variadic" alias="debug.argument_resolver.variadic"/>
+    <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller"/>
+    <service id="http_client" alias=".debug.http_client"/>
+    <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
   </services>
 </container>
