@@ -46,7 +46,7 @@ class EventData
         ],
 
         [
-            'name' => 'Route nocture',
+            'name' => 'Route nocturne',
             'description' => 'On vous propose de faire une session nocturne au skatepark avec des illuminations qui vous permettrons de trouver votre route.',
             'start_datetime' => '11-03-2022 19:00:00',
             'end_datetime' => '11-03-2022 22:00:00',

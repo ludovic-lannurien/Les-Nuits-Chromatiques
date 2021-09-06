@@ -21,7 +21,7 @@ class ArtistData
             'description' => 'Rappeur plus productif que ta mamie avec les tarte aux fruits.',
             'picture' => 'https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/227233603_3079777125639547_4597570207435771226_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=0debeb&_nc_ohc=NfqYIetVpEsAX_8OjLR&_nc_ht=scontent-cdg2-1.xx&oh=70a54a0d25c6de50200fd46623688d73&oe=6159860A',
             'videolink' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/H6xptNB5SrY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            'event' => '',
+            'event' => 'Apéro Lumière',
             'genre' => 'Musique'
         ],
 
@@ -30,10 +30,8 @@ class ArtistData
             'lastname' => null,
             'description' => 'Jeune producteur dijonnais qui est fortement influencé par la house et les musiques brésiliennes.',
             'picture' => 'https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/224004468_3079792368971356_6870917417178969518_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=0debeb&_nc_ohc=b4iB0wjzwfoAX9J_3Hi&_nc_ht=scontent-cdg2-1.xx&oh=6bbe7d7045d9e3fc3f31c4be6a2c95a9&oe=615C6F6B',
-            'videolink' => '
-            Lien vidéo
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Whf4IerCkJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            'event' => '',
+            'videolink' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/Whf4IerCkJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            'event' => 'After-Work lumineux',
             'genre' => 'Musique'
         ],
 
@@ -43,10 +41,7 @@ class ArtistData
             'description' => 'Producteur hip-hop, il n\'en ai pas à son premier coup d\'essai.',
             'picture' => 'https://scontent-cdg2-1.xx.fbcdn.net/v/t1.6435-9/121626492_2853004508316811_1887832508183784187_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=0debeb&_nc_ohc=Jqu7Wylj09kAX-sIZUY&_nc_ht=scontent-cdg2-1.xx&oh=7b9498c9706c27110b43f7af5781682c&oe=615A5508',
             'videolink' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/cARVKjTBn8c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            'event' => [
-                'Route Nocturne',
-                'After-Work lumineux'
-            ],
+            'event' => 'Route nocturne',
             'genre' => 'Musique'
         ],
 
@@ -96,7 +91,7 @@ class ArtistData
             'description' => 'Théoriz est un studio de création Art et Technologie spécialisé dans la conception installations immersives et de spectacles audiovisuels innovant.',
             'picture' => 'https://scontent-mrs2-2.xx.fbcdn.net/v/t1.6435-9/96817794_1625343920967366_7211342655119163392_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=9267fe&_nc_ohc=vkF_PKjoDksAX9d7VHb&_nc_ht=scontent-mrs2-2.xx&oh=779d62ef435c501d00113090e0e8314c&oe=615D1C58',
             'videolink' => '<iframe src="https://player.vimeo.com/video/194838088?h=ff41b03408&color=45B7D9" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
-                'event' => 'Route Nocturne',
+                'event' => 'Route nocturne',
                 'genre' => 'Lumière'
         ],
 
