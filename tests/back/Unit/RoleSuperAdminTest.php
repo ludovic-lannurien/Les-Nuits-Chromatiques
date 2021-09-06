@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Unit;
+namespace App\Tests\Back\Unit;
 
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -90,17 +90,14 @@ class RoleSuperAdminTest extends WebTestCase
     {
         // Event
         yield ['/admin/event/delete/lumiere-sur-cour'];
-        
-        // Place
-        yield ['/admin/place/delete/cour-de-l-ensa'];
                 
         // Artist
-        yield ['/admin/artist/delete/david-guerra'];
+        yield ['/admin/artist/delete/ketbi'];
 
         // Genre
         yield ['/admin/genre/delete/musique'];
 
         // User
-        yield ['/admin/user/delete/3'];
+        yield ['/admin/user/delete/1'];
     }
 }

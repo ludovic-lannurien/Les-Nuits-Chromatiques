@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Unit;
+namespace App\Tests\Back\Unit;
 
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -81,10 +81,7 @@ class RoleAdminTest extends WebTestCase
     public function deleteUrlProvider()
     {
         // Event
-        yield ['/admin/event/delete/apero-lumiere'];
-        
-        // Place
-        yield ['/admin/place/delete/cour-bareuzai'];
+        yield ['/admin/event/delete/la-forêt-de-lumiere'];
                 
         // Artist
         yield ['/admin/artist/delete/theoriz'];
