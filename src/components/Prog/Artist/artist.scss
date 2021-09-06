@@ -226,9 +226,16 @@
 @media (max-width: 1000px) {
   .artist-page {
     top: 10rem;
-    margin-left: 0;
     width: 100vw;
     height: 90vh;
+
+    .artist-picture {
+      width: 100vw;
+    }
+
+    .artist-content{
+      width: 100vw;
+    }
   }
 
 }
@@ -239,35 +246,132 @@
     width: 100vw;
     height: 90vh;
 
-    .content {
-      padding: 0;
+    .back-to-prog{
+      font-size: 15px;
+    }
+
+    .back-to-map {
+      font-size: 20px;
+    }
+
+    .artist-picture {
+      width: 100vw;
+      height: 15rem;
+    }
+  
+    .artist-content {
+      text-align: center;
+      padding: 20px;
+      width: 100vw;
+  
   
       .name {
-        font-size: 30px;
+        font-size: 35px;
+        font-weight: 600;
         padding: 1rem;
+        border: 2px solid #e3a3038c;
+        margin-bottom: 2rem;
       }
   
-      .description {
-        padding: 0;
-        font-size: 20px;
+      .artist-description {
+        font-size: 18px;
+        font-weight: 300;
         line-height: 30px;
+        padding: 3rem;
+      }
+    }
   
-        p {
+    .event-content {
+      text-align: center;
+      padding: 10px;
+      
+      .prog-span {
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 200;
+        margin: 2rem;
+        text-decoration: underline;
+      }
+  
+      .bloc-event {
+        padding: 20px;
+        border-bottom: 1px solid gray;
+        margin: auto;
+        margin-bottom: 2rem;
+  
+        .event-date {
+          width: 10rem;
+          margin: 1rem auto;
+          font-size: 14px;
+          margin-bottom: 1rem;
+          border: 1PX solid rgba(128, 128, 128, 0.699);
           padding: 1rem;
+          border-radius: 10px;
+  
+          .react-icons {
+            margin: 0 1rem;
+  
+          }
+  
         }
+  
+        .event-name {
+          width: 10rem;
+          color: white;
+          margin: auto;
+          padding: 0.8rem;
+          border-radius: 1rem;
+          font-size: 18px;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+          background-color: #e7b003;
+        }
+  
+        .event-place {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: rgba(170, 162, 162, 0.658);
+          transition: 0.3s;
+  
+          .react-icons {
+            cursor: pointer;
+          }
+  
+          &:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+          }
+        }
+  
+        .event-description {
+            border-radius: 5px;
+            text-align: justify;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 30px;
+    
+          p {
+            padding: 1rem;
+          }
+      }
+  
+  
       }
   
       .event {
-        height: 3.2rem;
-        margin: 1rem 0;
+        height: 5rem;
+        margin: 3rem 0;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
   
         .event_info {
-          padding: 0;
+          padding: 2rem;
           border-radius: 30px;
-          font-size: 16px;
+          font-size: 20px;
           text-transform: uppercase;
           background-color: #b1b1b163;
           color: white;
@@ -281,16 +385,185 @@
       }
   
       .video {
-        width: 90%;
-        height: 20rem;
+        height: 40rem;
         margin: auto;
   
-        .video-iframe {
+        iframe {
           width: 100%;
           height: 100%;
         }
   
       }
     }
+  
+  
+  }
+}
+
+
+
+@media (max-width: 320px) {
+  .artist-page {
+
+  
+    .back-to-prog {
+
+    }
+  
+    .back-to-map {
+
+  
+      .back-to-map-text {
+
+      }
+  
+      .back-to-map-cible {
+
+      }
+    }
+  
+    .artist-picture {
+      width: 100vw;
+      height: 15rem;
+    }
+  
+    .artist-content {
+      text-align: center;
+      padding: 20px;
+      width: 100vw;
+  
+  
+      .name {
+        font-size: 35px;
+        font-weight: 600;
+        padding: 1rem;
+        border: 2px solid #e3a3038c;
+        margin-bottom: 2rem;
+      }
+  
+      .artist-description {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 30px;
+        padding: 3rem;
+      }
+    }
+  
+    .event-content {
+      text-align: center;
+      padding: 10px;
+      
+      .prog-span {
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 200;
+        margin: 2rem;
+        text-decoration: underline;
+      }
+  
+      .bloc-event {
+        padding: 20px;
+        border-bottom: 1px solid gray;
+        margin: auto;
+        margin-bottom: 2rem;
+  
+        .event-date {
+          width: 10rem;
+          margin: 1rem auto;
+          font-size: 14px;
+          margin-bottom: 1rem;
+          border: 1PX solid rgba(128, 128, 128, 0.699);
+          padding: 1rem;
+          border-radius: 10px;
+  
+          .react-icons {
+            margin: 0 1rem;
+  
+          }
+  
+        }
+  
+        .event-name {
+          width: 10rem;
+          color: white;
+          margin: auto;
+          padding: 0.8rem;
+          border-radius: 1rem;
+          font-size: 18px;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+          background-color: #e7b003;
+        }
+  
+        .event-place {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: rgba(170, 162, 162, 0.658);
+          transition: 0.3s;
+  
+          .react-icons {
+            cursor: pointer;
+          }
+  
+          &:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+          }
+        }
+  
+        .event-description {
+            border-radius: 5px;
+            text-align: justify;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 30px;
+    
+          p {
+            padding: 1rem;
+          }
+      }
+  
+  
+      }
+  
+      .event {
+        height: 5rem;
+        margin: 3rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+  
+        .event_info {
+          padding: 2rem;
+          border-radius: 30px;
+          font-size: 20px;
+          text-transform: uppercase;
+          background-color: #b1b1b163;
+          color: white;
+          font-weight: 600;
+  
+          &:hover {
+            background-color: #e3a303;
+            transition: 0.2s ease-in-out;
+          }
+        }
+      }
+  
+      .video {
+        height: 40rem;
+        margin: auto;
+  
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+  
+      }
+    }
+  
+  
   }
 }
