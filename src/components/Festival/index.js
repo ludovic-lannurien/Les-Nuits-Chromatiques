@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-
+import PropTypes from 'prop-types';
 // == Import
 import './festival.scss';
 import CHKT from '../../assets/CHKT-TEAM.png';
@@ -8,10 +8,12 @@ import GIFOnClick from '../../assets/Gif_Onclick.png';
 import GIFSansClick from '../../assets/Gif_Auto_Sans_Clic.png';
 
 // == Composant
-const Festival = () => (
+const Festival = ({ gifOnClick, setGifOnClick }) => (
   <div className="festival">
     <div className="festival_picture">
-      <img src={CHKT} alt="CHKT" className="CHKT_picture" />
+      <a href="https://chkt.fr/" target="_blank" rel="noreferrer">
+        <img src={CHKT} alt="CHKT" className="CHKT_picture" />
+      </a>
     </div>
     <div className="festival_text">
       <h1>Le festival</h1>
@@ -37,11 +39,17 @@ const Festival = () => (
         toute l'équipe se mobilise pour faire naitre de beaux projets.
       </p>
     </div>
-    <div className="festival_gif">
-      <img src={GIFSansClick} alt="gif" />
+    <div className="festival_gif" onClick={setGifOnClick}>
+      {gifOnClick
+        ? <img src={GIFOnClick} alt="gif" />
+        : <img src={GIFSansClick} alt="gif" />}
     </div>
   </div>
 );
 
+Festival.propTypes = {
+  setGifOnClick: PropTypes.func.isRequired,
+  gifOnClick: PropTypes.bool.isRequired,
+};
 // == Export
 export default Festival;
