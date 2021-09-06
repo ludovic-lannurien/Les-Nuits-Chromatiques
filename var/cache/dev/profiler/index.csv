@@ -56,3 +56,5 @@ c41e12,127.0.0.1,GET,https://127.0.0.1:8000/admin/genre/read/musique,1630931897,
 75156d,127.0.0.1,GET,https://127.0.0.1:8000/admin/place/browse,1630932865,,200
 92a3d4,127.0.0.1,GET,https://127.0.0.1:8000/api/dates,1630933045,,200
 04ab06,127.0.0.1,GET,https://127.0.0.1:8000/admin/place/browse,1630933071,,200
+f6757b,127.0.0.1,GET,https://127.0.0.1:8000/admin/place/browse,1630934352,,302
+547cba,127.0.0.1,GET,https://127.0.0.1:8000/login,1630934352,,200
