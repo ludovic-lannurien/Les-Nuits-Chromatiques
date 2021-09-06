@@ -20,7 +20,10 @@ class EventController extends AbstractController
      */
     public function browse(EventRepository $eventRepository): Response
     {
-        $events = $eventRepository->findAll();
+        $events = $eventRepository->findBy(
+            [],
+            ['startDatetime' => 'ASC']
+        );
 
         return $this->render('event/browse.html.twig', [
             'events' => $events
