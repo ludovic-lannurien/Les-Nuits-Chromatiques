@@ -63,7 +63,6 @@
     background-size: auto 90%;
     width: 70vw;
     height: 25rem;
-    background: #6ec6d9;
     overflow: hidden;
     img {
       object-position: 0 25%;
@@ -71,7 +70,8 @@
       height: 100%;
       object-fit: cover;
       opacity: .7;
-      -webkit-transform: scale(1);
+      // transform: translateY(5rem);
+       -webkit-transform: scale(1);
 	      transform: scale(1);
 	      -webkit-transition: .3s ease-in-out;
 	      transition: .3s ease-in-out;

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	</head>
+
+	<body>
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+			<nav>
+				<ul>
+					<li>
+						<a class="menu" href="#">
+							<i class="fas fa-bars"></i>
+							<span>Menu</span>
+						</a>
+						<ul class="subnav">
+							<li class="{% block active_event %}{% endblock %}">
+								<a href="{{ path('admin_event_browse') }}">Évènements</a>
+							</li>
+							<li class="{% block active_place %}{% endblock %}">
+								<a href="{{ path('admin_place_browse') }}">Lieux</a>
+							</li>
+							<li class="{% block active_artist %}{% endblock %}">
+								<a href="{{ path('admin_artist_browse') }}">Artistes</a>
+							</li>
+							<li class="{% block active_genre %}{% endblock %}">
+								<a href="{{ path('admin_genre_browse') }}">Genres</a>
+							</li>
+							{% if is_granted('ROLE_SUPER_ADMIN') %}
+								<li class="{% block active_user %}{% endblock %}">
+									<a href="{{ path('admin_user_browse') }}">Utilisateurs</a>
+								</li>
+							{% endif %}
+						</ul>
+					</li>
+				</ul>
+				<ul class="logout">
+					<li class="badge-item">
+						<span class="badge-email">{{ app.user.email }}</span>
+					</li>
+					<li class="badge-item">
+						{% if is_granted('ROLE_SUPER_ADMIN') %}
+							<span class="badge-role">Super-Administrateur</span>
+						{% else %}
+							<span class="badge-role">Administrateur</span>
+						{% endif %}
+					</li>
+					<li class="logout-item">
+						<a class="logout-btn" href="{{ path('app_logout') }}">
+							<i class="fas fa-sign-out-alt"></i>
+							<span>Déconnexion</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		{% endif %}
+
+		{% block body %}{% endblock %}
+	</body>
+</html></body></html></body></html></body></html>
