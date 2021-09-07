@@ -60,7 +60,7 @@ class Event
 
     /**
      * @ORM\ManyToOne(targetEntity=Place::class, inversedBy="events")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      * @Groups({"events_get", "genres_get", "artists_get", "events_dates_get"})
      * @Assert\NotBlank
      */
