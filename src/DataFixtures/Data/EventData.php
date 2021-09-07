@@ -22,6 +22,14 @@ class EventData
         ],
 
         [
+            'name' => 'Closing',
+            'description' => 'Retrouvez une œuvre illuminée sur tout le long du festival.',
+            'start_datetime' => '13-03-2022 18:00:00',
+            'end_datetime' => '13-03-2022 23:00:00',
+            'place' => 'Les Tanneries'
+        ],
+
+        [
             'name' => 'La forêt de lumière',
             'description' => 'test',
             'start_datetime' => '12-03-2022 19:30:00',
@@ -51,6 +59,14 @@ class EventData
             'start_datetime' => '11-03-2022 19:00:00',
             'end_datetime' => '11-03-2022 22:00:00',
             'place' => 'Le SkatePark'
+        ],
+
+        [
+            'name' => 'Statue Illuminée',
+            'description' => '',
+            'start_datetime' => '07-03-2022 19:00:00',
+            'end_datetime' => '13-03-2022 23:00:00',
+            'place' => 'Péniche Cancale'
         ],
 
         [
