@@ -83,6 +83,9 @@ class RoleAdminTest extends WebTestCase
         // Event
         yield ['/admin/event/delete/la-forêt-de-lumiere'];
                 
+        // Place
+        yield ['/admin/place/delete/cour-bareuzai'];
+
         // Artist
         yield ['/admin/artist/delete/theoriz'];
 

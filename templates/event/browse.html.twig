@@ -29,7 +29,11 @@
 					{% for event in events %}
 						<tr>
 							<th scope="row">{{ event.name }}</td>
-							<td>{{ event.place.name }}</td>
+							<td>
+								{% if event.place is not empty %}
+									{{ event.place.name }}
+								{% endif %}
+							</td>
 							<td>{{ event.startDatetime|date('d/m/Y à H:i') }}</td>
 							<td>{{ event.endDatetime|date('d/m/Y à H:i') }}</td>
 							<td><a class="btn btn-primary" href="{{ path('admin_event_read', { slug: event.slug }) }}"><i class="fas fa-eye"></i></a></td>

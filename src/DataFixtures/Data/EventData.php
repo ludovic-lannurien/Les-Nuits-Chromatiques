@@ -23,7 +23,7 @@ class EventData
 
         [
             'name' => 'La forêt de lumière',
-            'description' => '',
+            'description' => 'test',
             'start_datetime' => '12-03-2022 19:30:00',
             'end_datetime' => '13-03-2022 00:00:00',
             'place' => 'Cour Bareuzai'
@@ -31,7 +31,7 @@ class EventData
 
         [
             'name' => 'Lumière sur cour',
-            'description' => '',
+            'description' => 'test',
             'start_datetime' => '09-03-2022 19:30:00',
             'end_datetime' => '10-03-2022 00:00:00',
             'place' => 'Cour Bareuzai'
@@ -39,7 +39,7 @@ class EventData
 
         [
             'name' => 'Patrimoine illuminé',
-            'description' => '',
+            'description' => 'test',
             'start_datetime' => '10-03-2022 19:30:00',
             'end_datetime' => '10-03-2022 23:00:00',
             'place' => 'Galeries Lafayette'

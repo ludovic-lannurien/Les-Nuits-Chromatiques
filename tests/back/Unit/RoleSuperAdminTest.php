@@ -91,6 +91,9 @@ class RoleSuperAdminTest extends WebTestCase
         // Event
         yield ['/admin/event/delete/lumiere-sur-cour'];
                 
+        // Place
+        yield ['/admin/place/delete/le-skatepark'];
+
         // Artist
         yield ['/admin/artist/delete/ketbi'];
 
