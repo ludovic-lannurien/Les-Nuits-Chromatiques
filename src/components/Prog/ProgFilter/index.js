@@ -24,9 +24,11 @@ const ProgFilter = ({
         setDaySelected(event.currentTarget.value);
       }}
     >
-      <option className="box-option" disabled selected value>
+      {!clickOnSelectArtist && (
+      <option className="box-option" disabled selected value="null">
         Choisir votre date
       </option>
+      )}
       {Object.keys(dates).map((date) => (
         <option
           value={date}
