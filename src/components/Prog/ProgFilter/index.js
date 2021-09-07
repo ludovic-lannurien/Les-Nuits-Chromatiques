@@ -14,6 +14,7 @@ const ProgFilter = ({
   dates,
   setClickOnSelectArtist,
   unselectFilter,
+  clickOnSelectArtist,
 }) => (
   <div className="progFilter">
     <select
@@ -48,6 +49,7 @@ const ProgFilter = ({
   </div>
 );
 ProgFilter.propTypes = {
+  clickOnSelectArtist: PropTypes.bool.isRequired,
   daySelected: PropTypes.string,
   setDaySelected: PropTypes.func.isRequired,
   dates: PropTypes.shape({}).isRequired,

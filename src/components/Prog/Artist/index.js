@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { GoLocation } from 'react-icons/go';
+import { ImClock } from 'react-icons/im';
 import { GrSchedule } from 'react-icons/gr';
 import { getArtistBySlug, getDateString } from 'src/utils';
 import cible from './cible.png';
@@ -44,7 +45,7 @@ const Artist = ({ artists }) => {
         </h1>
       </div>
       <div className="event-content">
-        <span className="prog-span">Programmation :</span>
+        <span className="prog-span">Programmation</span>
         {artist.events.map((event) => (
           <div className="bloc-event" key={event.id}>
             <div className="event-name">

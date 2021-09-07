@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
   daySelected: state.progFilter.daySelected,
   dates: state.progFilter.datesList,
   optionNull: state.progFilter.optionNull,
+  clickOnSelectArtist: state.progFilter.clickOnSelectArtist,
 });
 
 // === mapDispatchToProps
