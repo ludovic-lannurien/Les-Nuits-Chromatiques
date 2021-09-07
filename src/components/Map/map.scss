@@ -53,9 +53,11 @@
 
   img {
     border-radius: 5px;
-    width: 190px;
-    height: auto;
     margin: auto;
+    height: 8rem;
+    width: 100%;
+    object-position: 0 25%;
+    object-fit: cover;
   }
 
   h2 {
