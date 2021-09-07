@@ -16,6 +16,16 @@ class ArtistData
         ],
 
         [
+            'firstname' => 'CHKT CREW',
+            'lastname' => null,
+            'description' => 'Toute l\'équipe CHKT se réunit pour vous passer leurs sons préférés du moment.',
+            'picture' => 'https://scontent-mrs2-2.xx.fbcdn.net/v/t1.6435-9/225111434_3079773212306605_5865603698242421315_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=0debeb&_nc_ohc=uWPW-EHAjVMAX-qSk-M&tn=PVPjxXsnPJai1PFR&_nc_ht=scontent-mrs2-2.xx&oh=9f954812693bee4c4c4706c42c442cc5&oe=615C3AF2',
+            'videolink' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/zZi8N_Yfp4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            'event' => 'Closing',
+            'genre' => 'Musique'
+        ],
+
+        [
             'firstname' => 'COACH RAOUL',
             'lastname' => null,
             'description' => 'Rappeur plus productif que ta mamie avec les tarte aux fruits.',
@@ -46,6 +56,16 @@ class ArtistData
         ],
 
         [
+            'firstname' => 'MARC',
+            'lastname' => 'IPPON',
+            'description' => 'Né à Paris en 1987, Marc Ippon de Ronda vit entre la France et le Japon. Il questionne l\'espace, le temps et le mouvement à travers la création de sculptures lumineuses et d\'installations abstraites. Il est fasciné par la perception humaine et les propriétés physiques et symboliques des lumières. Son travail joue autour des concepts de distorsion visuelle et des limites entre le visible et l\'invisible, la tangibilité relative de la réalité. L\'espace et la lumière deviennent la matière et le médium de son travail.',
+            'picture' => 'https://images.unsplash.com/photo-1630898380805-2dff136b7b88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+            'videolink' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/Ko2NvssZ6MA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            'event' => 'Statue Illuminée',
+            'genre' => 'Lumière'
+        ],
+
+        [
             'firstname' => 'REELAX',
             'lastname' => null,
             'description' => 'Amis d\'enfance, ce groupe est composé d\'un beat maker et de deux chanteurs.',
@@ -68,8 +88,8 @@ class ArtistData
         [
             'firstname' => 'SAPIA',
             'lastname' => null,
-            'description' => '',
-            'picture' => null,
+            'description' => 'Ami de notre dev back, une exclusivité mondiale !',
+            'picture' => 'https://images.unsplash.com/photo-1549499090-5fa12865059c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
             'videolink' => '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335567162&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
                 'event' => 'Apéro Lumière',
                 'genre' => 'Lumière'
