@@ -6,7 +6,7 @@
   
     .navList{
       margin-top: 18rem;
-      font-size: 50px;
+      font-size: 48px;
       padding: 0.5em;
       line-height: 1.5em;
       color: #d3eef4;
@@ -17,7 +17,7 @@
         transition: 0.8s;
     
         &:hover{
-          font-size: 55px;
+          font-size: 50px;
           color: #f2bf68;
           padding-left: 0.1em;
           // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -53,9 +53,31 @@
     }
   }
 
- @media (max-width: 1400px) {
-  .nav {
+  @media (max-width: 1600px) {
+    .nav {
+      .navList {
+        font-size: 42px;
+        .navLink_element{
+          &:hover {
+            font-size: 44px;
+          }
+        }
+      }
+    }
+    } 
 
+ @media (max-width: 1322px) {
+  .nav {
+    .navList{
+      font-size: 35px;
+      padding: 0.8em;
+      line-height: 1.6em;
+      .navLink_element{
+        &:hover {
+          font-size: 37px;
+        }
+  }
+  }
     & .hide-nav {
       img {
         position: fixed;
@@ -64,17 +86,18 @@
         width: 15rem;
         height: auto;
       }
-  
-      .navList{
-        background-color: red;
-        font-size: 30px;
-        padding: 0.8em;
-        line-height: 1.6em;
-  
-        &:hover{
-          font-size: 33px;
+  }
+  } 
+ }
+ @media (max-width: 1160px) {
+  .nav {
+    .navList {
+      font-size: 30px;
+      .navLink_element{
+        &:hover {
+          font-size: 32px;
         }
-    }
+      }
     }
   }
   } 
