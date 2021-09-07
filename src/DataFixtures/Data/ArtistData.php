@@ -88,7 +88,7 @@ class ArtistData
         [
             'firstname' => 'SAPIA',
             'lastname' => null,
-            'description' => 'test',
+            'description' => 'Ami de notre dev back, une exclusivité mondiale !',
             'picture' => 'https://images.unsplash.com/photo-1549499090-5fa12865059c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
             'videolink' => '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/335567162&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
                 'event' => 'Apéro Lumière',

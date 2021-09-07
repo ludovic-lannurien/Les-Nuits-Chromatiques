@@ -31,7 +31,7 @@ class EventData
 
         [
             'name' => 'La forêt de lumière',
-            'description' => 'test',
+            'description' => 'Concert nocturne agrémenté de jeux de lumières.',
             'start_datetime' => '12-03-2022 19:30:00',
             'end_datetime' => '13-03-2022 00:00:00',
             'place' => 'Cour Bareuzai'
@@ -39,7 +39,7 @@ class EventData
 
         [
             'name' => 'Lumière sur cour',
-            'description' => 'test',
+            'description' => 'En collaboration avec l\'association "Fenêtre sur cour", on vous propose une soirée projection de film avec un set jazz House.',
             'start_datetime' => '09-03-2022 19:30:00',
             'end_datetime' => '10-03-2022 00:00:00',
             'place' => 'Cour Bareuzai'
@@ -47,7 +47,7 @@ class EventData
 
         [
             'name' => 'Patrimoine illuminé',
-            'description' => 'test',
+            'description' => 'Projection sur la façade du bâtiment.',
             'start_datetime' => '10-03-2022 19:30:00',
             'end_datetime' => '10-03-2022 23:00:00',
             'place' => 'Galeries Lafayette'
@@ -63,7 +63,7 @@ class EventData
 
         [
             'name' => 'Statue Illuminée',
-            'description' => '',
+            'description' => 'Retrouvez une œuvre illuminée sur tout le long du festival.',
             'start_datetime' => '07-03-2022 19:00:00',
             'end_datetime' => '13-03-2022 23:00:00',
             'place' => 'Péniche Cancale'
