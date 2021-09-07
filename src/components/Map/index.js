@@ -93,41 +93,41 @@ const Map = ({
           <div className="popup-content">
 
             {selectedEvent.artists.map((artist) => (
-              <div key={artist.id}>
-                <Link
-                  key={artist.id}
-                  to={`/artiste/${artist.slug}`}
-                  className="artist"
-                >
-                  <img src={artist.picture} className="philippe" alt="philippe" />
-                </Link>
-                <h2>{selectedEvent.name}</h2>
+              <>
+                <div key={artist.id}>
+                  <Link
+                    key={artist.id}
+                    to={`/artiste/${artist.slug}`}
+                    className="artist"
+                  >
+                    <img src={artist.picture} className="philippe" alt={artist.firstname} />
+                  </Link>
+                  <h2>{selectedEvent.name}</h2>
 
-                <h3 key={artist.slug}>{artist.firstname} {artist.lastname}</h3>
-              </div>
+                  <h3 key={artist.slug}>{artist.firstname} {artist.lastname}</h3>
+                </div>
+                <div className="popup-bottom" key={artist.id}>
+                  <div className="genre">
+                    {artist.genres.map((item) => (
+                      <span
+                        key={item.id}
+                        className="genre-item"
+                      >
+                        {item.name}
+                      </span>
+                    ))}
+                  </div>
+                  <Link
+                    key={artist.id}
+                    to={`/artiste/${artist.slug}`}
+                    className="artist"
+                  >
+                    <span className="voir-plus">Voir plus</span>
+                  </Link>
+                </div>
+              </>
             ))}
             <p>{selectedEvent.description}</p>
-            {selectedEvent.artists.map((artist) => (
-              <div className="popup-bottom" key={artist.id}>
-                <div className="genre">
-                  {artist.genres.map((item) => (
-                    <span
-                      key={item.id}
-                      className="genre-item"
-                    >
-                      {item.name}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  key={artist.id}
-                  to={`/artiste/${artist.slug}`}
-                  className="artist"
-                >
-                  <span className="voir-plus">Voir plus</span>
-                </Link>
-              </div>
-            ))}
           </div>
         </Popup>
         )}
