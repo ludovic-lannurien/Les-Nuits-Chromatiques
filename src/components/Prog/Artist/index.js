@@ -67,6 +67,8 @@ const Artist = ({ artists }) => {
                 to="/lieux"
               >
                 <a className="place-link">{event.place.name}</a>
+                <p>{event.place.address}</p>
+                <p>{event.place.city}</p>
               </Link>
             </div>
             <div className="event-description">
