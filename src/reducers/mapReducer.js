@@ -10,8 +10,8 @@ import {
 
 const initialState = {
   viewport: {
-    latitude: 47.321129,
-    longitude: 5.134941,
+    latitude: 47.324919762838725,
+    longitude: 5.068414330682785,
     width: '100vw',
     height: '100vh',
     zoom: 12,

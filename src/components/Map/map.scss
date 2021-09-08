@@ -27,8 +27,8 @@
 }
 
 .cible{
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   transition: 0.5s;
 
   &:hover{
@@ -53,9 +53,11 @@
 
   img {
     border-radius: 5px;
-    width: 190px;
-    height: auto;
     margin: auto;
+    height: 8rem;
+    width: 100%;
+    object-position: 0 25%;
+    object-fit: cover;
   }
 
   h2 {
@@ -71,7 +73,7 @@
   }
 
   p {
-    margin: 1rem 0;
+    margin: 0;
   }
 
   .popup-bottom {
@@ -107,9 +109,12 @@
       flex-direction: column;
       justify-content: flex-end;
       text-align: right;
+      color: #f54e00;
 
 
       .voir-plus {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
         font-style: italic;
         text-decoration: underline;
       }

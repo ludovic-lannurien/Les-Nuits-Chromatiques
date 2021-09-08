@@ -1,7 +1,7 @@
 .places {
   position: fixed;
   bottom: 0;
-  right: 5rem;
+  right: 0rem;
   top: 10rem;
   height: 45rem;
   width: 60vw;
@@ -69,8 +69,8 @@
     position: absolute;
     width: 100%;
     margin: auto;
-    bottom: 0 ;
-    height: 13vw;
+    bottom: 0;
+    height: 16vw;
     opacity: 0.6;
     width: 60vw;
     h3{
@@ -210,6 +210,7 @@
   
     .text-picture-active{
       bottom: 11rem;
+      height: 16vh;
       h3{
         font-size: 40px;
         text-align: center;
@@ -266,8 +267,8 @@
     }
   
     .text-picture-active{
-      
-      bottom: 2rem;
+      height: 20vh;
+      bottom: 9rem;
       width: 100vw;
     }
   }
@@ -275,23 +276,24 @@
 
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .places {
+    height: 100vh;
     bottom: 0;
     .image {
-      width: auto;
-      height: 25rem;
+      width: 100vw;
+      height: 60vh;
       margin: auto;
+      // object-position: 0 25%;
+      object-fit: cover;
     }
 
     .right-arrow {
-      top: 75%;
-
+      top: 60%;
     }
     
     .left-arrow {
-      top: 75%;
-
+      top: 60%;
     }
 
   .text-picture{
@@ -324,9 +326,9 @@
     transition: 0.8s;
     background-color: aliceblue;
     position: absolute;
-    bottom: 200px;
+    bottom: 20rem;
     margin: 0 Auto;
-    height: 200px;
+    height: 15rem;
     opacity: 0.6;
     width: 100vw;
 
@@ -346,7 +348,4 @@
     }
   }
   }
-
-
-
 }

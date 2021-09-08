@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Map from 'src/containers/Map';
 import Nav from 'src/containers/Nav';
 import Prog from 'src/containers/Prog';
-import Festival from 'src/components/Festival';
+import Festival from 'src/containers/Festival';
 import NotFound from 'src/components/NotFound';
 import Spinner from 'src/components/Spinner';
 import Places from 'src/containers/Places';

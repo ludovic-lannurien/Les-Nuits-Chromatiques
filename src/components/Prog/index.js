@@ -34,11 +34,13 @@ const Prog = ({
           ))
         )}
         {clickOnSelectArtist && (
-          artistsList[0].map((artist) => (
-            <ArtistCard
-              {...artist}
-              key={artist.id}
-            />
+          artistsList.map((artistsEvents) => (
+            artistsEvents.map((artist) => (
+              <ArtistCard
+                {...artist}
+                key={artist.id}
+              />
+            ))
           ))
         )}
       </div>

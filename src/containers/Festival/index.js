@@ -1,23 +1,23 @@
 import { connect } from 'react-redux';
-
+import { setGifOnClick } from 'src/actions/festival';
 // on importe le composant de présentation
-import Prog from 'src/components/Prog';
+import Festival from 'src/components/Festival';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  artists: state.artists.artistsList,
-  daySelected: state.progFilter.daySelected,
-  clickOnSelectArtist: state.progFilter.clickOnSelectArtist,
-  dates: state.progFilter.datesList,
+  gifOnClick: state.festival.gifOnClick,
 });
 
 // === mapDispatchToProps
 // si j'ai besoin de dispatcher des actions vers le store (mettre à jour le state)
 const mapDispatchToProps = (dispatch) => ({
-  // nom de la prop à remplir: fonction qui dispatch l'action
+  setGifOnClick: () => {
+    const action = setGifOnClick();
+    dispatch(action);
+  },
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Prog);
+export default connect(mapStateToProps, mapDispatchToProps)(Festival);
